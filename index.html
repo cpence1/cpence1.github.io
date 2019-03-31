@@ -55,6 +55,58 @@ a:hover {
 
     <p>KISS Hyperlink:</p>
     <a style="text-decoration: underline;" href="https://www.kissonline.com/">KISS Online</a>
+    <p></p>
+    <head>
+            <meta charset="UTF-8">
+            <title> Audio Player</title>
+            <style>
+                #playlist{
+                    list-style:none;
+                }
+        
+                #playlist li a{
+                    color:blue;
+                    text-decoration: none;
+                }
+                #playlist .current-song a{
+                    color:red;
+                }
+            </style>
+        </head>
+        <body>
+            <audio src="" controls id="audioPlayer"style="display:none">
+                Browser Doesn't Support This!
+            </audio>
+            <style>
+                    table, th, td {
+                    border: 1px solid red;
+                    }
+                    </style>
+                    </head>
+        <body>
+            <ul id="playlist">
+                    <table style="position:sticky">
+                            <caption>NOW PLAYING:</caption>
+                            <tr>
+                              <th>Song</th>
+                              <th>Artist</th>
+                            </tr>
+                            <tr>
+                              <td> <li class="current-song"><a href="Hwy.mp3">Highway to Hell</a></li></td>
+                              <td>AC/DC</td>
+                            </tr>
+                            <tr>
+                              <td><li><a href="Dude.mp3">Dude Looks Like A Lady</a></li></td>
+                              <td>Aerosmith</td>
+                            </tr>
+                          </table>
+                </table>
+            </ul>
+            <script src="https://code.jquery.com/jquery-2.2.0.js" ></script>
+            <script src="AudioPlayer.js"></script>
+            <script>
+                audioPlayer();  
+            </script>
 
 </body>
 </html>
