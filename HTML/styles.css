@@ -117,6 +117,17 @@ a img{border:0px;}
 #education .col-mid{margin:0px 65px;}
 
 /****************************************************/
+/* PERFORMANCE SECTION */
+/****************************************************/
+
+#performance{margin:0px 43px; padding-top:50px;}
+#performance .col{
+	width:235px;
+	float:left;
+}
+#performance .content{overflow:auto;}
+#performance .col-mid{margin:0px 65px;}
+/****************************************************/
 /* CONNECT SECTION */
 /****************************************************/
 #connect{margin:0px 43px; padding-top:115px;}
