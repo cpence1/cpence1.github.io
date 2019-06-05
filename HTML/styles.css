@@ -203,5 +203,5 @@ a img{border:0px;}
 	background:url(images/divider.png) repeat-x;
 	clear:both;
 }
-.top-divider{margin-bottom:40px;}
-.bottom-divider{margin-top:40px;}
+.top-divider{margin-bottom:10px;}
+.bottom-divider{margin-top:10px;}
