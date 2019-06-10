@@ -11,461 +11,321 @@
 <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=3.3"></script>	
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 650px; 
+  height: 175px;
+  padding: 7px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
 </head>
-
 <body>
-<!--Begin Performances Section-->  
-<div id="performance">
-        <h1>Performances</h1>
-        <h4>Hover over photos for more info</h4>
-        <h4>Follow provided links for more info on shows and companies</h4>
-        <div class="top-divider"></div>
-        <div class="content">               
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                    <style>
-                    .container {
-                      position: relative;
-                      width: 50%;
-                    }
-                    
-                    .image {
-                      display: block;
-                      width: 100%;
-                      height: auto;
-                      width: 275px; 
-                      height: 225px;
-                    }
-                    
-                    .overlay {
-                      position: absolute;
-                      top: 0;
-                      bottom: 0;
-                      left: 0;
-                      right: 0;
-                      width: 275px; 
-                      height: 225px;
-                      opacity: 0;
-                      transition: .5s ease;
-                      background-color: black;
-                    }
-                    
-                    .container:hover .overlay {
-                      opacity: .9;
-                    }
-                    
-                    .text {
-                      font-size: 15px;
-                      position: absolute;
-                      top: 5%;
-                      left:5%;
-                      right:5%;
-                      text-align: center;
-                    }
-                    div.gallery {
-                      margin: 5px;
-                      float: left;
-                      width: 275px; 
-                      height: 225px;
-                    }
-                    
-                    div.gallery img {
-                      width: 275px;
-                      height: 225px;
-                    }
-                    a {
-                            text-decoration-line: underline;
-                            text-decoration-style: solid;
-                    }
-                    </style>
-                    </head>
-                    <body>
-                    <div class="gallery">
-                    <div class="container">
-                      <img src="images/ODT.png" alt="Avatar" class="image">
-                      <div class="overlay">
-                        <div id="demo" style="display:none" class="text">
-                                <h3>Featured Player (October 2017 - Current)</h3>
-                                <a href="http://ovationdinnertheatre.com/">
-                                <h3>Ovation Dinner Theatre</h3></a>
-                                <h3>Baltimore, MD</h3>
-                                <p>Various Improvisational Comedic Roles</p>
-                            </div>
-                            <button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/AFGM.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3>"Lt. Sam Weinberg," <br><a href="https://www.samuelfrench.com/p/2810/a-few-good-men">
-                                    <u>A Few Good Men</u></a> (May - June 2019)</h3>
-                                    <a href="https://www.samuelfrench.com/p/2810/a-few-good-men">
-                                    <a href="https://www.hdylmn.org/home/suf?fbclid=IwAR1X840pNLYuPVhJtow_MgQMyCZP8yicZwmBxMuFNknZULlIm6P7JZu4K-E">
-                                    <h3>Stand Up For...Theatre</h3></a>
-                                    <h3>Brooklyn Park, MD</h3>
-                                    <p>Dramatic Lead Role</p>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/OnceUponAMattress.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3>"Knight / Emsemble," <br><a href="https://en.wikipedia.org/wiki/Once_Upon_a_Mattress"><u>Once Upon A Mattress</u></a> (October 2018)</h3>
-                                    <a href="https://en.wikipedia.org/wiki/Once_Upon_a_Mattress">
-                                    <a href="http://www.artistic-synergy.com/?fbclid=IwAR3HzmRKubBerribhBVoanTgh-mn6PvjG3vNRuyf6sPEEDHGtPNwkbQR3Kw">
-                                    <h3>Artistic Synergy of Baltimore</h3></a>
-                                    <h3>Baltimore, MD</h3>
-                                    <p>Comedic Emsemble Role, Musical</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/JossAdo.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3>"Borachio," <br><a href="https://en.wikipedia.org/wiki/Much_Ado_About_Nothing"><u>Much Ado About Nothing</u></a> (May 2018)</h3>
-                                    <a href="http://www.artistic-synergy.com/?fbclid=IwAR3HzmRKubBerribhBVoanTgh-mn6PvjG3vNRuyf6sPEEDHGtPNwkbQR3Kw">
-                                    <h3>Artistic Synergy of Baltimore</h3></a>
-                                    <h3>Baltimore, MD</h3>
-                                    <p>Comedic Ensemble Role, Shakespeare</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/WL.png" alt="Avatar" class="image">
-                        <div class="overlay">
-                                <div class="text">
-                                    <h3>"Ernie Bishop," <br><a href="https://en.wikipedia.org/wiki/A_Wonderful_Life_(musical)#">
-                                    <u>A Wonderful Life</u></a> (December 2017)</h3>
-                                    <a href="https://thirdwall.org/?fbclid=IwAR1eGjiST5P43hzgdnbfr-4RjgTgSoypcANP0oYums0kTwGdNsrkGzjvuxw">
-                                    <h3>Third Wall Productions</h3></a>
-                                    <h3>Towson, MD</h3>
-                                    <p>Dramatic Ensemble Role, Musical</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                          
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/JCS.png" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3>"Apostle / Roman Guard, "<br><a href="https://en.wikipedia.org/wiki/Jesus_Christ_Superstar"><u>Jesus Christ Superstar</u></a> (June - July 2017)</h3>
-                                    <a href="https://thirdwall.org/?fbclid=IwAR1eGjiST5P43hzgdnbfr-4RjgTgSoypcANP0oYums0kTwGdNsrkGzjvuxw">
-                                    <h3>Third Wall Productions</h3></a>
-                                    <h3>Towson, MD</h3>
-                                    <p>Dramatic Emsemble Role, Musical</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/Shorebirds.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3>"Sherman The Shorebird" Mascot (May - September 2014)</h3>
-                                    <a href="https://www.milb.com/delmarva">
-                                    <h3>Delmarva Shorebirds Baseball</h3></a>
-                                    <h3>Salisbury, MD</h3>
-                                    <p>Mascot Role</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                        <div class="container">
-                            <img src="images/sammy.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">
-                                    <h3><a href="https://www.salisbury.edu/experience-campus/athletics/discover-sammy.aspx">
-                                    "Sammy Sea Gull"</a> Mascot (Spring 2012 - Spring 2013)</h3>
-                                    <a href="https://www.salisbury.edu">
-                                    <h3>Salisbury University</h3></a>
-                                    <h3>Salisbury, MD</h3>
-                                    <p>Mascot Role</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>     
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/JB.jpeg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                    <h3>Stage Manager, <br><a href="https://histage.com/jungle-book">
-                                        <u>The Jungle Book</u></a> (Summer 2008)</h3>
-                                    <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                    <h3>The Sky is the Limit Performing Arts</h3></a>
-                                    <h3>Baltimore, MD</h3>
-                                            <p>Stage Manager</p>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                            <div class="container">
-                                <img src="images/JSS.jpg" alt="Avatar" class="image">
-                                <div class="overlay">
-                                    <div class="text">
-                                        <h3>"Bavian / Uncle Baboon" / Fly Puppeteer, <br><a href="https://en.wikipedia.org/wiki/Just_So_Stories"><u>Just So Stories</u></a> (January 2013)</h3>
-                                            <a href="https://www.salisbury.edu/academic-offices/liberal-arts/music-theatre-and-dance/index.aspx">
-                                            <h3 style=>Salisbury University</h3></a>
-                                            <h3>Salisbury, MD</h3>
-                                            <p>Comedic Emsemble Roles</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                       
-                    <div class="gallery">
-                    <div class="container">
-                      <img src="images/Servant.jpg" alt="Avatar" class="image">
-                      <div class="overlay">
-                        <div class="text">
-                                <h3>"Florindo,"<br><a href="https://www.samuelfrench.com/p/5677/the-servant-of-two-masters">
-                                <u>The Servant of Two Masters</u></a> (November 2011)</h3>
-                                <a href="https://www.salisbury.edu/academic-offices/liberal-arts/music-theatre-and-dance/index.aspx">
-                                <h3>Salisbury University</h3></a>
-                                <h3>Salisbury, MD</h3>
-                                <p>Comedic Lead Role</p>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/Shrew.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                    <h3>"Haberdasher" / Zanni, <a href="https://en.wikipedia.org/wiki/The_Taming_of_the_Shrew">
-                                    <u>The Taming of the Shrew</u></a> (October 2009)</h3>
-                                    <a href="https://www.ccbcmd.edu/Campus-Life-and-Activities/Arts-and-Culture/Performing-Arts/Theatre-Productions.aspx">
-                                    <h3>CCBC Essex Academic Theatre Troupe</h3></a>
-                                    <h3>Baltimore, MD</h3>
-                                    <p>Comedic Ensemble Role, Shakespeare</p> 
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/MuchAdo.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                    <h3>"Leonato," <br><a href="https://en.wikipedia.org/wiki/Much_Ado_About_Nothing"><u>Much Ado About Nothing</u></a> (February - March 2009)</h3>
-                                    <a href="http://parkvillehs.bcps.org/Courses/visual_and_performing_arts/performing_arts">
-                                    <h3>Parkville High School</h3></a>
-                                    <h3>Parkville, MD</h3>
-                                    <p>Comedic Lead Role, Shakespeare</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/DTD.png" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                    <h3>"Whitney Olive," <br><a href="https://www.samuelfrench.com/p/945/done-to-death">
-                                    <u>Done to Death</u></a> (February 2008)</h3>
-                                    <a href="http://parkvillehs.bcps.org/Courses/visual_and_performing_arts/performing_arts">
-                                    <h3>Parkville High School</h3></a>
-                                    <h3>Parkville, MD</h3>
-                                    <p>Comedic Lead Role</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/Wed.png"style="background-color: white;" alt="Avatar" class="image">
-                        <div class="overlay">
-                                <div class="text">
-                                    <h3>Spotlight, <br><a href="https://www.pioneerdrama.com/searchdetail.asp?pc=DOOWOPWEDW">
-                                    <u>Doo Wop Wed Widing Hood</u></a> (Summer 2007)</h3>
-                                    <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                    <h3>The Sky is the Limit Performing Arts</h3></a>
-                                    <h3>Baltimore, MD</h3>
-                                    <p>Spotlight</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                          
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/OK.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3>"Marshal Cord Elam," <br><a href="https://en.wikipedia.org/wiki/Oklahoma!">
-                                    <u>Oklahoma!</u></a> (May 2007)</h3>
-                                    <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                    <h3>The Sky is the Limit Performing Arts</h3></a>
-                                    <h3>Baltimore, MD</h3>
-                                    <p>Comedic Ensemble Role, Musical</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/tenor.jpeg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                    <h3>"Henry Saunders," <br><a href="https://www.samuelfrench.com/p/658/ken-ludwigs-lend-me-a-tenor">
-                                        <u>Lend Me A Tenor</u></a> (February 2007)</h3>
-                                        <a href="http://parkvillehs.bcps.org/Courses/visual_and_performing_arts/performing_arts">
-                                        <h3>Parkville High School</h3></a>
-                                        <h3>Parkville, MD</h3>
-                                    <p>Comedic Lead Role</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                        <div class="container">
-                            <img src="images/dogs.jpeg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">
-                                    <h3>Stage Manager, <br><a href="https://histage.com/dogs"><u>Dogs</u></a> (Summer 2006)</h3>
-                                        <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                        <h3>The Sky is the Limit Performing Arts</h3></a>
-                                        <h3>Baltimore, MD</h3>
-                                        <p>Stage Manager</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>     
-                    <div class="gallery">
-                    <div class="container">
-                        <img src="images/wiz.gif" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">
-                                    <h3>"The Wizard of Oz / Professor Marvel,"<br><a href="https://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)">
-                                    <u>The Wizard of Oz</u></a> (March 2006)</h3>
-                                    <a href="http://parkvillehs.bcps.org/Courses/visual_and_performing_arts/performing_arts">
-                                    <h3>Parkville High School</h3></a>
-                                    <h3>Parkville, MD</h3>
-                                    <p>Comedic Emsemble Role, Musical</p> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>                       
-                    <div class="gallery">
-                            <div class="container">
-                              <img src="images/KK.jpeg" alt="Avatar" class="image">
-                              <div class="overlay">
-                                <div class="text">
-                                    <h3>"Jos&eacute Jabe&ntildeero," <br><a href="https://histage.com/katastrophe-kate">
-                                    <u>Katastrophe Kate</u></a> (Summer 2005)</h3>
-                                    <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                    <h3>The Sky is the Limit Performing Arts</h3></a>
-                                <h3>Baltimore, MD</h3>
-                                <p>Comedic Lead Role, Musical</p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gallery">
-                            <div class="container">
-                                <img src="images/mermaid.jpeg" alt="Avatar" class="image">
-                                <div class="overlay">
-                                    <div class="text">
-                                            <h3>"Prince," <br><a href="https://histage.com/little-mermaid">
-                                            <u>The Little Mermaid</u></a> (June - July 2004)</h3>
-                                            <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                            <h3>The Sky is the Limit Performing Arts</h3></a>
-                                            <h3>Baltimore, MD</h3>  
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            <div class="gallery">
-                            <div class="container">
-                                <img src="images/woods.jpg" alt="Avatar" class="image">
-                                <div class="overlay">
-                                    <div class="text">
-                                            <h3>Stage Manager, <br><a href="https://en.wikipedia.org/wiki/Into_the_Woods">
-                                            <u>Into The Woods</u></a> (Fall 2003)</h3>
-                                            <a href="http://lochraventech.bcps.org/magnet_programs/performing_arts">
-                                            <h3>Loch Raven Academy Middle School</h3></a>
-                                            <h3>Baltimore, MD</h3>
-                                            <p>Stage Manager</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery">
-                            <div class="container">
-                                <img src="images/BSS.jpg" alt="Avatar" class="image">
-                                <div class="overlay">
-                                    <div class="text">
-                                            <h3>Various, <br><u>Broadway Showstoppers</u> (August - September 2003)</h3>
-                                            <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                            <h3>The Sky is the Limit Performing Arts</h3></a>
-                                            <h3>Baltimore, MD</h3>
-                                            <p>Musical Revue</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery">
-                            <div class="container">
-                                <img src="images/magic.png" style="background-color: white;"
-                                    alt="Avatar" class="image" >
-                                <div class="overlay">
-                                        <div class="text">
-                                            <h3>"Coco The Clown," <br><a href="https://www.pioneerdrama.com/SearchDetail.asp?PC=MAGICINME"></a>
-                                                <u>The Magic in Me</u> (June - July 2003)</h3>
-                                            <a href="https://www.facebook.com/pages/The-Sky-Is-the-Limit-Theatre/156516517706154">
-                                            <h3>The Sky is the Limit Performing Arts</h3></a>
-                                            <h3>Baltimore, MD</h3>
-                                            <p>Comedic Lead Role, Musical</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                          
-                            <div class="gallery">
-                            <div class="container">
-                                <img src="images/goats.jpg" alt="Avatar" class="image">
-                                <div class="overlay">
-                                    <div class="text">
-                                        <h3>Chorus, <br><a href="https://www.teachinteract.com/c/product.web?nocache@1+s@hHofpsJeam8cM+record@TF41229+Title@THE%20THREE%20BILLY%20GOATS%20GRUFF%26mdash%3BGO%20CALYPSO%21+ISBN@9781573363624">
-                                            </a><u>Three Billy Goats Go Calypso</u> (2002)</h3>
-                                        <a href="https://www.bcps.org/schools/profile.aspx?OrgID=114">
-                                        <h3>Eastwood Elementary School</h3></a>
-                                        <h3>Baltimore, MD</h3>
-                                        <p>Emsemble Role, Musical</p>    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="gallery">
-                            <div class="container">
-                                <img src="images/red.jpg" alt="Avatar" class="image">
-                                <div class="overlay">
-                                    <div class="text">
-                                        <h3>"Wolf", <br><a href="https://en.wikipedia.org/wiki/Little_Red_Riding_Hood">
-                                        </a><u>Little Red Riding Hood</u> (2001)</h3>
-                                        <a href="https://www.bcps.org/schools/profile.aspx?OrgID=114">
-                                        <h3>Eastwood Elementary School</h3></a>
-                                        <h3>Baltimore, MD</h3>
-                                        <p>Lead Role, Musical</p>          
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>                 
-                    </body>
-                    </html>   
-        <div class="bottom-divider"></div>
+
+<h2>List View or Grid View</h2>
+
+<p>Click on a button to choose list view or grid view.</p>
+
+<div id="btnContainer">
+  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+</div>
+<br>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Rideshare Operator (09/2016 – 06/2019)</h2>
+    <a href="https://www.lyft.com/">
+    <img src="images/Lyft_logo.jpg" alt="Lyft_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>Lyft – Baltimore, MD</h3>
+    <ul style="list-style-type:none;">
+            <li>Operated own rideshare operation, driving customers to requested 
+                destinations, offering a clean car, and friendly & prompt service</li>
+            <li>Managed own hours of operation, work vehicle, and earnings</li> 
+    </ul>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Delivery Driver (05/2018 – 03/2019)</h2>
+    <a href="https://www.jasonsdeli.com/">
+    <img src="images/Deli_Logo.jpg" alt="Deli_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>Jason’s Deli – Timonium, MD</h3>
+    <ul style="list-style-type:none;">
+            <li>Helped with the preparation and delivery of custom ordered 
+                catering meals, ensuring the order was met with all satisfaction, 
+                from the initial creation to the delivery and setup</li>
+            <li>Performed basic operations of the restaurant, including running 
+                food, bussing tables, and preparing food for the near future</li> 
+        </ul>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>Laser Tag Technician (09/2017 – 06/2018)</h2>
+    <a href="https://www.redzoneadventures.com/">
+    <img src="images/RZA_Logo.jpg" alt="RZA_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>Red Zone Adventures – Timonium, MD</h3>
+    <ul style="list-style-type:none;">
+            <li>Performed maintenance on laser tag vests, including battery 
+                and parts replacements, software and hardware fixes</li>                                
+           <li>Ran laser tag games, including customer briefings and preparation, 
+               supervising games, and cleaning and maintaining the laser 
+                tag arena and surrounding areas</li>
+        </ul>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <h2>Manager-in-Training (07/2017 - 08/2017)</h2>
+    <a href="https://www.summitconsultinginc.net/">
+    <img src="images/summit_logo.png" alt="Summit_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>Summit Consulting – Glen Burnie, MD</h3>
+    <ul style="list-style-type:none;">
+            <li>Participated in face-to-face marketing with customers, 
+                educating customers on the importance of energy choice
+                 and their need to switch to a company that would be more 
+                 beneficial to customer needs</li>                                
+        </ul>
+  </div>
+</div>
+
+  <div class="column" style="background-color:#aaa;">
+    <h2>Independent Benefits Specialist (02/2017 - 06/2017)</h2>
+    <a href="https://www.businessyab.com/explore/united_states/maryland/harford_county/1_abingdon/abingdon/emmorton_road/3103/canton_insurance.html">
+    <img src="images/aflac-logo.jpg" alt="Aflac_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>The Canton Agency – Bel Air, MD</h3>
+    <ul style="list-style-type:none;">
+            <li>Promoted the continued use of health benefits, helping 
+                businesses to provide affordable benefits to employees by 
+                participating in cold-calling marketing, as well as face-to-face 
+                meetings with business owners and employees, enrolling employees 
+                in voluntary health benefits</ul>                        
+            </ul>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Internet Sales Specialist (04/2017 - 06/2017)</h2>
+    <a href="https://www.facebook.com/boweryantiques/">
+    <img src="images/bowery_logo.jpg" alt="Aflac_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>The Bowery of Antiques & Collectables – Parkville, MD</h3>
+    <ul style="list-style-type:none;">
+    <li>Managed the internet sales of a small business, including, but not 
+        limited to, photographing and describing items for sale on eBay, 
+        maintaining company emails, preparing shipping orders, and sending 
+        invoices and collecting payment from online customers.</li>
+    </ul>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>Event Coordinator (02/2017 - 04/2017)</h2>
+    <a href="http://www.2020companies.com/">
+    <img src="images\2020.png" alt="2020_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>2020 Retail Stores – Sykesville, MD</h3>
+    <ul style="list-style-type:none;">
+            <li>Participated in face-to-face marketing with customers, 
+                educating customers on the importance of energy choice 
+                and their need to switch to a company that would be more 
+                beneficial to customer needs</li>
+        </ul>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <h2>Wireless Expert	(01/2017 - 02/2017)</h2>
+    <a href="https://www.cellularsales.com/store/stores/">
+    <img src="images\CS.jpg" alt="CS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>Verizon by Cellular Sales – Bel Air, MD</h3>
+    <ul style="list-style-type:none;">
+        <li>Assisted customers in the sale, activation, and maintenance of 
+            cellular phones, and tablets on the Verizon network, focusing 
+            on monthly sales quotas as well as customer needs, including 
+            explaining and suggesting plans, offering instructions and 
+            advice with cellular phones, and selling and fitting accessories 
+            for specific devices.</li>
+    </ul>
+</div>
+<div class="column" style="background-color:#aaa;">
+    <h2>Seasonal Warehouse Associate (11/2016 – 01/2017)</h2>
+    <a href="https://careers.kohls.com/">
+    <img src="images\kohls.jpg" alt="Kohls_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+    <h3>Kohl’s E-Fulfillment Center – Edgewood, MD</h3>
+    <ul style="list-style-type:none;">                          
+        <li>Carried out the various operations of the Kohl’s e-fulfillment center warehouse, 
+                including picking, packing, and helping to ship customer ordered products</li>
+        </ul>
     </div>
-    <!--End Performances Section-->
+<div class="column" style="background-color:#bbb;">
+    <h2>Event Coordinator (09/2016 – 09/2016)</h2>
+    <a href="https://www.glassdoor.com/Reviews/Blue-Shore-Strategies-Reviews-E1101867.htm">
+        <img src="images\BS.png" alt="BS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+        <h3>Blue Shore Strategies – Pikesville, MD</h3>
+        <ul style="list-style-type:none;">
+            <li>Presented to Home Depot customers the benefits of Home Depot’s Fifth Generation Cabinet Re-facing services, in order to 
+                sign customers up for a free consultation with a Home Depot consultant</li>
+            </ul> 
+        </div>
+<div class="column" style="background-color:#ccc;">
+    <h2>Fulfillment Associate (04/2016 – 08/2016)</h2>
+    <a href="https://www.amazon.jobs/en/business_categories/fulfillment-operations">
+        <img src="images\amazon.png" alt="Amazon_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+        <h3>Amazon.com – Baltimore, MD</h3>
+        <ul style="list-style-type:none;">
+        <li>Carried out various operations of the Amazon.Com warehouse, such as packing customer-ordered products, stocking boxes
+                for easy access to those packing products, retrieving pallets of material, etc.
+                </li>
+        </ul> 
+    </div>
+    <div class="column" style="background-color:#ddd;">
+        <h2>Wireless Expert (08/2015 – 03/2016)</h2>
+        <a href="https://www.glassdoor.com/Reviews/MOBILE-NOW-Reviews-E438107.htm">
+            <img src="images\MN.jpg" alt="MN_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+            <h3>Sprint by Mobile Now – Essex, MD</h3>
+            <ul style="list-style-type:none;">
+            <li>Assisted customers in the sale, activation, and maintenance of cellular phones, tablets, and wireless routers for the Sprint
+                    network, focusing on monthly sales quotas as well as customer needs, including explaining and suggesting plans, offering instructions and advice with cellular phones, selling and fitting accessories for specific devices.
+                    </li>
+            </ul> 
+        </div>
+    <div class="column" style="background-color: #aaa;">
+        <h2>Assistant Manager (02/2014 – 08/2015)</h2>
+        <a href="https://www.radioshack.com/">
+            <img src="images\RS.png" alt="RS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+            <h3>Radio Shack – Cockeysville, Maryland</h3>
+                <ul style="list-style-type:none;">
+                <li>Assisted customers in finding solutions to technical issues regarding electronics, cell phones, musical instrument cables and
+                        accessories, and other technological issues.
+                        </li>
+            </ul> 
+        </div>    
+        <div class="column" style="background-color:#bbb;">
+            <h2>Mascot Performer (04/2014 – 09/2014)</h2>
+            <a href="https://www.milb.com/delmarva">
+                <img src="images\Shorebirds.jpg" alt="Shorebirds_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                <h3>Delmarva Shorebirds Baseball – Salisbury, MD</h3>
+                <ul style="list-style-type:none;">
+                <li>Interacted with people of all ages to provide a fun, charismatic team mascot that was always willing to take pictures, offer
+                        hugs, and be the best team and team representative possible
+                        </li>
+                </ul>
+        </div>
+        <div class="column" style="background-color:#ccc;">
+            <h2>Cashier (09/2013 – 02/2014)</h2>
+            <a href="https://giantfood.com/">
+                <img src="images\giant.png" alt="Giant_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                <h3>Giant Food – Long Neck, DE</h3>
+                <ul style="list-style-type:none;">
+                <li>Managed gas station, taking payment for gas and helping customers to understand how to use the gas pumps.</li>
+                <li>Scanned and bagged customers' groceries, took payment, dealt with coupons, sales, and customer inquiries about store functions.
+                        </li>
+                </ul>
+        </div>
+        <div class="column" style="background-color:#ddd;">
+            <h2>Server (08/2013 – 09/2013)</h2>
+            <a href="https://www.friendlysrestaurants.com/">
+                <img src="images\friendlys.png" alt="Friendlys_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                <h3>Friendly’s Ice Cream Parlor – Rehoboth, DE</h3>
+                <ul style="list-style-type:none;">
+                <li>Interacted with customers in order to take and prepare food orders, refill drinks, and provide 
+                    sanitary and satisfactory dining experiences for every customer.</li>
+                </ul> 
+        </div>
+        <div class="column" style="background-color:#aaa;">
+            <h2>Mascot Performer (04/2012 – 05/2013)</h2>
+            <a href="https://www.salisbury.edu/experience-campus/athletics/discover-sammy.aspx">
+                <img src="images\sammy.jpg" alt="Sammy_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                <h3>Salisbury University – Salisbury, MD</h3>
+                <ul style="list-style-type:none;">
+                <li>Interacted with people of all ages to provide a fun, charismatic team mascot that was always willing to take pictures, offer
+                        hugs, and be the best team and university representative possible.
+                        </li>
+                    </ul> 
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>Call Center Representative (10/2011 – 05/2013)</h2>
+            <a href="https://www.salisbury.edu">
+                <img src="images\SU.png" alt="SU_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                <h3>Salisbury University Alumni Association – Salisbury, MD</h3>
+                <ul style="list-style-type:none;">
+                <li>Spoke with university alumni, alerting alumni of upcoming events and sharing university news with former students in
+                        order to gain monetary support for the university.
+                        </li>                                    
+                    </ul> 
+        </div>
+        <div class="column" style="background-color:#ccc;">
+            <h2>Food Runner / Busser (02/2010 – 11/2010)</h2>
+            <a href="http://rubytuesday.com/">
+                <img src="images\RT.jpg" alt="RT_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                <h3>Ruby Tuesday – White Marsh, MD</h3>
+                <ul style="list-style-type:none;">
+                <li>Delivered food to customers with a smile, and cleaned and disposed of used food and dishes in order to provide a clean, 
+                        satisfactory experience for every customer                                    
+                        </li>                                    
+                    </ul> 
+        </div>
+        <div class="column" style="background-color:#ddd;">
+            <h2>Self Employed Snowball Vendor (07/2009 - 07/2010)</h2>
+            <img src="images\SE.jpg" alt="SE_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;">
+                <h3>A World of Cool Snowballs - Baltimore, MD</h3>
+                <ul style="list-style-type:none;">
+                <li>Organized and maintained own business, including sales, promotions, finances, and operations of the stand, offering the
+                        community a cool, cheap, tasty treat and a smile that kept bringing customers back for more.
+                        </li>
+                    </ul>
+        </div>
+    <script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "100%";
+  }
+}
+
+// Grid View
+function gridView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "50%";
+  }
+}
+
+/* Optional: Add active class to the current button (highlight it) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>

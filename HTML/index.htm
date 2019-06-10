@@ -53,37 +53,93 @@
         <h4>Click accompanying photos for more information</h4>
         <div class="top-divider"></div>
         <div class="content">
-            <h2>Rideshare Operator (09/2016 – 06/2019)</h2>
-            <a href="https://www.lyft.com/">
-            <img src="images/Lyft_logo.jpg" alt="Lyft_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-            <h3>Lyft – Baltimore, MD</h3>
-            <ul style="list-style-type:none;">
-                    <li>Operated own rideshare operation, driving customers to requested 
-                        destinations, offering a clean car, and friendly & prompt service</li>
-                    <li>Managed own hours of operation, work vehicle, and earnings</li> 
-            </ul>
-            <h2>Delivery Driver (05/2018 – 03/2019)</h2>
-            <a href="https://www.jasonsdeli.com/">
-            <img src="images/Deli_Logo.jpg" alt="Deli_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-            <h3>Jason’s Deli – Timonium, MD</h3>
-            <ul style="list-style-type:none;">
-                    <li>Helped with the preparation and delivery of custom ordered 
-                        catering meals, ensuring the order was met with all satisfaction, 
-                        from the initial creation to the delivery and setup</li>
-                    <li>Performed basic operations of the restaurant, including running 
-                        food, bussing tables, and preparing food for the near future</li> 
-                </ul>
-                <h2>Laser Tag Technician (09/2017 – 06/2018)</h2>
-                <a href="https://www.redzoneadventures.com/">
-                <img src="images/RZA_Logo.jpg" alt="RZA_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                <h3>Red Zone Adventures – Timonium, MD</h3>
-                <ul style="list-style-type:none;">
-                        <li>Performed maintenance on laser tag vests, including battery 
-                            and parts replacements, software and hardware fixes</li>                                
-                       <li>Ran laser tag games, including customer briefings and preparation, 
-                           supervising games, and cleaning and maintaining the laser 
-                            tag arena and surrounding areas</li>
+            <style>
+                * {
+                  box-sizing: border-box;
+                }
+                
+                /* Create two equal columns that floats next to each other */
+                .column {
+                  float: left;
+                  width: 650px; 
+                  height: 175px;
+                  padding: 5px;
+                }
+                
+                /* Clear floats after the columns */
+                .row:after {
+                  content: "";
+                  display: table;
+                  clear: both;
+                }
+                /* Style the buttons */
+                .btn {
+                  border: none;
+                  outline: none;
+                  padding: 12px 16px;
+                  background-color: #f1f1f1;
+                  cursor: pointer;
+                }
+                
+                .btn:hover {
+                  background-color: #ddd;
+                }
+                
+                .btn.active {
+                  background-color: #666;
+                  color: white;
+                }
+                </style>
+                </head>
+                <body>
+                
+                <h2>List View or Grid View</h2>
+                
+                <p>Click on a button to choose list view or grid view.</p>
+                
+                <div id="btnContainer">
+                  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+                  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+                </div>
+                <br>
+                
+                <div class="row">
+                  <div class="column" style="background-color:#aaa; opacity: .9;">
+                    <h2>Rideshare Operator (09/2016 – 06/2019)</h2>
+                    <a href="https://www.lyft.com/">
+                    <img src="images/Lyft_logo.jpg" alt="Lyft_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                    <h3>Lyft – Baltimore, MD</h3>
+                    <ul style="list-style-type:none;">
+                            <li>Operated own rideshare operation, driving customers to requested 
+                                destinations, offering a clean car, and friendly & prompt service, managing
+                                own hours of operation, work vehicle, and earnings</li> 
                     </ul>
+                  </div>
+                  <div class="column" style="background-color:#bbb;opacity: .9">
+                    <h2>Delivery Driver (05/2018 – 03/2019)</h2>
+                    <a href="https://www.jasonsdeli.com/">
+                    <img src="images/Deli_Logo.jpg" alt="Deli_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                    <h3>Jason’s Deli – Timonium, MD</h3>
+                    <ul style="list-style-type:none;">
+                            <li>Helped with the preparation and delivery of custom ordered 
+                                catering meals, and performed basic operations of the restaurant, 
+                                including running 
+                                food, bussing tables, and preparing food for the near future</li> 
+                        </ul>
+                  </div>
+                  <div class="column" style="background-color:#ccc;opacity: .9">
+                    <h2>Laser Tag Technician (09/2017 – 06/2018)</h2>
+                    <a href="https://www.redzoneadventures.com/">
+                    <img src="images/RZA_Logo.jpg" alt="RZA_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                    <h3>Red Zone Adventures – Timonium, MD</h3>
+                    <ul style="list-style-type:none;">                                
+                           <li>Ran  and supervised laser tag games and customer briefings, 
+                               cleaned and maintaining the laser tag arena,
+                               and maintained laser tag vests, including battery 
+                                and parts replacements, software and hardware fixes</li>
+                        </ul>
+                  </div>
+                  <div class="column" style="background-color:#ddd;opacity: .9">
                     <h2>Manager-in-Training (07/2017 - 08/2017)</h2>
                     <a href="https://www.summitconsultinginc.net/">
                     <img src="images/summit_logo.png" alt="Summit_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
@@ -94,27 +150,33 @@
                                  and their need to switch to a company that would be more 
                                  beneficial to customer needs</li>                                
                         </ul>
+                  </div>
+                </div>
+                
+                  <div class="column" style="background-color:#aaa;opacity: .9">
                     <h2>Independent Benefits Specialist (02/2017 - 06/2017)</h2>
                     <a href="https://www.businessyab.com/explore/united_states/maryland/harford_county/1_abingdon/abingdon/emmorton_road/3103/canton_insurance.html">
                     <img src="images/aflac-logo.jpg" alt="Aflac_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
                     <h3>The Canton Agency – Bel Air, MD</h3>
                     <ul style="list-style-type:none;">
-                            <li>Promoted the continued use of health benefits, helping 
-                                businesses to provide affordable benefits to employees by 
+                            <li>Promoted the continued use of health benefits by 
                                 participating in cold-calling marketing, as well as face-to-face 
                                 meetings with business owners and employees, enrolling employees 
                                 in voluntary health benefits</ul>                        
                             </ul>
+                  </div>
+                  <div class="column" style="background-color:#bbb;opacity: .9;">
                     <h2>Internet Sales Specialist (04/2017 - 06/2017)</h2>
                     <a href="https://www.facebook.com/boweryantiques/">
                     <img src="images/bowery_logo.jpg" alt="Aflac_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
                     <h3>The Bowery of Antiques & Collectables – Parkville, MD</h3>
                     <ul style="list-style-type:none;">
-                    <li>Managed the internet sales of a small business, including, but not 
-                        limited to, photographing and describing items for sale on eBay, 
-                        maintaining company emails, preparing shipping orders, and sending 
-                        invoices and collecting payment from online customers.</li>
+                    <li>Managed the internet sales of a small business, 
+                        photographed and described items for sale on eBay, 
+                        maintained shipping orders and invoices.</li>
                     </ul>
+                  </div>
+                  <div class="column" style="background-color:#ccc;opacity: .9;">
                     <h2>Event Coordinator (02/2017 - 04/2017)</h2>
                     <a href="http://www.2020companies.com/">
                     <img src="images\2020.png" alt="2020_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
@@ -125,18 +187,21 @@
                                 and their need to switch to a company that would be more 
                                 beneficial to customer needs</li>
                         </ul>
+                  </div>
+                  <div class="column" style="background-color:#ddd;opacity: .9;">
                     <h2>Wireless Expert	(01/2017 - 02/2017)</h2>
                     <a href="https://www.cellularsales.com/store/stores/">
                     <img src="images\CS.jpg" alt="CS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
                     <h3>Verizon by Cellular Sales – Bel Air, MD</h3>
                     <ul style="list-style-type:none;">
                         <li>Assisted customers in the sale, activation, and maintenance of 
-                            cellular phones, and tablets on the Verizon network, focusing 
-                            on monthly sales quotas as well as customer needs, including 
+                            cellular phones and tablets on the Verizon network, including 
                             explaining and suggesting plans, offering instructions and 
-                            advice with cellular phones, and selling and fitting accessories 
-                            for specific devices.</li>
+                            advice, and selling accessories. 
+                        </li>
                     </ul>
+                </div>
+                <div class="column" style="background-color:#aaa;opacity: .9;">
                     <h2>Seasonal Warehouse Associate (11/2016 – 01/2017)</h2>
                     <a href="https://careers.kohls.com/">
                     <img src="images\kohls.jpg" alt="Kohls_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
@@ -144,7 +209,9 @@
                     <ul style="list-style-type:none;">                          
                         <li>Carried out the various operations of the Kohl’s e-fulfillment center warehouse, 
                                 including picking, packing, and helping to ship customer ordered products</li>
-                        </ul>                        
+                        </ul>
+                    </div>
+                <div class="column" style="background-color:#bbb;opacity: .9;">
                     <h2>Event Coordinator (09/2016 – 09/2016)</h2>
                     <a href="https://www.glassdoor.com/Reviews/Blue-Shore-Strategies-Reviews-E1101867.htm">
                         <img src="images\BS.png" alt="BS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
@@ -153,6 +220,8 @@
                             <li>Presented to Home Depot customers the benefits of Home Depot’s Fifth Generation Cabinet Re-facing services, in order to 
                                 sign customers up for a free consultation with a Home Depot consultant</li>
                             </ul> 
+                        </div>
+                <div class="column" style="background-color:#ccc;opacity: .9;">
                     <h2>Fulfillment Associate (04/2016 – 08/2016)</h2>
                     <a href="https://www.amazon.jobs/en/business_categories/fulfillment-operations">
                         <img src="images\amazon.png" alt="Amazon_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
@@ -162,86 +231,140 @@
                                 for easy access to those packing products, retrieving pallets of material, etc.
                                 </li>
                         </ul> 
-                    <h2>Wireless Expert (08/2015 – 03/2016)</h2>
-                    <a href="https://www.glassdoor.com/Reviews/MOBILE-NOW-Reviews-E438107.htm">
-                        <img src="images\MN.jpg" alt="MN_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Sprint by Mobile Now – Essex, MD</h3>
-                        <ul style="list-style-type:none;">
-                        <li>Assisted customers in the sale, activation, and maintenance of cellular phones, tablets, and wireless routers for the Sprint
-                                network, focusing on monthly sales quotas as well as customer needs, including explaining and suggesting plans, offering instructions and advice with cellular phones, selling and fitting accessories for specific devices.
-                                </li>
-                        </ul> 
-                    <h2>Assistant Manager (02/2014 – 08/2015)</h2>
-                    <a href="https://www.radioshack.com/">
-                        <img src="images\RS.png" alt="RS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Radio Shack – Cockeysville, Maryland</h3>
+                    </div>
+                    <div class="column" style="background-color:#ddd;opacity: .9;">
+                        <h2>Wireless Expert (08/2015 – 03/2016)</h2>
+                        <a href="https://www.glassdoor.com/Reviews/MOBILE-NOW-Reviews-E438107.htm">
+                            <img src="images\MN.jpg" alt="MN_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                            <h3>Sprint by Mobile Now – Essex, MD</h3>
                             <ul style="list-style-type:none;">
-                            <li>Assisted customers in finding solutions to technical issues regarding electronics, cell phones, musical instrument cables and
-                                    accessories, and other technological issues.
-                                    </li>
-                        </ul> 
-                    <h2>Mascot Performer (04/2014 – 09/2014)</h2>
-                    <a href="https://www.milb.com/delmarva">
-                        <img src="images\Shorebirds.jpg" alt="Shorebirds_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Delmarva Shorebirds Baseball – Salisbury, MD</h3>
-                        <ul style="list-style-type:none;">
-                        <li>Interacted with people of all ages to provide a fun, charismatic team mascot that was always willing to take pictures, offer
-                                hugs, and be the best team and team representative possible
+                                <li>Assisted customers in the sale, activation, and maintenance of 
+                                    cellular phones and tablets on the Sprint network, including 
+                                    explaining and suggesting plans, offering instructions and 
+                                    advice, and selling accessories. 
                                 </li>
-                        </ul>
-                    <h2>Cashier (09/2013 – 02/2014)</h2>
-                    <a href="https://giantfood.com/">
-                        <img src="images\giant.png" alt="Giant_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Giant Food – Long Neck, DE</h3>
-                        <ul style="list-style-type:none;">
-                        <li>Managed gas station, taking payment for gas and helping customers to understand how to use the gas pumps.</li>
-                        <li>Scanned and bagged customers' groceries, took payment, dealt with coupons, sales, and customer inquiries about store functions.
-                                </li>
-                        </ul>                          
-                    <h2>Server (08/2013 – 09/2013)</h2>
-                    <a href="https://www.friendlysrestaurants.com/">
-                        <img src="images\friendlys.png" alt="Friendlys_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Friendly’s Ice Cream Parlor – Rehoboth, DE</h3>
-                        <ul style="list-style-type:none;">
-                        <li>Interacted with customers in order to take and prepare food orders, refill drinks, and provide 
-                            sanitary and satisfactory dining experiences for every customer.</li>
-                        </ul> 
-                    <h2>Mascot Performer (04/2012 – 05/2013)</h2>
-                    <a href="https://www.salisbury.edu/experience-campus/athletics/discover-sammy.aspx">
-                        <img src="images\sammy.jpg" alt="Sammy_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Salisbury University – Salisbury, MD</h3>
-                        <ul style="list-style-type:none;">
-                        <li>Interacted with people of all ages to provide a fun, charismatic team mascot that was always willing to take pictures, offer
-                                hugs, and be the best team and university representative possible.
-                                </li>
-                            </ul>                 
-                    <h2>Call Center Representative (10/2011 – 05/2013)</h2>
-                    <a href="https://www.salisbury.edu">
-                        <img src="images\SU.png" alt="SU_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                        <h3>Salisbury University Alumni Association – Salisbury, MD</h3>
-                        <ul style="list-style-type:none;">
-                        <li>Spoke with university alumni, alerting alumni of upcoming events and sharing university news with former students in
-                                order to gain monetary support for the university.
-                                </li>                                    
-                            </ul>                 
-                        <h2>Food Runner / Busser (02/2010 – 11/2010)</h2>
-                        <a href="http://rubytuesday.com/">
-                            <img src="images\RT.jpg" alt="RT_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
-                            <h3>Ruby Tuesday – White Marsh, MD</h3>
-                            <ul style="list-style-type:none;">
-                            <li>Delivered food to customers with a smile, and cleaned and disposed of used food and dishes in order to provide a clean, 
-                                    satisfactory experience for every customer                                    
-                                    </li>                                    
-                                </ul>  
-                        <h2>Self Employed Snowball Vendor (07/2009 - 07/2010)</h2>
-                        <img src="images\SE.jpg" alt="SE_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;">
-                            <h3>A World of Cool Snowballs - Baltimore, MD</h3>
-                            <ul style="list-style-type:none;">
-                            <li>Organized and maintained own business, including sales, promotions, finances, and operations of the stand, offering the
-                                    community a cool, cheap, tasty treat and a smile that kept bringing customers back for more.
-                                    </li>
+                            </ul> 
+                        </div>
+                    <div class="column" style="background-color: #aaa;opacity: .9;">
+                        <h2>Assistant Manager (02/2014 – 08/2015)</h2>
+                        <a href="https://www.radioshack.com/">
+                            <img src="images\RS.png" alt="RS_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                            <h3>Radio Shack – Cockeysville, Maryland</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Assisted customers in finding solutions to technical issues regarding electronics, cell phones, musical instrument cables and
+                                        accessories, and other technological issues.
+                                        </li>
+                            </ul> 
+                        </div>    
+                        <div class="column" style="background-color:#bbb;opacity: .9;">
+                            <h2>Mascot Performer (04/2014 – 09/2014)</h2>
+                            <a href="https://www.milb.com/delmarva">
+                                <img src="images\Shorebirds.jpg" alt="Shorebirds_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                                <h3>Delmarva Shorebirds Baseball – Salisbury, MD</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Interacted with people of all ages to provide a fun, charismatic team mascot that was always willing to take pictures, offer
+                                        hugs, and be the best team and team representative possible
+                                        </li>
                                 </ul>
-                            </div>     
+                        </div>
+                        <div class="column" style="background-color:#ccc;opacity: .9;">
+                            <h2>Cashier (09/2013 – 02/2014)</h2>
+                            <a href="https://giantfood.com/">
+                                <img src="images\giant.png" alt="Giant_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                                <h3>Giant Food – Long Neck, DE</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Managed gas station, taking payment and assisting customers, 
+                                    scanned and bagged customers' groceries, took payment, 
+                                    dealt with coupons, and sales.
+                                </li>
+                                </ul>
+                        </div>
+                        <div class="column" style="background-color:#ddd;opacity: .9;">
+                            <h2>Server (08/2013 – 09/2013)</h2>
+                            <a href="https://www.friendlysrestaurants.com/">
+                                <img src="images\friendlys.png" alt="Friendlys_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                                <h3>Friendly’s Ice Cream Parlor – Rehoboth, DE</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Interacted with customers in order to take and prepare food orders, refill drinks, and provide 
+                                    sanitary and satisfactory dining experiences for every customer.</li>
+                                </ul> 
+                        </div>
+                        <div class="column" style="background-color:#aaa;opacity: .9;">
+                            <h2>Mascot Performer (04/2012 – 05/2013)</h2>
+                            <a href="https://www.salisbury.edu/experience-campus/athletics/discover-sammy.aspx">
+                                <img src="images\sammy.jpg" alt="Sammy_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                                <h3>Salisbury University – Salisbury, MD</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Interacted with people of all ages to provide a fun, charismatic team mascot that was always willing to take pictures, offer
+                                        hugs, and be the best team and university representative possible.
+                                        </li>
+                                    </ul> 
+                        </div>
+                        <div class="column" style="background-color:#bbb;opacity: .9;">
+                            <h2>Call Center Representative (10/2011 – 05/2013)</h2>
+                            <a href="https://www.salisbury.edu">
+                                <img src="images\SU.png" alt="SU_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                                <h3>Salisbury University Alumni Association – Salisbury, MD</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Spoke with university alumni, alerting alumni of upcoming events and sharing university news with former students in
+                                        order to gain monetary support for the university.
+                                        </li>                                    
+                                    </ul> 
+                        </div>
+                        <div class="column" style="background-color:#ccc;opacity: .9;">
+                            <h2>Food Runner / Busser (02/2010 – 11/2010)</h2>
+                            <a href="http://rubytuesday.com/">
+                                <img src="images\RT.jpg" alt="RT_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;"></a>
+                                <h3>Ruby Tuesday – White Marsh, MD</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Delivered food to customers with a smile, and cleaned and disposed of used food and dishes in order to provide a clean, 
+                                        satisfactory experience for every customer                                    
+                                        </li>                                    
+                                    </ul> 
+                        </div>
+                        <div class="column" style="background-color:#ddd;opacity: .9;">
+                            <h2>Self Employed Snowball Vendor (07/2009 - 07/2010)</h2>
+                            <img src="images\SE.jpg" alt="SE_Logo" style= "width: 100px; height: 75px;float:left;padding-right: 25px;">
+                                <h3>A World of Cool Snowballs - Baltimore, MD</h3>
+                                <ul style="list-style-type:none;">
+                                <li>Organized and maintained own business, including sales, promotions, finances, and operations of the stand, offering the
+                                        community a cool, cheap, tasty treat and a smile that kept bringing customers back for more.
+                                        </li>
+                                    </ul>
+                        </div>
+                        <div class="column" style="background-color:none;"></div>
+                    <script>
+                // Get the elements with class="column"
+                var elements = document.getElementsByClassName("column");
+                
+                // Declare a loop variable
+                var i;
+                
+                // List View
+                function listView() {
+                  for (i = 0; i < elements.length; i++) {
+                    elements[i].style.width = "100%";
+                  }
+                }
+                
+                // Grid View
+                function gridView() {
+                  for (i = 0; i < elements.length; i++) {
+                    elements[i].style.width = "50%";
+                  }
+                }
+                
+                /* Optional: Add active class to the current button (highlight it) */
+                var container = document.getElementById("btnContainer");
+                var btns = container.getElementsByClassName("btn");
+                for (var i = 0; i < btns.length; i++) {
+                  btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                  });
+                }
+                </script>    
         <div class="bottom-divider"></div>
     </div>
 <!--End Experience Section-->
@@ -298,7 +421,7 @@
             }
             </style>
     <h1>Current Show:</h1>
-    <img src="images/AFGM.jpg" alt="Avatar" class="image" style="position:center;">
+    <img src="images/AFGM.jpg" alt="Avatar" class="image" style="position:center;opacity: .9;">
     <h2><u><a href="https://www.samuelfrench.com/p/2810/a-few-good-men">A Few Good Men</u></a></h2>
     <h3>(May 31 - June 15)</h3>
     <a href="https://www.hdylmn.org/home/suf?fbclid=IwAR1X840pNLYuPVhJtow_MgQMyCZP8yicZwmBxMuFNknZULlIm6P7JZu4K-E">
@@ -330,8 +453,8 @@
                   bottom: 0;
                   left: 0;
                   right: 0;
-                  width: 275px; 
-                  height: 225px;
+                  width: 227px;
+                  height: 227px;
                   opacity: 0;
                   transition: .5s ease;
                   background-color: black;
@@ -350,15 +473,15 @@
                   text-align: center;
                 }
                 div.gallery {
-                  margin: 5px;
+                  margin: 15px;
                   float: left;
-                  width: 275px; 
-                  height: 225px;
+                  width: 227px;
+                  height: 227px;
                 }
                 
                 div.gallery img {
-                  width: 275px;
-                  height: 225px;
+                    width: 227px;
+                  height: 227px;
                 }
                 a {
                         text-decoration-line: underline;
@@ -397,7 +520,7 @@
                                 <h3>Stand Up For...Theatre</h3></a>
                                 <h3>Brooklyn Park, MD</h3>
                                 <p>Dramatic Lead Role</p>
-                                <p>Click <a href="http://www.theatrebloom.com/2019/06/a-few-good-men-at-stand-up-for-theatre/?fbclid=IwAR14fK_dcWEZ6TxIjZXxZ_uHczV4_Mx1BJ3AXlw7wOz9mj5-RrFhmrctk7c">here</a> for the TheatreBloom review of the show</p>
+                                <p><a href="http://www.theatrebloom.com/2019/06/a-few-good-men-at-stand-up-for-theatre/?fbclid=IwAR14fK_dcWEZ6TxIjZXxZ_uHczV4_Mx1BJ3AXlw7wOz9mj5-RrFhmrctk7c">TheatreBloom Review</a></p>
                             </div>
                         </div>
                       </div>
@@ -413,7 +536,7 @@
                                 <h3>Artistic Synergy of Baltimore</h3></a>
                                 <h3>Baltimore, MD</h3>
                                 <p>Comedic Emsemble Role, Musical</p>
-                                <p>Click <a href="http://www.theatrebloom.com/2018/10/once-upon-a-mattress-at-artistic-synergy-of-baltimore/">here</a> for the TheatreBloom review of the show</p>
+                                <p><a href="http://www.theatrebloom.com/2018/10/once-upon-a-mattress-at-artistic-synergy-of-baltimore/">TheatreBloom Review</a></p>
                             </div>
                         </div>
                     </div>
@@ -428,7 +551,7 @@
                                 <h3>Artistic Synergy of Baltimore</h3></a>
                                 <h3>Baltimore, MD</h3>
                                 <p>Comedic Ensemble Role, Shakespeare</p>
-                                <p>Click <a href="http://www.theatrebloom.com/2018/05/much-ado-about-nothing-at-artistic-synergy-of-baltimore/">here</a> for the TheatreBloom review of the show</p>
+                                <p><a href="http://www.theatrebloom.com/2018/05/much-ado-about-nothing-at-artistic-synergy-of-baltimore/">TheatreBloom Review</a></p>
                             </div>
                         </div>
                     </div>
@@ -444,7 +567,7 @@
                                 <h3>Third Wall Productions</h3></a>
                                 <h3>Towson, MD</h3>
                                 <p>Dramatic Ensemble Role, Musical</p>
-                                <p>Click <a href="http://www.theatrebloom.com/2017/12/wonderful-life-third-wall-productions/">here</a> for the TheatreBloom review of the show</p>
+                                <p><a href="http://www.theatrebloom.com/2017/12/wonderful-life-third-wall-productions/">TheatreBloom Review</a></p>
                             </div>
                         </div>
                     </div>
@@ -458,8 +581,8 @@
                                 <a href="https://thirdwall.org/?fbclid=IwAR1eGjiST5P43hzgdnbfr-4RjgTgSoypcANP0oYums0kTwGdNsrkGzjvuxw">
                                 <h3>Third Wall Productions</h3></a>
                                 <h3>Towson, MD</h3>
-                                <p>Dramatic Emsemble Role, Musical</p>
-                                <p>Click <a href="http://www.theatrebloom.com/2017/06/jesus-christ-superstar-at-third-wall-productions/">here</a> for the TheatreBloom review of the show</p>
+                                <p>Dramatic Ensemble Role, Musical</p>
+                                <p><a href="http://www.theatrebloom.com/2017/06/jesus-christ-superstar-at-third-wall-productions/">TheatreBloom Review</a></p>
                             </div>
                         </div>
                     </div>
@@ -771,7 +894,8 @@
         <div class="top-divider"></div>
         	<div class="content">
             	<div id="form">
-                	<form action="mailto:cpence1@outlook.com?Subject=ResumeSite" method="post" enctype="text/plain">
+                    
+                	<form action="mailto:&#099;&#112;&#101;&#110;&#099;&#101;&#049;&#064;&#111;&#117;&#116;&#108;&#111;&#111;&#107;&#046;&#099;&#111;&#109;?Subject=ResumeSite" method="post" enctype="text/plain">
                     	<span>Name</span>
                         <input type="text" name="Name " class="name" />
                         <span>Email</span>
