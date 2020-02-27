@@ -9,6 +9,73 @@
     </script>
         <h2>Event Test</h2>
         <button onclick="alert('You Clicked The Button.')">Click Me</button>
-</p>
+    </p>
+    <p>
+        <h2>Current Date & Time</h2>
+        <script>
+            now=new Date();
+            localtime=now.toString();
+            utctime=now.toGMTString();
+            document.write("<b>LOCAL TIME:</b> "+localtime+"<BR>");
+            document.write("<b>UTC TIME:</b>"+utctime+"<BR>");
+            hours=now.getHours();
+            minutes=now.getMinutes();
+            seconds=now.getSeconds();
+            document.write("<b>MILITARY TIME:</b>");
+                if(hours<10){
+                    document.write("0"+hours+":");
+                }
+                else{
+                    document.write(hours+":");
+                }
+                if(minutes<10){
+                    document.write("0"+minutes+":");
+                }
+                else{
+                    document.write(minutes+":");
+                }
+                if(seconds<10){
+                    document.write("0"+seconds);
+                }
+                else{
+                    document.write(seconds);
+                }
+                document.write("<BR>");
+                document.write("<b>STANDARD TIME:</b>");
+                if(hours>12){hours=hours-12;ap="PM"}
+                else{ap="AM";}
+                if(hours<10){
+                    document.write("0"+hours+":");
+                }
+                else{
+                    document.write(hours+":");
+                }
+                if(minutes<10){
+                    document.write("0"+minutes+":");
+                }
+                else{
+                    document.write(minutes+":");
+                }
+                if(seconds<10){
+                    document.write("0"+second+ap);
+                }
+                else{
+                    document.write(seconds+ap);
+                }
+                document.write("<BR>");
+            document.write("</font>");
+        </script>
+            <h2>Event Handlers</h2>
+                <p>
+                    <a href="http://www.jsworkshop.com/" 
+                    onClick="alert('Aha, an event happened!');">Click this link</a>
+                    to test an object handler.
+                </p>
+            <h2>Back & Forward Buttons</h2>
+            <input type="button"
+            onClick="history.back();" value="<<--Back">
+            <input type="button"
+            onClick="history.forward();" value="Forward-->>">
+    </p>
     </body>
 </html>
