@@ -1,0 +1,46 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 500px; 
+  margin: 1rem;
+  border: 1px solid red;
+}
+p{
+  word-wrap: break-word;
+}
+header {
+  font-family: Magneto;
+  padding: 30px;
+  text-align: center;
+  color: red;
+}
+body {
+  padding: 30px;
+  text-align: center;
+  color: red;
+}
+
+a:link {
+color:red;
+background-color: transparent;
+text-decoration: none;
+}
+a:visited {
+color: red;
+background-color: transparent;
+text-decoration: none;
+}
+a:hover {
+color:blue;
+background-color: transparent;
+text-decoration: underline;
+}
