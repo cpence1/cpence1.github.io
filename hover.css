@@ -1,0 +1,28 @@
+#example1 .hover{
+    display:none;
+}
+
+#example1 .nohower{
+    display:block;
+}
+
+#example1:hover .hover{
+    display:block;
+}
+
+#example1:hover .nohower{
+    display:none;
+}
+
+#example2:hover span:after{
+    content:attr(data-hover);
+}
+#example2:hover span{
+    width:1px;
+    margin-left: -0.5em;/* adjust accoridng to font*/
+}
+
+.hoverer {
+    border:1px solid black;
+    overflow:hidden;
+}

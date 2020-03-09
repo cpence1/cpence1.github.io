@@ -1,0 +1,21 @@
+<html>
+    <title>Modifying Text</title>
+<h2>Modifying Text</h2>
+<head>
+    <script language="Javascript" type="text/javascript">
+    function changeText(){
+        if(!document.getElementById)return;
+        var newtext=document.form1.newtext.value;
+        var text1=document.getElementById("text1");
+        text1.firstChild.nodeValue=newtext;
+    }</script>
+</head>
+<body>
+    <h3 ID="text1">Dynamic Text in Javascript</h3>
+    <p>Type new text into the box, then Submit to change text.</p>
+    <form name="form1">
+        <input type="text" name="newtext" size="25">
+        <input type="button" value="Submit" onClick="changeText();">
+    </form>
+</body>
+</html>

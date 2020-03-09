@@ -16,6 +16,15 @@
         <p>Welcome to our website. Last update:<script language="Javascript"type="text/javascript">
         document.write(document.lastModified);
     </script>
+        <h2>Browser Info</h2>
+        <script language="Javascript" type="text/javascript">
+        document.write("<li><b>Code Name: </b> "+navigator.appCodeName);
+        document.write("<li><b>App Name: </b> "+navigator.appName);
+        document.write("<li><b>App Version: </b> "+navigator.appVersion);
+        document.write("<li><b>User Agent: </b> "+navigator.userAgent);
+        document.write("<li><b>Language: </b> "+navigator.language); 
+        document.write("<li><b>Platform: </b> "+navigator.platform);           
+        </script>
         <h2>Event Test</h2>
         <button onclick="alert('You Clicked The Button.')">Click Me</button>
     </p>
@@ -77,6 +86,7 @@
                 else document.write("Good Evening!");
             document.write("</font>");
         </script>
+        </p>
             <h2>Event Handlers</h2>
                 <p>
                     <a href="" onClick="alert('Aha, an event happened!');">Click this link</a>
@@ -128,17 +138,39 @@
         document.write("Average: "+total);
         </script>
         <h2>Multiplication Table</h2>
+        <script language="Javascript">
+            function times(a,b,x){
+                this.a=a;
+                this.b=b;
+                this.x=x;
+                document.write(a+"*"+b+"="+x+"<br>");
+            }
+        </script>
+        <style>
+            td:hover {
+	        width:50px;
+	        font-size:18px;
+	        font-family:cursive;
+	        padding:7px;
+	        background:white;
+	        color: black;
+            }
+        </style>
             <script language="JavaScript">
             document.write("<table border='1px' width='10%' cellspacing='1' cellpadding='1'>");
             for(var a = 1; a <= 10; a++) {
              
             document.write("<tr>");
             for(var b = 1; b <= 10; b++) {
-                if(a==b)document.write("<td><b>" 
-                    + a*b + "</b></td>");
+                var x=a*b;
+                if(a==b){
+                    document.write("<td><b>" 
+                    + x + "</b></td>");
+
+                }
                     else
-            document.write("<td>" 
-                    + a*b + "</td>");
+                    document.write("<td>" 
+                    + x + "</td>");
                 }
                 document.write("</tr>");
             }
@@ -151,5 +183,75 @@
                 <p><input type="button" VALUE="Close New Window" 
                     onClick="NewWin.close();"></p>
             </form>
+            <h2>Form Example</h2>
+            <head>
+            <script language="Javascript" type="text/javascript">
+            function display(){
+                DispWin=window.open(' ', 'NewWin','toolbar=no, status=no, width=300, height=200')
+                message="<ul><li><b>NAME: </b>"+document.form1.yourname.value;
+                message+="<li><b>ADDRESS: </b>"+document.form1.address.value;
+                message+="<li><b>PHONE: </b>"+document.form1.phone.value +"</ul>";
+                DispWin.document.write(message);
+                }
+                </script>
+                </head>
+                <body>
+                    Enter the following info, then submit
+                    <form name="form1">
+                        <p><b>Name:</b><input type="TEXT" size="20" name="yourname">
+                        </p>
+                        <p><b>Address:</b><input type="TEXT" size="30" name="address">
+                        </p>
+                        <p><b>Phone:</b><input type="TEXT" size="15" name="phone">
+                        </p>
+                        <p><input type="button" value="Display" onClick="display();"></p>
+                    </form>
+                    <h2>Dropdown List</h2>
+                    <script language="Javascript" type="text/javascript"></script>
+                    <form name="form1">
+                        <b>Color:</b>
+                        <select>
+                            <option value="black">Black</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="yellow">Yellow</option>
+                        </select>
+                    </form>
+                    <h2><a href="position.htm">Positioning Elements</a></h2>
+                    <h2><a href="ShowHide.htm">Show / Hide Elements</a></h2>
+                    <h2><a href="modify.htm">Modify Text</a></h2>
+                    <h2>Navigation Tree</h2>
+                        <style>
+                            a{text-decoration: none;}
+                            #productsmenu, #supportmenu,#contactmenu{
+                                display:none;
+                                margin-left: 2em;
+                            }
+                        </style>
+                            <p>Expand / Collapse Items</p>
+                            <ul>
+                                <li><a id="products" href="#">[+]Products</a>
+                                <ul ID="productsmenu">
+                                    <li><a href="prodlist.html">Product List</a></li>
+                                    <li><a href="order.html">Order Form</a></li>
+                                    <li><a href="pricelist.html">Price List</a></li>
+                                </ul>
+                                </li>
+                                    <li><a id="support" href="#">[+]Support</a>
+                                    <ul ID="supportmenu">
+                                        <li><a href="sforum.html">Support Forum</a></li>
+                                        <li><a href="scontact.html">Contact</a></li>
+                                    </ul>
+                                    </li>
+                                <li><a id="contact" href="#">[+]Contact</a>
+                                <ul ID="contactmenu">
+                                    <li><a href="contact1.html">Service</a></li>
+                                    <li><a href="contact2.html">Sales</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                            <script language="Javascript" type="text/javascript" src="tree.js"></script>
+                    <h2><a href="NumberGuess.htm">Guess A Number</a></h2>
     </body>
 </html>
