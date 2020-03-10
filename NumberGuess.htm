@@ -9,9 +9,9 @@
             tries++;
             status="Tries: "+tries;
             if(guess<num)
-            document.form1.hint.value="Guess higher.\n";
+            document.form1.hint.value="Guess higher. Guesses Left="+(10-tries);
             if(guess>num)
-            document.form1.hint.value="Guess lower.\n";
+            document.form1.hint.value="Guess lower. Guesses Left="+(10-tries);
             if(guess==num){
                 window.alert("Correct! You guessed it in "+tries+" tries.");
                 location.reload();
