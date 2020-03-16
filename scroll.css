@@ -1,9 +1,10 @@
 #thewindow{
     position:relative;
-    width:360;
+    width:330;
     height:300;
     overflow:hidden;
     border:2px solid red;
+    background-image: url("images/stars.jpg");
 }
 #thetext{
     position:absolute;
