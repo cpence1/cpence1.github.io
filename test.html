@@ -87,6 +87,87 @@
             document.write("</font>");
         </script>
         </p>
+        <h2>Ordered List / Unordered List</h2>
+        <ol>
+            <li>One</li>
+            <ul>
+                <li>One - A</li>
+                <ul>
+                    <li>One - A - 1</li>
+                </ul>
+                <li>One - B</li>
+                <ul>
+                    <li>One - B - 1</li>
+                </ul>
+            </ul>
+            <li>Two</li>
+            <ul>
+                <li>Two - A</li>
+                <ul>
+                    <li>Two - A - 1</li>
+                </ul>
+                <li>Two - B</li>
+                <ul>
+                    <li>Two - B - 1</li>
+                </ul>
+            </ul>
+            </ul>
+        </ol>
+        <h2>Checklist</h2>
+            <input type="checkbox">Check 1<br>
+            <input type="checkbox">Check 2<br>
+            <input type="checkbox">Check 3<br>
+        <h2>Radio Buttons</h2>
+            <input type="radio">Radio 1<br>
+            <input type="radio">Radio 2<br>
+            <input type="radio">Radio 3<br>
+        <h2>Table</h2>
+        <table style="float:center;">
+                <style>
+                        table, th, td {
+                        border: 1px solid black;
+                        text-align: center;
+                        }
+                        </style>
+                <caption><b>Caption</b></caption>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <tr>
+                <td style="background-color: red;">Info 1-A</td>
+                <td style="background-color: yellow;">Info 1-B</td>
+                <td style="background-color: orange;">Info 1-C</td>
+            </tr>
+            <tr>
+                <td style="background-color:green;">Info 2-A</td>
+                <td style="background-color: blue;">Info 2-B</td>
+                <td style="background-color: indigo;">Info 2-C</td>
+            </tr>
+            <tr>
+                <td style="background-color: violet">Info 3-A</td>
+                <td style="background-color: black; color:white;">Info 3-B</td>
+                <td>Info 3-C</td>
+            </tr>
+              </table>
+              <h2>Change Image on Hover</h2>
+              <script>
+              var blue=new Image;
+              blue.src="images\bluearrow.png";
+              var red=new Image;
+              red.src="images\redarrow.png";
+              function turnBlue(){
+                  document.arrow.src=blue.src;
+                  return;
+              }
+              function turnRed(){
+                  document.arrow.src=red.src;
+                  return;
+              }
+            </script>
+            <body>
+                <a href="#" onmouseout="turnBlue()" onmouseover="turnRed()">
+                <img name="arrow" src="images/bluearrow.png"></a>
+            </body>
             <h2>Event Handlers</h2>
                 <p>
                     <a href="" onClick="alert('Aha, an event happened!');">Click this link</a>
@@ -107,10 +188,10 @@
                 and the sorted list of names will appear in the text area.</p>
                 <form name="theform">
                     Name:
-                    <input type="text" name="newname" size="20">
+                    <input type="text" name="newname" size="20" >
                     <input type="button" name="addname" value="Add" onclick="SortNames();">
                     <h3>Sorted Names</h3>
-                    <textarea col="60" rows="10" name="sorted">The sorted names will appear here.
+                    <textarea col="60" rows="10" name="sorted" style="background-color: Red">The sorted names will appear here.
                     </textarea>
                 </form>
         </body>
@@ -256,6 +337,11 @@
                     <h2><a href="Scroll.html">Scrolling Window</a></h2>
                     <h2><a href="Slides.html">Slideshow</a></h2>
                     <h2><a href="Scroll.html">Scrolling Window</a></h2>
+
+
+
+
+
                     <h2>Piano</h2>
                     <style>
                         .white{
@@ -273,7 +359,6 @@
                         }
                             </style>
                         <body>
-                        
                         <audio id="C"><source src="Music\C.mp3" type="audio/mp3"></audio>
                         <audio id="Cs"><source src="Music\Cs.mp3" type="audio/mp3"></audio>
                         <audio id="D"><source src="Music/D.mp3" type="audio/mp3"></audio>
@@ -317,9 +402,7 @@
                         function playA() { document.getElementById("A").play();} function playAs() { document.getElementById("As").play();}
                         function playB() { document.getElementById("B").play();}
                         function playC5() { document.getElementById("C5").play();}
-                        
                         </script>
-                        
                         </body>
     </body>
 </html>
