@@ -77,19 +77,37 @@
                 else return true;
             }
         </script>
+        <style>
+            form{
+                width:400;
+                overflow:hidden;
+                border:2px solid black;
+                text-align: center;
+                background-color: yellow;
+            }
+            body{
+                background-image: url("images/Slice.jpg");
+            }
+            div{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 30%;
+            }
+        </style>
         </head>
-        <body>
-            <form name="PizzaForm">
+        <body style="background-color: red;">
+            <img src="images/Pizza.jpg" style=" width: 177px; height: 200px;float:left; position:absolute; position:relative; top:0px; left: 0px">
+            <img src="images/Pizza.jpg" style=" width: 177px; height: 200px;float:right; position:absolute; position:relative; top:0px; right: 0px">
+            <div><form name="PizzaForm">
                 <h1>Pizza Parlor</h1>
-                <br>
                 <h4>Step One: Enter Your Info</h4>
-                Name:<input name="customer" type="text" size="50"><br>
-                Address:<input name="address" type="text" size="50"><br>
+                Name:<input name="customer" type="text" size="30"><br>
+                Address:<input name="address" type="text" size="30"><br>
                 City:<input name="city" type="text" size="16"><br>
                 State:<input name="state" type="text" size="4"><br>
                 Zip:<input name="zip" type="text" size="8"><br>
                 Phone:<input name="phone" type="text" size="15"><br>
-                <br><br>
                 <h4>Step Two: Select Size</h4>
                 <input name="size" type="radio" value="Small">Small
                 <input name="size" type="radio" value="Medium">Medium
@@ -105,7 +123,8 @@
                 <br><br>
                 <input type="button" value="Submit Order" onclick="doSubmit()">
                 <input type="button" value="Clear Entries" onclick="doClear()">
-            </form>
+                <br><br>
+            </form></div>
         </body>
     </head>
 </html>
