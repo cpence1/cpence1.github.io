@@ -4,6 +4,7 @@
         <script>
             function doSubmit(){
                 if(validateText()){
+                    var q=document.PizzaForm.customer.value;
                     var order="Your order has been submitted";
                     order+="\nName: "+document.PizzaForm.customer.value+"\n";
                      order+="Address: "+document.PizzaForm.address.value+"\n";
@@ -22,19 +23,23 @@
                          }
                          order+="Toppings: \n";
                     if(document.PizzaForm.toppings[0].checked==true)
-                        order+="Pepperoni, ";
+                        order+="Pepperoni ";
                     if(document.PizzaForm.toppings[1].checked==true)
-                        order+="Canadian Bacon, ";
+                        order+="Canadian Bacon ";
                     if(document.PizzaForm.toppings[2].checked==true)
-                        order+="Sausage, ";
+                        order+="Sausage ";
                     if(document.PizzaForm.toppings[3].checked==true)
-                        order+="Mushrooms, ";
+                        order+="Mushrooms ";
                     if(document.PizzaForm.toppings[4].checked==true)
-                        order+="Pineapple, ";
+                        order+="Pineapple ";
                     if(document.PizzaForm.toppings[5].checked==true)
                         order+="Olives";
-                alert(order);
-                }
+                    alert(order);
+                    var node = document.createElement("LI");
+                    var textnode = document.createTextNode(q);
+                    node.appendChild(textnode);
+                    document.getElementById("queueList").appendChild(node);
+                    }
                 return;
             }
             function doClear(){
@@ -88,18 +93,25 @@
             body{
                 background-image: url("images/Slice.jpg");
             }
-            div{
+            #order{
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
                 width: 30%;
             }
+            #queue{
+                position:absolute;
+                top:225;
+                width:177;
+                border:2px solid black;
+                background-color: yellow;
+            }
         </style>
         </head>
         <body style="background-color: red;">
-            <img src="images/Pizza.jpg" style=" width: 177px; height: 200px;float:left; position:absolute; position:relative; top:0px; left: 0px">
-            <img src="images/Pizza.jpg" style=" width: 177px; height: 200px;float:right; position:absolute; position:relative; top:0px; right: 0px">
-            <div><form name="PizzaForm">
+            <img src="images/Pizza.jpg" style="border: black; border-style: solid; width: 177px; height: 200px;float:left; position:absolute; position:relative; top:0px; left: 0px">
+            <img src="images/Pizza.jpg" style="border: black; border-style: solid; width: 177px; height: 200px;float:right; position:absolute; position:relative; top:0px; right: 0px">
+            <div id="order"><form name="PizzaForm">
                 <h1>Pizza Parlor</h1>
                 <h4>Step One: Enter Your Info</h4>
                 Name:<input name="customer" type="text" size="30"><br>
@@ -121,10 +133,18 @@
                 <input name="toppings" type="checkbox">Pineapple
                 <input name="toppings" type="checkbox">Olives
                 <br><br>
-                <input type="button" value="Submit Order" onclick="doSubmit()">
+                <input type="button" value="Submit Order" onclick="doSubmit()" onclick="">
                 <input type="button" value="Clear Entries" onclick="doClear()">
                 <br><br>
             </form></div>
+            <div id="queue">
+                <h1>Queue:</h1>
+                <ol id="queueList">
+                    <li>Curley Howard</li>
+                    <li>Larry Fine</li>
+                    <li>Moe Howard</li>
+                  </ol>
+            </div>
         </body>
     </head>
 </html>
