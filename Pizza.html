@@ -39,6 +39,10 @@
                     var textnode = document.createTextNode(q);
                     node.appendChild(textnode);
                     document.getElementById("queueList").appendChild(node);
+                    var node = document.createElement("LI");
+                    var textnode = document.createTextNode(q);
+                    node.appendChild(textnode);
+                    document.getElementById("bill").appendChild(node);
                     }
                 return;
             }
@@ -106,6 +110,12 @@
                 border:2px solid black;
                 background-color: yellow;
             }
+            #bill{
+                position:absolute;
+                width:177;
+                border:2px solid black;
+                background-color: yellow;
+            }
         </style>
         </head>
         <body style="background-color: red;">
@@ -138,12 +148,17 @@
                 <br><br>
             </form></div>
             <div id="queue">
-                <h1>Queue:</h1>
+                <h1 style="text-align:center;">Queue:</h1>
                 <ol id="queueList">
                     <li>Curley Howard</li>
                     <li>Larry Fine</li>
                     <li>Moe Howard</li>
                   </ol>
+            </div>
+            <div id="bill" style="float:right; top:225px; right: 10px">
+                <h1 style="text-align:center;">Bill:</h1>
+                <ul id="queueList">
+                  </ul>
             </div>
         </body>
     </head>
