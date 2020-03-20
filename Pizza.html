@@ -3,19 +3,7 @@
         <title>Pizza Parlor</title>
         <script>
             function doSubmit(){
-                if(document.PizzaForm.customer.value=="")
-                alert("Name Missing");
-                else if(document.PizzaForm.address.value=="")
-                alert("Address Missing");
-                else if(document.PizzaForm.city.value=="")
-                alert("City Missing");
-                else if(document.PizzaForm.state.value=="")
-                alert("State Missing");
-                else if(document.PizzaForm.zip.value=="")
-                alert("Zip Missing");
-                else if(document.PizzaForm.phone.value=="")
-                alert("Phone Missing");
-                else{
+                if(validateText()){
                     var order="Your order has been submitted";
                     order+="\nName: "+document.PizzaForm.customer.value+"\n";
                      order+="Address: "+document.PizzaForm.address.value+"\n";
@@ -28,6 +16,10 @@
                          order+="Size: "+document.PizzaForm.size[1].value+"\n";
                      else if(document.PizzaForm.size[2].checked==true)
                          order+="Size: "+document.PizzaForm.size[2].value+"\n";
+                         else{
+                             alert("Please choose size.");
+                             return;
+                         }
                          order+="Toppings: \n";
                     if(document.PizzaForm.toppings[0].checked==true)
                         order+="Pepperoni, ";
@@ -44,7 +36,7 @@
                 alert(order);
                 }
                 return;
-                }
+            }
             function doClear(){
                 document.PizzaForm.customer.value="";
                 document.PizzaForm.address.value="";
@@ -62,6 +54,27 @@
                 document.PizzaForm.toppings[4].checked=false;
                 document.PizzaForm.toppings[5].checked=false;
                 return;
+            }
+            function validateText(){
+                if(document.PizzaForm.customer.value==""){
+                alert("Name Missing");
+                return false;}
+                else if(document.PizzaForm.address.value==""){
+                alert("Address Missing");
+                return false;}
+                else if(document.PizzaForm.city.value==""){
+                alert("City Missing");
+                return false;}
+                else if(document.PizzaForm.state.value==""){
+                alert("State Missing");
+                return false;}
+                else if(document.PizzaForm.zip.value==""){
+                alert("Zip Missing");
+                return false;}
+                else if(document.PizzaForm.phone.value==""){
+                alert("Phone Missing");
+                return false;}
+                else return true;
             }
         </script>
         </head>
