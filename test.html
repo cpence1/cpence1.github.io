@@ -27,8 +27,6 @@
         </script>
         <h2>Event Test</h2>
         <button onclick="alert('You Clicked The Button.')">Click Me</button>
-    </p>
-    <p>
         <h2>Current Date & Time</h2>
         <script>
             now=new Date();
@@ -86,7 +84,45 @@
                 else document.write("Good Evening!");
             document.write("</font>");
         </script>
-        </p>
+<h2>Working Clock</h2>    
+<head>
+    <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      var ap="AM";
+      var greet;
+      switch(h){
+            case 0: case 1: case 2: case 3: case 4: case 5:greet="Good Night!";
+            case 6: case 7: case 8: case 9: case 10: case 11:greet="Good Morning!";
+            case 12:case 13:case 14:case 15:case 16: greet="Good Afternoon!";
+            case 17:case 18:case 19:case 20:case 21: case 22: case 23: greet="Good Evening!";
+      }
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML ="<b>Military Time: </b>"+
+      h + ":" + m + ":" + s+ "<br>"+greet;
+      if(h>12){
+          h=h-12;
+          ap="PM";
+      }
+      h=checkTime(h);
+      document.getElementById('txt1').innerHTML ="<b>Standard Time: </b>"+
+      h + ":" + m + ":" + s+ap+"<br>"+greet;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+    </head>
+    <body onload="startTime()">
+    <div id="txt"></div>
+    <div id="txt1"></div>
+    </body>
         <h2>Ordered List / Unordered List</h2>
         <ol>
             <li>One</li>
@@ -118,38 +154,67 @@
             <input type="checkbox">Check 2<br>
             <input type="checkbox">Check 3<br>
         <h2>Radio Buttons</h2>
-            <input type="radio">Radio 1<br>
-            <input type="radio">Radio 2<br>
-            <input type="radio">Radio 3<br>
+            <input type="radio" name="radio">Radio 1<br> <!-- Must share name in order 
+                                                            to select only one -->
+            <input type="radio" name="radio">Radio 2<br>
+            <input type="radio" name="radio">Radio 3<br>
+        <h2>Range</h2>
+        <div class="slidecontainer">
+        0<input type="range" min="0" max="10" value="5" class="slider" id="myRange">10
+          <p>Value: <span id="demo"></span></p>
+        </div>
+        
+        <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
+        
+        </body>
         <h2>Table</h2>
-        <table style="float:center;">
-                <style>
-                        table, th, td {
-                        border: 1px solid black;
-                        text-align: center;
-                        }
-                        </style>
-                <caption><b>Caption</b></caption>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <tr>
-                <td style="background-color: red;">Info 1-A</td>
-                <td style="background-color: yellow;">Info 1-B</td>
-                <td style="background-color: orange;">Info 1-C</td>
+        <table border="1";>
+            <caption>My Schedule</caption>
+            <tr style="text-align: center;">
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
             </tr>
-            <tr>
-                <td style="background-color:green;">Info 2-A</td>
-                <td style="background-color: blue;">Info 2-B</td>
-                <td style="background-color: indigo;">Info 2-C</td>
+            <tr style="text-align: center;">
+                <th>Breakfast</th>
+                <td>In Lair</td>
+                <td>With Cronies</td>
+                <td>In Lair</td>
+                <td>In Lair</td>
+                <td>In Lair</td>
             </tr>
-            <tr>
-                <td style="background-color: violet">Info 3-A</td>
-                <td style="background-color: black; color:white;">Info 3-B</td>
-                <td>Info 3-C</td>
+            <tr style="text-align: center;">
+                <th>Morning</th>
+                <td colspan="2">Design Traps</td>
+                <td colspan="3">Improve Hideout</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Afternoon</th>
+                <td>Train Minions</td>
+                <td>Train Minions</td>
+                <td>Train Minions</td>
+                <td>Train Minions</td>
+                <td rowspan="2">World Domination</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Evening</th>
+                <td>Maniacal Laughter</td>
+                <td>Maniacal Laughter</td>
+                <td>Maniacal Laughter</td>
+                <td>Maniacal Laughter</td>
             </tr>
               </table>
-            <h2></h2>
             <h2>Event Handlers</h2>
                 <p>
                     <a href="" onClick="alert('Aha, an event happened!');">Click this link</a>
@@ -247,27 +312,15 @@
                     onClick="NewWin.close();"></p>
             </form>
             <h2>Form Example</h2>
-            <head>
-            <script language="Javascript" type="text/javascript">
-            function display(){
-                DispWin=window.open(' ', 'NewWin','toolbar=no, status=no, width=300, height=200')
-                message="<ul><li><b>NAME: </b>"+document.form1.yourname.value;
-                message+="<li><b>ADDRESS: </b>"+document.form1.address.value;
-                message+="<li><b>PHONE: </b>"+document.form1.phone.value +"</ul>";
-                DispWin.document.write(message);
-                }
-                </script>
-                </head>
-                <body>
-                    Enter the following info, then submit
+                    Enter the following info
                     <form name="form1">
                         <p><b>Name:</b><input type="TEXT" size="20" name="yourname">
                         </p>
                         <p><b>Address:</b><input type="TEXT" size="30" name="address">
                         </p>
                         <p><b>Phone:</b><input type="TEXT" size="15" name="phone">
+                        <p><b>Password:</b><input type="password" id="pwd" value="secret"></p>
                         </p>
-                        <p><input type="button" value="Display" onClick="display();"></p>
                     </form>
                     <h2>Dropdown List</h2>
                     <script language="Javascript" type="text/javascript"></script>
