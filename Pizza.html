@@ -7,10 +7,10 @@
                     var q=document.PizzaForm.customer.value;
                     var order="Your order has been submitted";
                     order+="\nName: "+document.PizzaForm.customer.value+"\n";
-                     order+="Address: "+document.PizzaForm.address.value+"\n";
-                     order+="City: "+document.PizzaForm.city.value+"\n";
-                     order+="State: "+document.PizzaForm.state.value+"\n";
-                     order+="Zip: "+document.PizzaForm.zip.value+"\n";
+                     order+="Address: "+document.PizzaForm.address.value;
+                     order+=" "+document.PizzaForm.city.value;
+                     order+=", "+document.PizzaForm.state.value;
+                     order+=" "+document.PizzaForm.zip.value+"\n";
                      if(document.PizzaForm.size[0].checked==true)
                          order+="Size: "+document.PizzaForm.size[0].value+"\n";
                      else if(document.PizzaForm.size[1].checked==true)
@@ -23,17 +23,17 @@
                          }
                          order+="Toppings: \n";
                     if(document.PizzaForm.toppings[0].checked==true)
-                        order+="Pepperoni ";
+                        order+="    Pepperoni\n";
                     if(document.PizzaForm.toppings[1].checked==true)
-                        order+="Canadian Bacon ";
+                        order+="    Canadian Bacon\n";
                     if(document.PizzaForm.toppings[2].checked==true)
-                        order+="Sausage ";
+                        order+="    Sausage\n";
                     if(document.PizzaForm.toppings[3].checked==true)
-                        order+="Mushrooms ";
+                        order+="    Mushrooms\n";
                     if(document.PizzaForm.toppings[4].checked==true)
-                        order+="Pineapple ";
+                        order+="    Pineapple\n";
                     if(document.PizzaForm.toppings[5].checked==true)
-                        order+="Olives";
+                        order+="    Olives";
                     alert(order);
                     var node = document.createElement("LI");
                     var textnode = document.createTextNode(q);
@@ -85,6 +85,14 @@
                 return false;}
                 else return true;
             }
+            function everything(){
+                document.PizzaForm.toppings[0].checked=true;
+                document.PizzaForm.toppings[1].checked=true;
+                document.PizzaForm.toppings[2].checked=true;
+                document.PizzaForm.toppings[3].checked=true;
+                document.PizzaForm.toppings[4].checked=true;
+                document.PizzaForm.toppings[5].checked=true;
+            }
         </script>
         <style>
             form{
@@ -110,12 +118,6 @@
                 border:2px solid black;
                 background-color: yellow;
             }
-            #bill{
-                position:absolute;
-                width:177;
-                border:2px solid black;
-                background-color: yellow;
-            }
         </style>
         </head>
         <body style="background-color: red;">
@@ -123,26 +125,36 @@
             <img src="images/Pizza.jpg" style="border: black; border-style: solid; width: 177px; height: 200px;float:right; position:absolute; position:relative; top:0px; right: 0px">
             <div id="order"><form name="PizzaForm">
                 <h1>Pizza Parlor</h1>
+                <hr>
                 <h4>Step One: Enter Your Info</h4>
                 Name:<input name="customer" type="text" size="30"><br>
                 Address:<input name="address" type="text" size="30"><br>
                 City:<input name="city" type="text" size="16"><br>
                 State:<input name="state" type="text" size="4"><br>
                 Zip:<input name="zip" type="text" size="8"><br>
-                Phone:<input name="phone" type="text" size="15"><br>
+                Phone:<input name="phone" type="text" size="15"><hr>
                 <h4>Step Two: Select Size</h4>
                 <input name="size" type="radio" value="Small">Small
                 <input name="size" type="radio" value="Medium">Medium
                 <input name="size" type="radio" value="Large">Large
-                <br><br>
+                <hr>
                 <h4>Step 3: Select Toppings</h4>
-                <input name="toppings" type="checkbox">Pepperoni
-                <input name="toppings" type="checkbox">Canadian Bacon
-                <input name="toppings" type="checkbox">Sausage<br>
-                <input name="toppings" type="checkbox">Mushrooms
-                <input name="toppings" type="checkbox">Pineapple
-                <input name="toppings" type="checkbox">Olives
-                <br><br>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tr>
+                        <td><input name="toppings" type="checkbox">Pepperoni</td>
+                        <td><input name="toppings" type="checkbox">Canadian Bacon</td>
+                    </tr>
+                    <tr>
+                        <td><input name="toppings" type="checkbox">Sausage</td>
+                        <td><input name="toppings" type="checkbox">Mushrooms</td>
+                    </tr>
+                    <tr>
+                        <td><input name="toppings" type="checkbox">Pineapple</td>
+                        <td><input name="toppings" type="checkbox">Olives</td>
+                    </tr>
+                </table>
+                <input name="toppings" type="checkbox" onclick="everything();">Everything
+                <hr>
                 <input type="button" value="Submit Order" onclick="doSubmit()" onclick="">
                 <input type="button" value="Clear Entries" onclick="doClear()">
                 <br><br>

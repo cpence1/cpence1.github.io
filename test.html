@@ -149,6 +149,14 @@
             </ul>
             </ul>
         </ol>
+        <h2>Bullets Styling</h2>
+            <ul> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
+                <li style="list-style-image: url('images/Check.jpg');">Check 1</li>
+                <!--NEED TO BE SURE PICTURE IS CORRECTLY SIZED-->
+                <li style="list-style-type: square;">Check 1</li>
+                <li style="list-style-type:circle;">Check 2</li>
+                <li style="list-style-type:disc;">Check 3</li>
+            </ul>
         <h2>Checklist</h2>
             <input type="checkbox">Check 1<br>
             <input type="checkbox">Check 2<br>
@@ -158,6 +166,26 @@
                                                             to select only one -->
             <input type="radio" name="radio">Radio 2<br>
             <input type="radio" name="radio">Radio 3<br>
+        <h2>Superscript & Subscript</h2>
+        A<sup>2</sup>+B<sup>2</sup>=C<sup>2</sup><br><br>
+        i<sub>0</sub>+i<sub>1</sub>=i<sub>(0+1)</sub>
+        <h2>Styling Paragraphs</h2>
+        <style type="text/css">
+            #quote{
+                font: bold italic 130% Garamond, Fantasy;
+                text-align: center;
+            }
+        </style>
+        <div style="box-sizing: content-box; width: 300px; height: 250px;
+        padding: 10px;  border: 2px solid black; margin:auto; background-color:darkgoldenrod;">
+        <p id="quote" >"All the world’s a stage,<br>
+            And all the men and women merely players;<br>
+            They have their exits and their entrances;<br>
+            And one man in his time plays many parts,<br>
+            His acts being seven ages."</p>
+            <p style="font:100% monospace; text-align:  center;"><b>-William Shakespeare,
+                <i>"As You Like It"</i></b></p>
+            </div>
         <h2>Range</h2>
         <div class="slidecontainer">
         0<input type="range" min="0" max="10" value="5" class="slider" id="myRange">10
