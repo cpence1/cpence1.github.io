@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Layout</title>
+        <link rel="stylesheet"
+            type="text/css">
+        <style>
+            #header{
+                border:1px solid black;
+                text-align:center;
+                background-color: red;
+            }
+            #left{
+                float:left;
+                width:20%;
+                height:30em;
+                overflow:auto;
+                background-color: blue;
+            }
+            #center{
+                float:left;
+                width:60%;
+                padding-left: 1%;
+                padding-right:1%;
+                height:30em;
+                overflow:auto;
+            }
+            #right{
+                float:left;
+                width: 17%;
+                height:30em;
+                overflow:auto;
+                padding-left: 1%;
+                background-color: green;
+            }
+            #footer{
+                border:1px solid black;
+                float:left;
+                width:100%;
+                clear:both;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Width Layout</h1>
+        </div>
+        <div id="left">
+            <h2>Left Column</h2>
+        </div>
+        <div id="center">
+            <h2>Center Column</h2>
+        </div>
+        <div id="right">
+            <h2>Right Column</h2>
+        </div>
+        <div id="footer">
+            <h2>Footer</h2>
+        </div>
+    </body>
+</html>

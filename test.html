@@ -1,33 +1,23 @@
 <html>
     <head>
         <title>My Test Page</title>
-            <script language="JavaScript" type="text/javascript">
-            function Avg(a,b,c,d){
-                result=(a+b+c+d)/4;
-                return result;
-            }
-            </script>
-            <script language="JavaScript" type="text/javascript">
-
-            </script>
     </head>
     <body>
         <h1>Test Page</h1>
         <p>Welcome to our website. Last update:<script language="Javascript"type="text/javascript">
         document.write(document.lastModified);
     </script>
-        <h2>Browser Info</h2>
+<h2>Browser Info</h2>
         <script language="Javascript" type="text/javascript">
         document.write("<li><b>Code Name: </b> "+navigator.appCodeName);
         document.write("<li><b>App Name: </b> "+navigator.appName);
         document.write("<li><b>App Version: </b> "+navigator.appVersion);
         document.write("<li><b>User Agent: </b> "+navigator.userAgent);
         document.write("<li><b>Language: </b> "+navigator.language); 
-        document.write("<li><b>Platform: </b> "+navigator.platform);           
+        document.write("<li><b>Platform: </b> "+navigator.platform);          
         </script>
-        <h2>Event Test</h2>
-        <button onclick="alert('You Clicked The Button.')">Click Me</button>
-        <h2>Current Date & Time</h2>
+        </li>
+<h2>Current Date & Time</h2>
         <script>
             now=new Date();
             localtime=now.toString();
@@ -123,7 +113,7 @@
     <div id="txt"></div>
     <div id="txt1"></div>
     </body>
-        <h2>Ordered List / Unordered List</h2>
+<h2>Ordered List / Unordered List</h2>
         <ol>
             <li>One</li>
             <ul>
@@ -149,7 +139,7 @@
             </ul>
             </ul>
         </ol>
-        <h2>Bullets Styling</h2>
+<h2>Bullets Styling</h2>
             <ul> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
                 <li style="list-style-image: url('images/Check.jpg');">Check 1</li>
                 <!--NEED TO BE SURE PICTURE IS CORRECTLY SIZED-->
@@ -157,19 +147,19 @@
                 <li style="list-style-type:circle;">Check 2</li>
                 <li style="list-style-type:disc;">Check 3</li>
             </ul>
-        <h2>Checklist</h2>
+<h2>Checklist</h2>
             <input type="checkbox">Check 1<br>
             <input type="checkbox">Check 2<br>
             <input type="checkbox">Check 3<br>
-        <h2>Radio Buttons</h2>
+<h2>Radio Buttons</h2>
             <input type="radio" name="radio">Radio 1<br> <!-- Must share name in order 
                                                             to select only one -->
             <input type="radio" name="radio">Radio 2<br>
             <input type="radio" name="radio">Radio 3<br>
-        <h2>Superscript & Subscript</h2>
+<h2>Superscript & Subscript</h2>
         A<sup>2</sup>+B<sup>2</sup>=C<sup>2</sup><br><br>
         i<sub>0</sub>+i<sub>1</sub>=i<sub>(0+1)</sub>
-        <h2>Styling Paragraphs</h2>
+<h2>Styling Paragraphs</h2>
         <style type="text/css">
             #quote{
                 font: bold italic 130% Garamond, Fantasy;
@@ -186,24 +176,20 @@
             <p style="font:100% monospace; text-align:  center;"><b>-William Shakespeare,
                 <i>"As You Like It"</i></b></p>
             </div>
-        <h2>Range</h2>
+<h2>Range</h2>
         <div class="slidecontainer">
         0<input type="range" min="0" max="10" value="5" class="slider" id="myRange">10
           <p>Value: <span id="demo"></span></p>
         </div>
-        
         <script>
         var slider = document.getElementById("myRange");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value;
-        
         slider.oninput = function() {
           output.innerHTML = this.value;
         }
         </script>
-        
-        </body>
-        <h2>Table</h2>
+<h2>Table</h2>
         <table border="1";>
             <caption>My Schedule</caption>
             <tr style="text-align: center;">
@@ -243,22 +229,16 @@
                 <td>Maniacal Laughter</td>
             </tr>
               </table>
-            <h2>Event Handlers</h2>
-                <p>
-                    <a href="" onClick="alert('Aha, an event happened!');">Click this link</a>
+<h2>Event Handlers</h2>
+    <a href="" onClick="alert('Aha, an event happened!');">Click this link</a>
                     to test an object handler.
-                </p>
-            <h2>Back & Forward Buttons</h2>
-            <p>
+<h2>Back & Forward Buttons</h2>
                 <input type="button"
                 onClick="history.back();" value="<<--Back">
                 <input type="button"
                 onClick="history.forward();" value="Forward-->>">
-            </p>
+<h2>Sorting String Arrays</h2>
             <script type="text/javascript" language="javascript" src="js/sort.js"></script>
-        </head>
-        <body>
-            <h2>Sorting String Arrays</h2>
             <p>Enter two or more names in the field below, 
                 and the sorted list of names will appear in the text area.</p>
                 <form name="theform">
@@ -269,15 +249,9 @@
                     <textarea col="60" rows="10" name="sorted" style="background-color: Red">The sorted names will appear here.
                     </textarea>
                 </form>
-        </body>
-        <h2>Average Function</h2>
-        <script language="JavaScript" type="text/javascript">
-        document.write("The average of 3, 4, 5, 6 is "+Avg(3,4,5,6));
-        </script>
-        <h2>Card Object</h2>
-        <script language="JavaScript" type="text/javascript" src="js/cardtest.js">
-        </script>
-        <h2>Random Numbers</h2>
+<h2>Card Object</h2>
+        <script language="JavaScript" type="text/javascript" src="js/cardtest.js"></script>
+<h2>Random Numbers</h2>
         <script language="Javascript" type="text/javascript">
         total=0;
          for(i=1;i<=100;i++){
@@ -288,12 +262,11 @@
             document.write("<br>");
         }
         i--;
-
         document.write("<br>Generated numbers: "+i+"<br>");
         total=total/i;
         document.write("Average: "+total);
         </script>
-        <h2>Multiplication Table</h2>
+<h2>Multiplication Table</h2>
         <script language="Javascript">
             function times(a,b,x){
                 this.a=a;
@@ -301,18 +274,6 @@
                 this.x=x;
                 document.write(a+"*"+b+"="+x+"<br>");
             }
-        </script>
-        <style>
-            td:hover {
-	        width:50px;
-	        font-size:18px;
-	        font-family:cursive;
-	        padding:7px;
-	        background:white;
-	        color: black;
-            }
-        </style>
-            <script language="JavaScript">
             document.write("<table border='1px' width='10%' cellspacing='1' cellpadding='1'>");
             for(var a = 1; a <= 10; a++) {
              
@@ -332,14 +293,14 @@
             }
             document.write("</table></center>");
             </script>
-            <h2>Creating & Closing Windows</h2>
+<h2>Creating & Closing Windows</h2>
             <form name="winform">
                 <input type="button" VALUE="Open New Window" 
                 onClick="NewWin=window.open('','NewWin', 'toolbar=no, status=no, width=200 height=100');">
                 <p><input type="button" VALUE="Close New Window" 
                     onClick="NewWin.close();"></p>
             </form>
-            <h2>Form Example</h2>
+<h2>Form Example</h2>
                     Enter the following info
                     <form name="form1">
                         <p><b>Name:</b><input type="TEXT" size="20" name="yourname">
@@ -350,7 +311,7 @@
                         <p><b>Password:</b><input type="password" id="pwd" value="secret"></p>
                         </p>
                     </form>
-                    <h2>Dropdown List</h2>
+<h2>Dropdown List</h2>
                     <script language="Javascript" type="text/javascript"></script>
                     <form name="form1">
                         <b>Color:</b>
@@ -362,52 +323,21 @@
                             <option value="yellow">Yellow</option>
                         </select>
                     </form>
-                    <h2><a href="position.html">Positioning Elements</a></h2>
-                    <h2><a href="ShowHide.html">Show / Hide Elements</a></h2>
-                    <h2><a href="modify.html">Modify Text</a></h2>
-                    <h2>Navigation Tree</h2>
-                        <style>
-                            a{text-decoration: none;}
-                            #productsmenu, #supportmenu,#contactmenu{
-                                display:none;
-                                margin-left: 2em;
-                            }
-                        </style>
-                            <p>Expand / Collapse Items</p>
-                            <ul>
-                                <li><a id="products" href="#">[+]Products</a>
-                                <ul ID="productsmenu">
-                                    <li><a href="prodlist.html">Product List</a></li>
-                                    <li><a href="order.html">Order Form</a></li>
-                                    <li><a href="pricelist.html">Price List</a></li>
-                                </ul>
-                                </li>
-                                    <li><a id="support" href="#">[+]Support</a>
-                                    <ul ID="supportmenu">
-                                        <li><a href="sforum.html">Support Forum</a></li>
-                                        <li><a href="scontact.html">Contact</a></li>
-                                    </ul>
-                                    </li>
-                                <li><a id="contact" href="#">[+]Contact</a>
-                                <ul ID="contactmenu">
-                                    <li><a href="contact1.html">Service</a></li>
-                                    <li><a href="contact2.html">Sales</a></li>
-                                </ul>
-                                </li>
-                            </ul>
-                            <script language="Javascript" type="text/javascript" src="js/tree.js"></script>
-                    <h2><a href="NumberGuess.html">Guess A Number</a></h2>
-                    <h2><a href="Scroll.html">Scrolling Window</a></h2>
-                    <h2><a href="Slides.html">Slideshow</a></h2>
-                    <h2><a href="Scroll.html">Scrolling Window</a></h2>
-                    <h2><a href="Pizza.html">Pizza Parlor</a></h2>
-                    <h2></h2>
+<h2><a href="position.html">Positioning Elements</a></h2>
+<h2><a href="ShowHide.html">Show / Hide Elements</a></h2>
+<h2><a href="modify.html">Modify Text</a></h2>
+<h2><a href="NavTree.html">Navigation Tree</a></h2>
+<h2><a href="NumberGuess.html">Guess A Number</a></h2>
+<h2><a href="Scroll.html">Scrolling Window</a></h2>
+<h2><a href="Slides.html">Slideshow</a></h2>
+<h2><a href="Scroll.html">Scrolling Window</a></h2>
+<h2><a href="Pizza.html">Pizza Parlor</a></h2>
+<h2><a href="Layout.html">Layout</a></h2>
+<h2><a href="CheckerBoard.html">CSS CheckerBoard</a></h2>
+<h2><a href="Chess.html">HTML ChessBoard</a></h2>
 
 
-
-
-
-                    <h2>Piano</h2>
+<h2>Piano</h2>
                     <style>
                         .white{
                             float:left;

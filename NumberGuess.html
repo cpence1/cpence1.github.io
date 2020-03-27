@@ -12,12 +12,12 @@
             document.form1.hint.value="Guess higher. Guesses Left="+(10-tries);
             if(guess>num)
             document.form1.hint.value="Guess lower. Guesses Left="+(10-tries);
-            if(guess==num){
-                window.alert("Correct! You guessed it in "+tries+" tries.");
-                location.reload();
-            }
             if(tries==10){
                 window.alert("Sorry, time's up. The number was "+num);
+                location.reload();
+            }
+            else if(guess==num){
+                window.alert("Correct! The number was "+num+"!\nYou guessed it in "+tries+" tries.");
                 location.reload();
             }
         }
