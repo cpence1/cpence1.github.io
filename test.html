@@ -2,11 +2,10 @@
     <head>
         <title>My Test Page</title>
     </head>
-    <body>
+    <body style="text-align:center;">
         <h1>Test Page</h1>
         <p>Welcome to our website. Last update:<script language="Javascript"type="text/javascript">
-        document.write(document.lastModified);
-    </script>
+        document.write(document.lastModified);</script>
 <h2>Browser Info</h2>
         <script language="Javascript" type="text/javascript">
         document.write("<li><b>Code Name: </b> "+navigator.appCodeName);
@@ -114,7 +113,7 @@
     <div id="txt1"></div>
     </body>
 <h2>Ordered List / Unordered List</h2>
-        <ol>
+        <ol style="text-align:left;">
             <li>One</li>
             <ul>
                 <li>One - A</li>
@@ -140,7 +139,7 @@
             </ul>
         </ol>
 <h2>Bullets Styling</h2>
-            <ul> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
+            <ul style="text-align:left;"> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
                 <li style="list-style-image: url('images/Check.jpg');">Check 1</li>
                 <!--NEED TO BE SURE PICTURE IS CORRECTLY SIZED-->
                 <li style="list-style-type: square;">Check 1</li>
@@ -190,7 +189,7 @@
         }
         </script>
 <h2>Table</h2>
-        <table border="1";>
+        <table border="1"; style="margin-left:auto; margin-right:auto;">
             <caption>My Schedule</caption>
             <tr style="text-align: center;">
                 <th></th>
@@ -335,6 +334,7 @@
 <h2><a href="Layout.html">Layout</a></h2>
 <h2><a href="CheckerBoard.html">CSS CheckerBoard</a></h2>
 <h2><a href="Chess.html">HTML ChessBoard</a></h2>
+
 
 
 <h2>Piano</h2>

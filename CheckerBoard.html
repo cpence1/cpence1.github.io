@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <h2 style="text-align:center;">ChessBoard</h2>
+        <h2 style="text-align:center;">CheckerBoard</h2>
         <meta charset="UTF-8">
         <title>Checkerboard</title>
         <style>
@@ -30,27 +30,44 @@
                 background-color: gold;
                 position: relative;
             }
+            .red {
+                height: 90%;
+                width: 90%;
+                background-color:red;
+                border-radius: 50%;
+                display: inline-block;
+                border:solid blue 2px;
+            }
+            .black {
+                height: 90%;
+                width: 90%;
+                background-color:black;
+                border-radius: 50%;
+                display: inline-block;
+                border:solid blue 2px;
+            }
         </style>
     </head>
     <body>
+
         <div id="board">
-                <p id="black" style="left:0%;"></p>
+                <p id="black" style="left:0%;"><span class="red"></span></p>
                 <p id="red" style="left:12.5%;"></p>
-                <p id="black" style="left:25%;"></p>
+                <p id="black" style="left:25%;"><span class="red"></span></p>
                 <p id="red" style="left:37.5%;"></p>
-                <p id="black" style="left:50%;"></p>
+                <p id="black" style="left:50%;"><span class="red"></span></p>
                 <p id="red" style="left:62.5%;"></p>
-                <p id="black" style="left:75%;"></p>
+                <p id="black" style="left:75%;"><span class="red"></span></p>
                 <p id="red" style="left:86.5%;"></p>
                 
                 <p id="red" style="left:0%; top:12.5%;"></p>
-                <p id="black" style="left:12.5%; top:12.5%;"></p> 
+                <p id="black" style="left:12.5%; top:12.5%;"><span class="red"></span></p> 
                 <p id="red" style="left:25%; top:12.5%;"></p>
-                <p id="black" style="left:37.5%; top:12.5%;"></p>
+                <p id="black" style="left:37.5%; top:12.5%;"><span class="red"></span></p>
                 <p id="red" style="left:50%; top:12.5%;"></p>
-                <p id="black" style="left:62.5%; top:12.5%;"></p>
+                <p id="black" style="left:62.5%; top:12.5%;"><span class="red"></span></p>
                 <p id="red" style="left:75%; top:12.5%;"></p>
-                <p id="black" style="left:86.5%; top:12.5%;"></p>
+                <p id="black" style="left:86.5%; top:12.5%;"><span class="red"></span></p>
 
                 <p id="black" style="left:0%; top:25%;"></p>
                 <p id="red" style="left:12.5%; top:25%"></p>
@@ -88,23 +105,23 @@
                 <p id="red" style="left:75%; top:62.5%;"></p>
                 <p id="black" style="left:86.5%; top:62.5%;"></p>
 
-                <p id="black" style="left:0%; top:75%;"></p>
+                <p id="black" style="left:0%; top:75%;"><span class="black"></span></p>
                 <p id="red" style="left:12.5%; top:75%"></p>
-                <p id="black" style="left:25%; top:75%;"></p>
+                <p id="black" style="left:25%; top:75%;"><span class="black"></span></p>
                 <p id="red" style="left:37.5%; top:75%"></p>
-                <p id="black" style="left:50%; top:75%;"></p>
+                <p id="black" style="left:50%; top:75%;"><span class="black"></span></p>
                 <p id="red" style="left:62.5%; top:75%"></p>
-                <p id="black" style="left:75%; top:75%;"></p>
+                <p id="black" style="left:75%; top:75%;"><span class="black"></span></p>
                 <p id="red" style="left:86.5%; top:75%"></p>
 
                 <p id="red" style="left:0%; top:86.5%;"></p>
-                <p id="black" style="left:12.5%; top:86.5%;"></p> 
+                <p id="black" style="left:12.5%; top:86.5%;"><span class="black"></span></p> 
                 <p id="red" style="left:25%; top:86.5%;"></p>
-                <p id="black" style="left:37.5%; top:86.5%;"></p>
+                <p id="black" style="left:37.5%; top:86.5%;"><span class="black"></span></p>
                 <p id="red" style="left:50%; top:86.5%;"></p>
-                <p id="black" style="left:62.5%; top:86.5%;"></p>
+                <p id="black" style="left:62.5%; top:86.5%;"><span class="black"></span></p>
                 <p id="red" style="left:75%; top:86.5%;"></p>
-                <p id="black" style="left:86.5%; top:86.5%;"></p>
+                <p id="black" style="left:86.5%; top:86.5%;"><span class="black"></span></p>
                 
                 
             </div>                                        
