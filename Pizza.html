@@ -34,7 +34,6 @@
                         order+="    Pineapple\n";
                     if(document.PizzaForm.toppings[5].checked==true)
                         order+="    Olives";
-                    alert(order);
                     var node = document.createElement("LI");
                     var textnode = document.createTextNode(q);
                     node.appendChild(textnode);
@@ -42,7 +41,7 @@
                     var node = document.createElement("LI");
                     var textnode = document.createTextNode(q);
                     node.appendChild(textnode);
-                    document.getElementById("bill").appendChild(node);
+                    alert(order);
                     }
                 return;
             }
@@ -155,7 +154,7 @@
                 </table>
                 <input name="toppings" type="checkbox" onclick="everything();">Everything
                 <hr>
-                <input type="button" value="Submit Order" onclick="doSubmit()" onclick="">
+                <input type="button" value="Submit Order" onclick="doSubmit()">
                 <input type="button" value="Clear Entries" onclick="doClear()">
                 <br><br>
             </form></div>

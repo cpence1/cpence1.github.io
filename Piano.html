@@ -1,0 +1,62 @@
+<h2>Piano</h2>
+                    <style>
+                        .white{
+                            float:left;
+                            background-color: white;
+                            height:300px;
+                            width:30px;
+                            border: 2px solid black;
+                        }
+                        .black{
+                            float: left;
+                            background-color: black;
+                            height:225px;
+                            width:25px;
+                        }
+                            </style>
+                        <body>
+                        <audio id="C"><source src="Music\C.mp3" type="audio/mp3"></audio>
+                        <audio id="Cs"><source src="Music\Cs.mp3" type="audio/mp3"></audio>
+                        <audio id="D"><source src="Music/D.mp3" type="audio/mp3"></audio>
+                        <audio id="Ds"><source src="Music\Ds.mp3" type="audio/mp3"></audio>    
+                        <audio id="E"><source src="Music/E.mp3" type="audio/mp3"></audio>
+                        <audio id="F"><source src="Music/F.mp3" type="audio/mp3"></audio>
+                        <audio id="Fs"><source src="Music\Fs.mp3" type="audio/mp3"></audio>    
+                        <audio id="G"><source src="Music/G.mp3" type="audio/mp3"></audio>
+                        <audio id="Gs"><source src="Music\Gs.mp3" type="audio/mp3"></audio>
+                        <audio id="A"><source src="Music/A.mp3" type="audio/mp3"></audio>
+                        <audio id="As"><source src="Music\As.mp3" type="audio/mp3"></audio>
+                        <audio id="B"><source src="Music/B.mp3" type="audio/mp3"></audio>
+                        <audio id="C5"><source src="Music/C5.mp3" type="audio/mp3"></audio>
+                            
+                        <audio id="Ds"><source src="Music/Ds.mp3" type="audio/mp3"></audio>
+                        
+                        
+                        <p>Press piano keys to play</p>
+                        <div id="piano" style="position:absolute;border:black; border-style: solid; border-width: 4px;">
+                        <div class="white" id="C" onmouseover="playC()"></div>
+                        <div class="black" id="Cs" onclick="playCs()"></div> 
+                        <div class="white" id="D" onclick="playD()"></div>
+                        <div class="black" id="Ds" onclick="playDs()"></div> 
+                        <div class="white" id="E" onclick="playE()"></div>
+                        <div class="white" id="F" onclick="playF()"></div>
+                        <div class="black" id="Fs" onclick="playFs()"></div> 
+                        <div class="white" id="G" onclick="playG()"></div>
+                        <div class="black" id="Gs" onclick="playGs()"></div> 
+                        <div class="white" id="A" onclick="playA()"></div>
+                        <div class="black" id="As" onclick="playAs()"></div> 
+                        <div class="white" id="B" onclick="playB()"></div>
+                        <div class="white" id="C5" onclick="playC5()"></div></div>
+                        
+                        
+                        <script>
+                        function playC() { document.getElementById("C").play();} function playCs() { document.getElementById("Cs").play();}
+                        function playD() { document.getElementById("D").play();} function playDs() { document.getElementById("Ds").play();}
+                        function playE() { document.getElementById("E").play();}
+                        function playF() { document.getElementById("F").play();} function playFs() { document.getElementById("Fs").play();}
+                        function playG() { document.getElementById("G").play();} function playGs() { document.getElementById("Gs").play();}
+                        function playA() { document.getElementById("A").play();} function playAs() { document.getElementById("As").play();}
+                        function playB() { document.getElementById("B").play();}
+                        function playC5() { document.getElementById("C5").play();}
+                        </script>
+                        </body>

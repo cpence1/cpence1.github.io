@@ -1,0 +1,31 @@
+<h2>innerHTML For Loops</h2>
+<script>
+    var output;
+    function init(){
+        output=document.getElementById("output");
+    }
+    function count(){
+        output.innerHTML="";
+        for(i=1;i<=10;i++)
+        output.innerHTML+=i+"<br />";
+    }
+    function back(){
+        output.innerHTML="";
+        for(i=10;i>0;i--)
+        output.innerHTML+=i+"<br />";
+    }
+    function byFives(){
+        output.innerHTML="";
+        for(i=1;i<=10;i++)
+        output.innerHTML+=(i*5)+"<br />";
+    }
+</script>
+<body onload="init()">
+<form action="">
+    <fieldset>
+        <button type="button" onclick="count()">Count to Ten</button>
+        <button type="button" onclick="back()">Count Backwards</button>
+        <button type="button" onclick="byFives()">Count By Fives</button>
+    </fieldset></form>
+<div id="output">Click</div>
+</body>

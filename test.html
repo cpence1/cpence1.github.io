@@ -4,8 +4,11 @@
     </head>
     <body style="text-align:center;">
         <h1>Test Page</h1>
+        <fieldset>
         <p>Welcome to our website. Last update:<script language="Javascript"type="text/javascript">
         document.write(document.lastModified);</script>
+        </fieldset>
+<fieldset>
 <h2>Browser Info</h2>
         <script language="Javascript" type="text/javascript">
         document.write("<li><b>Code Name: </b> "+navigator.appCodeName);
@@ -16,6 +19,8 @@
         document.write("<li><b>Platform: </b> "+navigator.platform);          
         </script>
         </li>
+    </fieldset>
+<fieldset>
 <h2>Current Date & Time</h2>
         <script>
             now=new Date();
@@ -73,6 +78,8 @@
                 else document.write("Good Evening!");
             document.write("</font>");
         </script>
+        </fieldset>
+        <fieldset>
 <h2>Working Clock</h2>    
 <head>
     <script>
@@ -111,7 +118,8 @@
     <body onload="startTime()">
     <div id="txt"></div>
     <div id="txt1"></div>
-    </body>
+    </body></fieldset>
+    <fieldset>
 <h2>Ordered List / Unordered List</h2>
         <ol style="text-align:left;">
             <li>One</li>
@@ -137,7 +145,8 @@
                 </ul>
             </ul>
             </ul>
-        </ol>
+        </ol></fieldset>
+        <fieldset>
 <h2>Bullets Styling</h2>
             <ul style="text-align:left;"> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
                 <li style="list-style-image: url('images/Check.jpg');">Check 1</li>
@@ -145,19 +154,23 @@
                 <li style="list-style-type: square;">Check 1</li>
                 <li style="list-style-type:circle;">Check 2</li>
                 <li style="list-style-type:disc;">Check 3</li>
-            </ul>
+            </ul></fieldset>
+            <fieldset>
 <h2>Checklist</h2>
             <input type="checkbox">Check 1<br>
             <input type="checkbox">Check 2<br>
-            <input type="checkbox">Check 3<br>
+            <input type="checkbox">Check 3<br></fieldset>
+            <fieldset>
 <h2>Radio Buttons</h2>
             <input type="radio" name="radio">Radio 1<br> <!-- Must share name in order 
                                                             to select only one -->
             <input type="radio" name="radio">Radio 2<br>
-            <input type="radio" name="radio">Radio 3<br>
+            <input type="radio" name="radio">Radio 3<br></fieldset>
+        <fieldset>
 <h2>Superscript & Subscript</h2>
         A<sup>2</sup>+B<sup>2</sup>=C<sup>2</sup><br><br>
-        i<sub>0</sub>+i<sub>1</sub>=i<sub>(0+1)</sub>
+        i<sub>0</sub>+i<sub>1</sub>=i<sub>(0+1)</sub></fieldset>
+        <fieldset>
 <h2>Styling Paragraphs</h2>
         <style type="text/css">
             #quote{
@@ -174,7 +187,8 @@
             His acts being seven ages."</p>
             <p style="font:100% monospace; text-align:  center;"><b>-William Shakespeare,
                 <i>"As You Like It"</i></b></p>
-            </div>
+            </div></fieldset>
+            <fieldset>
 <h2>Range</h2>
         <div class="slidecontainer">
         0<input type="range" min="0" max="10" value="5" class="slider" id="myRange">10
@@ -187,7 +201,8 @@
         slider.oninput = function() {
           output.innerHTML = this.value;
         }
-        </script>
+        </script></fieldset>
+        <fieldset>
 <h2>Table</h2>
         <table border="1"; style="margin-left:auto; margin-right:auto;">
             <caption>My Schedule</caption>
@@ -227,15 +242,19 @@
                 <td>Maniacal Laughter</td>
                 <td>Maniacal Laughter</td>
             </tr>
-              </table>
+              </table></fieldset>
+              <fieldset>
 <h2>Event Handlers</h2>
     <a href="" onClick="alert('Aha, an event happened!');">Click this link</a>
-                    to test an object handler.
+                    to test an object handler.</fieldset>
+                    <fieldset>
 <h2>Back & Forward Buttons</h2>
                 <input type="button"
                 onClick="history.back();" value="<<--Back">
                 <input type="button"
                 onClick="history.forward();" value="Forward-->>">
+            </fieldset>
+            <fieldset>
 <h2>Sorting String Arrays</h2>
             <script type="text/javascript" language="javascript" src="js/sort.js"></script>
             <p>Enter two or more names in the field below, 
@@ -247,9 +266,11 @@
                     <h3>Sorted Names</h3>
                     <textarea col="60" rows="10" name="sorted" style="background-color: Red">The sorted names will appear here.
                     </textarea>
-                </form>
+                </form></fieldset>
+                <fieldset>
 <h2>Card Object</h2>
-        <script language="JavaScript" type="text/javascript" src="js/cardtest.js"></script>
+        <script language="JavaScript" type="text/javascript" src="js/cardtest.js"></script></fieldset>
+        <fieldset>
 <h2>Random Numbers</h2>
         <script language="Javascript" type="text/javascript">
         total=0;
@@ -264,7 +285,8 @@
         document.write("<br>Generated numbers: "+i+"<br>");
         total=total/i;
         document.write("Average: "+total);
-        </script>
+        </script></fieldset>
+        <fieldset>
 <h2>Multiplication Table</h2>
         <script language="Javascript">
             function times(a,b,x){
@@ -291,14 +313,16 @@
                 document.write("</tr>");
             }
             document.write("</table></center>");
-            </script>
+            </script></fieldset>
+            <fieldset>
 <h2>Creating & Closing Windows</h2>
             <form name="winform">
                 <input type="button" VALUE="Open New Window" 
                 onClick="NewWin=window.open('','NewWin', 'toolbar=no, status=no, width=200 height=100');">
                 <p><input type="button" VALUE="Close New Window" 
                     onClick="NewWin.close();"></p>
-            </form>
+            </form></fieldset>
+            <fieldset>
 <h2>Form Example</h2>
                     Enter the following info
                     <form name="form1">
@@ -309,7 +333,8 @@
                         <p><b>Phone:</b><input type="TEXT" size="15" name="phone">
                         <p><b>Password:</b><input type="password" id="pwd" value="secret"></p>
                         </p>
-                    </form>
+                    </form></fieldset>
+                    <fieldset>
 <h2>Dropdown List</h2>
                     <script language="Javascript" type="text/javascript"></script>
                     <form name="form1">
@@ -321,83 +346,55 @@
                             <option value="green">Green</option>
                             <option value="yellow">Yellow</option>
                         </select>
-                    </form>
-<h2><a href="position.html">Positioning Elements</a></h2>
-<h2><a href="ShowHide.html">Show / Hide Elements</a></h2>
-<h2><a href="modify.html">Modify Text</a></h2>
-<h2><a href="NavTree.html">Navigation Tree</a></h2>
-<h2><a href="NumberGuess.html">Guess A Number</a></h2>
-<h2><a href="Scroll.html">Scrolling Window</a></h2>
-<h2><a href="Slides.html">Slideshow</a></h2>
-<h2><a href="Scroll.html">Scrolling Window</a></h2>
-<h2><a href="Pizza.html">Pizza Parlor</a></h2>
-<h2><a href="Layout.html">Layout</a></h2>
-<h2><a href="CheckerBoard.html">CSS CheckerBoard</a></h2>
-<h2><a href="Chess.html">HTML ChessBoard</a></h2>
-
-
-
-<h2>Piano</h2>
-                    <style>
-                        .white{
-                            float:left;
-                            background-color: white;
-                            height:300px;
-                            width:30px;
-                            border: 2px solid black;
-                        }
-                        .black{
-                            float: left;
-                            background-color: black;
-                            height:225px;
-                            width:25px;
-                        }
-                            </style>
-                        <body>
-                        <audio id="C"><source src="Music\C.mp3" type="audio/mp3"></audio>
-                        <audio id="Cs"><source src="Music\Cs.mp3" type="audio/mp3"></audio>
-                        <audio id="D"><source src="Music/D.mp3" type="audio/mp3"></audio>
-                        <audio id="Ds"><source src="Music\Ds.mp3" type="audio/mp3"></audio>    
-                        <audio id="E"><source src="Music/E.mp3" type="audio/mp3"></audio>
-                        <audio id="F"><source src="Music/F.mp3" type="audio/mp3"></audio>
-                        <audio id="Fs"><source src="Music\Fs.mp3" type="audio/mp3"></audio>    
-                        <audio id="G"><source src="Music/G.mp3" type="audio/mp3"></audio>
-                        <audio id="Gs"><source src="Music\Gs.mp3" type="audio/mp3"></audio>
-                        <audio id="A"><source src="Music/A.mp3" type="audio/mp3"></audio>
-                        <audio id="As"><source src="Music\As.mp3" type="audio/mp3"></audio>
-                        <audio id="B"><source src="Music/B.mp3" type="audio/mp3"></audio>
-                        <audio id="C5"><source src="Music/C5.mp3" type="audio/mp3"></audio>
-                            
-                        <audio id="Ds"><source src="Music/Ds.mp3" type="audio/mp3"></audio>
-                        
-                        
-                        <p>Press piano keys to play</p>
-                        <div id="piano" style="position:absolute;border:black; border-style: solid; border-width: 4px;">
-                        <div class="white" id="C" onmouseover="playC()"></div>
-                        <div class="black" id="Cs" onclick="playCs()"></div> 
-                        <div class="white" id="D" onclick="playD()"></div>
-                        <div class="black" id="Ds" onclick="playDs()"></div> 
-                        <div class="white" id="E" onclick="playE()"></div>
-                        <div class="white" id="F" onclick="playF()"></div>
-                        <div class="black" id="Fs" onclick="playFs()"></div> 
-                        <div class="white" id="G" onclick="playG()"></div>
-                        <div class="black" id="Gs" onclick="playGs()"></div> 
-                        <div class="white" id="A" onclick="playA()"></div>
-                        <div class="black" id="As" onclick="playAs()"></div> 
-                        <div class="white" id="B" onclick="playB()"></div>
-                        <div class="white" id="C5" onclick="playC5()"></div></div>
-                        
-                        
-                        <script>
-                        function playC() { document.getElementById("C").play();} function playCs() { document.getElementById("Cs").play();}
-                        function playD() { document.getElementById("D").play();} function playDs() { document.getElementById("Ds").play();}
-                        function playE() { document.getElementById("E").play();}
-                        function playF() { document.getElementById("F").play();} function playFs() { document.getElementById("Fs").play();}
-                        function playG() { document.getElementById("G").play();} function playGs() { document.getElementById("Gs").play();}
-                        function playA() { document.getElementById("A").play();} function playAs() { document.getElementById("As").play();}
-                        function playB() { document.getElementById("B").play();}
-                        function playC5() { document.getElementById("C5").play();}
-                        </script>
-                        </body>
-    </body>
+                    </form></fieldset>
+                    <fieldset>
+<h2><a href="position.html">Positioning Elements</a></h2></fieldset>
+<h2><a href="ShowHide.html">Show / Hide Elements</a></h2></fieldset><fieldset>
+<h2><a href="modify.html">Modify Text</a></h2></fieldset><fieldset>
+<h2><a href="NavTree.html">Navigation Tree</a></h2></fieldset><fieldset>
+<h2><a href="NumberGuess.html">Guess A Number</a></h2></fieldset><fieldset>
+<h2><a href="Scroll.html">Scrolling Window</a></h2></fieldset><fieldset>
+<h2><a href="Slides.html">Slideshow</a></h2></fieldset><fieldset>
+<h2><a href="Scroll.html">Scrolling Window</a></h2></fieldset><fieldset>
+<h2><a href="Pizza.html">Pizza Parlor</a></h2></fieldset><fieldset>
+<h2><a href="Layout.html">Layout</a></h2></fieldset><fieldset>
+<h2><a href="CheckerBoard.html">CSS CheckerBoard</a></h2></fieldset><fieldset>
+<h2><a href="Chess.html">HTML ChessBoard</a></h2></fieldset><fieldset>
+<h2><a href="Piano.html">Piano</a></h2></fieldset><fieldset>
+<h2>Prompt</h2>
+<script>
+function fn(){
+    var x=prompt("Enter x:");
+    alert("x = '"+x+"'"+"\n***NOT AN INTEGER VALUE***");
+}
+</script>
+<input type="button" value="Prompt" onclick="fn();"> <!--Prompt only works as string unless it is parsed-->
+</fieldset>
+<fieldset>
+    <h2>innerHTML Demo</h2>
+<script>
+    function sayHi(){
+        txtName=document.getElementById("txtName");
+        divOutput=document.getElementById("divOutput");
+        name=txtName.value;
+        divOutput.innerHTML=name;
+        divOutput.innerHTML+=" is a very nice name.";
+    }
+</script>
+    <form action="">
+        <fieldset>
+            <label>Enter Name:</label><p>
+                <input type="text" id="txtName"/>
+                <button type="button" onclick="sayHi()">Enter</button>
+                <div id="divOutput"></div>
+        </fieldset>
+    </form>
+</fieldset>
+<fieldset>
+    <h2><a href="innerFor.html">innerHTML For Loops</a></h2>
+</fieldset>
+<fieldset>
+<h2>Next</h2>
+</fieldset>
+</body>
 </html>
