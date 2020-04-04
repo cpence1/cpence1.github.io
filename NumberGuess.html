@@ -2,7 +2,7 @@
     <head>
         <Title>Guess a Number</Title>
         <script language="Javascript" type="text/javascript">
-        var num=Math.floor(Math.random()*1000)+1;
+        var num=Math.floor(Math.random()*100)+1;
         var tries=0;
         function Guess(){
             var guess=document.form1.guess1.value;
@@ -12,7 +12,7 @@
             document.form1.hint.value="Guess higher. Guesses Left="+(10-tries);
             if(guess>num)
             document.form1.hint.value="Guess lower. Guesses Left="+(10-tries);
-            if(tries==10){
+            if(tries>10){
                 window.alert("Sorry, time's up. The number was "+num);
                 location.reload();
             }
@@ -23,10 +23,10 @@
         }
         </script>
     </head>
-    <body>
+    <body style="text-align:center;">
         <h1>Guess a Number</h1>
         <hr>
-        <p>I'm thinking of a number between 1 and 1000. Try to guess it in less than 10 tries.</p>
+        <p>I'm thinking of a number between 1 and 100. Try to guess it in less than 10 tries.</p>
         <form name="form1">
             <input type=text size="25" name="hint" value="Enter Your Guess">
             <br>

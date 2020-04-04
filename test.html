@@ -121,7 +121,8 @@
     </body></fieldset>
     <fieldset>
 <h2>Ordered List / Unordered List</h2>
-        <ol style="text-align:left;">
+        <ol style="text-align: center;
+        list-style-position: inside;">
             <li>One</li>
             <ul>
                 <li>One - A</li>
@@ -148,7 +149,8 @@
         </ol></fieldset>
         <fieldset>
 <h2>Bullets Styling</h2>
-            <ul style="text-align:left;"> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
+            <ul style="text-align: center;
+            list-style-position: inside;"> <!--NEED TO BE SURE IT ONLY APPLIES TO DESIRED BULLETS-->
                 <li style="list-style-image: url('images/Check.jpg');">Check 1</li>
                 <!--NEED TO BE SURE PICTURE IS CORRECTLY SIZED-->
                 <li style="list-style-type: square;">Check 1</li>
@@ -274,13 +276,15 @@
 <h2>Random Numbers</h2>
         <script language="Javascript" type="text/javascript">
         total=0;
+        document.write("<table style='margin-left:auto; margin-right:auto;' border='1px' width='10%' cellspacing='1' cellpadding='1'>");
          for(i=1;i<=100;i++){
             num=parseInt(Math.random()*100);
-            document.write(num+"    ");
+            document.write("<td>"+num+"    ");
             total=total+num;
             if(i%10==0)
-            document.write("<br>");
+            document.write("</tr>");
         }
+        document.write("</table>");
         i--;
         document.write("<br>Generated numbers: "+i+"<br>");
         total=total/i;
@@ -289,25 +293,18 @@
         <fieldset>
 <h2>Multiplication Table</h2>
         <script language="Javascript">
-            function times(a,b,x){
-                this.a=a;
-                this.b=b;
-                this.x=x;
-                document.write(a+"*"+b+"="+x+"<br>");
-            }
-            document.write("<table border='1px' width='10%' cellspacing='1' cellpadding='1'>");
+            document.write("<table style='margin-left:auto; margin-right:auto;' border='1px' width='10%' cellspacing='1' cellpadding='1'>");
             for(var a = 1; a <= 10; a++) {
-             
             document.write("<tr>");
             for(var b = 1; b <= 10; b++) {
                 var x=a*b;
                 if(a==b){
-                    document.write("<td><b>" 
+                    document.write("<td style='text-align:center;'><b>"+a+"*"+b+"="+ 
                     + x + "</b></td>");
 
                 }
                     else
-                    document.write("<td>" 
+                    document.write("<td style='text-align:center;'>"+a+"*"+b+"="+ 
                     + x + "</td>");
                 }
                 document.write("</tr>");
@@ -335,27 +332,40 @@
                         </p>
                     </form></fieldset>
                     <fieldset>
-<h2>Dropdown List</h2>
-                    <script language="Javascript" type="text/javascript"></script>
-                    <form name="form1">
-                        <b>Color:</b>
-                        <select>
-                            <option value="black">Black</option>
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                            <option value="yellow">Yellow</option>
-                        </select>
-                    </form></fieldset>
-                    <fieldset>
-<h2><a href="position.html">Positioning Elements</a></h2></fieldset>
+                        <h2>Dropdown Color Change</h2>
+                        <script type="text/javascript">
+                            function changeColor(){
+                                var selColor=document.getElementById("selColor");
+                                var color=selColor.value;
+                                document.body.style.backgroundColor=color;
+                            }
+                        </script>
+                            <form>
+                                <h3>Please Select A Color</h3>
+                                <fieldset>
+                                    <select id="selColor">
+                                        <option value="#FFFFFF">White</option>
+                                        <option value="#000000">Black</option>
+                                        <option value="#FF0000">Red</option>
+                                        <option value="#FFCC00">Orange</option>
+                                        <option value="#FFFF00">Yellow</option>
+                                        <option value="#00FF00">Green</option>
+                                        <option value="#0000FF">Blue</option>
+                                        <option value="#663366">Indigo</option>
+                                        <option value="#FF00FF">Violet</option>
+                                    </select>
+                                    <input type="button" value="Change Color" onclick="changeColor()"/>
+                                </fieldset> 
+                            </form>
+                        </fieldset><fieldset>
+<h2><a href="position.html">Positioning Elements</a></h2></fieldset><fieldset>
 <h2><a href="ShowHide.html">Show / Hide Elements</a></h2></fieldset><fieldset>
 <h2><a href="modify.html">Modify Text</a></h2></fieldset><fieldset>
 <h2><a href="NavTree.html">Navigation Tree</a></h2></fieldset><fieldset>
 <h2><a href="NumberGuess.html">Guess A Number</a></h2></fieldset><fieldset>
+<h2><a href="NumberGuess2.html">Guess A Number 2</a></h2></fieldset><fieldset>
 <h2><a href="Scroll.html">Scrolling Window</a></h2></fieldset><fieldset>
 <h2><a href="Slides.html">Slideshow</a></h2></fieldset><fieldset>
-<h2><a href="Scroll.html">Scrolling Window</a></h2></fieldset><fieldset>
 <h2><a href="Pizza.html">Pizza Parlor</a></h2></fieldset><fieldset>
 <h2><a href="Layout.html">Layout</a></h2></fieldset><fieldset>
 <h2><a href="CheckerBoard.html">CSS CheckerBoard</a></h2></fieldset><fieldset>
@@ -394,7 +404,49 @@ function fn(){
     <h2><a href="innerFor.html">innerHTML For Loops</a></h2>
 </fieldset>
 <fieldset>
-<h2>Next</h2>
+<h2><a href="Ants.html">The Ants Go Marching</a></h2>
 </fieldset>
+    <fieldset>
+        <h2>Multiple Selection Dropdown Box</h2>
+        <script type="text/javascript">
+            function showChoices(){
+                var selLanguage = document.getElementById("selLanguage");
+                var result = "<h2>Your Languages<\/h2>";
+                result+="<ul style='text-align: center;list-style-position: inside;'>\n";
+                for(i=0; i<selLanguage.length;i++){
+                    currentOption=selLanguage[i];
+                    if(currentOption.selected==true){
+                        result+=" <li>"+currentOption.value+"</li>\n";
+                    }
+                }
+                result+="<\/ul>\n";
+                output=document.getElementById("output");
+                output.innerHTML=result;
+            }
+        </script>
+        <body>
+        <form action="">
+            <fieldset>
+                <label>Select Languages You Know (Ctrl-Click to Select Multiple)</label><br>
+                <select id="selLanguage" multiple="multiple" size="10">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="PHP">PHP</option>
+                    <option value="MySQL">MySQL</option>
+                    <option value="Java">Java</option>
+                    <option value="VB.NET">VB.NET</option>
+                    <option value="Python">Python</option>
+                    <option value="Flash">Flash</option>
+                    <option value="Perl">Perl</option>
+                </select>
+                <button type="button" onclick="showChoices()">Submit</button>
+        </form>
+        <div id="output"></div>
+        </fieldset>
+    </body>
+    </fieldset>
+<fieldset><h2><a href="Gradients.html">Draw Gradients</a></h2></fieldset>
+<fieldset><h2></h2></fieldset>
 </body>
 </html>

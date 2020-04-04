@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>The Ants Go Marching</title>
+        <script>
+            var output;
+            var n=1;
+            var d=new Array("","suck his thumb<br />","tie his shoe<br />","climb a tree<br/>","shut the door<br />",
+            "take a dive<br />","pick up sticks<br />","pray to Heaven<br />", "roller skate<br />",
+            "check the time<br />", 'shout "THE END!"<br/>');
+            function chorus(){
+                var text="And they all go marching down<br />";
+                text+="To the ground<br />";
+                text+="To get out<br />";
+                text+="Of the rain<br />";
+                text+="Boom boom boom boom<br /><br />";
+                output.innerHTML+=text;
+            }
+            function verse(){
+                var text="The ants go marching "+n+" by "+n+"<br />";
+                text+="Hoorah, hoorah<br />";
+                text+="The ants go marching "+n+" by "+n+"<br />";
+                text+="Hoorah, hoorah<br />";
+                text+="The ants go marching "+n+" by "+n+"<br />";
+                text+="The little one stops to "+d[n];
+                output.innerHTML+=text;
+            }
+            function makeSong(){
+                output=document.getElementById("output");
+                output.innerHTML+="";
+                verse();
+                chorus();
+                n++;
+                if(n>10){
+                    alert("No more verses!\nRefresh to sing again!")
+                }
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <h1>The Ants Go Marching</h1>
+        <form action="">
+            <fieldset>
+                <button type="button" onclick="makeSong()">Make Song</button>
+            </fieldset>
+        </form>
+        <div id="output"></div>
+    </body>
+</html>
