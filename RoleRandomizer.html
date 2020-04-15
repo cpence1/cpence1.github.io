@@ -1,0 +1,161 @@
+<html>
+    <title>Role Randomizer</title>
+    <style>
+    body{
+        background-image: url("images/Bill.jpg");
+        background-size: 100%;
+        font-family:'Courier New', Courier, monospace;
+        text-align: center;
+    }
+    #cast{
+                position:absolute;
+                text-align: center;
+                top:8;
+                width:475px;
+                left:8;
+                border:1px solid black;
+                background-color: tan;
+                background-image: url("images/s2.jpg");
+                background-size: 100%;
+                
+            }
+    #roles{
+                position:absolute;
+                text-align: center;
+                top:8;
+                right:8;
+                width:475px;
+                border:1px solid black;
+                background-color: tan;
+                background-image: url("images/s2.jpg");
+                background-size: 100%;
+            }
+    #DP{
+        position:absolute;
+                text-align: center;
+                bottom:10;
+                left:450;
+                width:500;
+                border:1px solid black;
+                background-color: tan;
+                background-image: url("images/s2.jpg");
+                background-size: 100%;
+    }
+    </style>
+    <script>
+    var castArray=[];
+    var roleArray=[];
+    var size=0;
+    function resetCast(){
+        for(var i=0; i<castArray.length; i++)
+        castArray=[];
+        quantity.value="";
+        document.getElementById("a").innerHTML="";
+        document.getElementById("c").innerHTML="";
+        alert("Cast Reset");
+    }
+    function resetRoles(){
+        for(var i=0; i<roleArray.length; i++)
+        roleArray=[];
+        quantity1.value="";
+        document.getElementById("b").innerHTML="";
+        document.getElementById("c").innerHTML="";
+        alert("Roles Reset");
+    }
+    function fn(){
+    size=quantity.value;
+    if(size<=0) alert("Please enter cast size");
+    else{
+    for(var i=0; i<size; i++)
+        castArray[i]={
+            name:prompt('Enter Cast Member Name:').toUpperCase(),
+            sex:promptSex()
+            }
+        document.getElementById("a").innerHTML+="<h2>Cast:<h2>";
+    for(var j=0; j<size;j++)
+        document.getElementById("a").innerHTML+=(j+1)+". "+castArray[j].name+" ("+castArray[j].sex+")<br>";
+        castArray[j].sex=castSex.value;
+    size=0;
+        }
+    }
+    function promptSex(){
+        var x=prompt('Enter Sex:\nM=Male\nF=Female\nU=Unisex');
+        x=x.toUpperCase();
+        if(x!='M'){
+            if(x!='F'){
+                if(x!='U'){
+                    alert("Please chose M, F, or U");
+                    x=promptSex();
+                }
+            }
+        }
+        return x;
+    }
+    function fn2(){
+    size=quantity1.value;
+    if(size<=0) alert("Please enter number of roles");
+    else{
+    for(var i=0; i<size; i++)
+    roleArray[i]={
+            name:prompt('Enter Role Name:').toUpperCase(),
+            sex:promptSex()
+            }
+        document.getElementById("b").innerHTML+="<h2>Roles:<h2>";
+    for(var j=0; j<size;j++)
+    document.getElementById("b").innerHTML+=(j+1)+". "+roleArray[j].name+" ("+roleArray[j].sex+")<br>";
+        
+    }
+    }
+    function fn3(){
+        if(castArray.length===0) alert("Please enter cast size & number of roles");
+        else if(roleArray.length===0) alert("Please enter cast size & number of roles");
+        else{
+        document.getElementById("c").innerHTML="<h2>Dramatis Personae:</h2>";
+        shuffle(roleArray);
+        for(i=0; i<roleArray.length;i++){
+            if(roleArray[i].sex!='U')
+                if(roleArray[i].sex!=castArray[i].sex){
+                    shuffle(roleArray);
+                    fn3();
+                }
+            if(castArray[i]==undefined){
+                castArray[i]={
+            name:"OPEN",
+            sex:"U"
+            }
+            }
+            document.getElementById("c").innerHTML+=castArray[i].name+".........."+roleArray[i].name+"<br>";
+            }
+            document.getElementById("c").innerHTML+='<h4>Click more than once <br>to scramble cast list again</h4>'
+        }
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+            [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    }
+    </script>
+    <body>
+        <h1 style="background-color: tan; border:1px solid black;"><u><b>Role Randomizer</b></u></h1>
+        <div id="cast">
+        <h3>Number of Cast Members:</h3>
+        <input type="number" id="quantity" name="quantity" min="1" max="25">
+        <button type="button" onclick="fn()">Submit</button><br><br>
+        <button type="button" onclick="resetCast()">Reset</button>
+        <p id="a"></p>
+        </div>
+        <div id="roles">
+        <h3>Number of Roles:</h3>
+        <input type="number" id="quantity1" name="quantity1" min="1" max="25">
+        <button type="button" onclick="fn2()">Submit</button><br><br>
+        <button type="button" onclick="resetRoles()">Reset</button>
+        <p id="b"></p>
+        </div>
+        <div id="DP">
+            <h3>Click below to see cast</h3>
+            <button type="button" onclick="fn3()">See Your Cast</button>
+            <p id="c"></p>
+        </div>
+    </body>
+</html>
