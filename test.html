@@ -279,6 +279,9 @@
         document.write("<table style='margin-left:auto; margin-right:auto;' border='1px' width='10%' cellspacing='1' cellpadding='1'>");
          for(i=1;i<=100;i++){
             num=parseInt(Math.random()*100);
+            if(num<10)
+            document.write("<td>0"+num+"    ");
+            else
             document.write("<td>"+num+"    ");
             total=total+num;
             if(i%10==0)
@@ -424,7 +427,7 @@ function fn(){
                 output.innerHTML=result;
             }
         </script>
-        <body>
+        <div>
         <form action="">
             <fieldset>
                 <label>Select Languages You Know (Ctrl-Click to Select Multiple)</label><br>
@@ -444,11 +447,12 @@ function fn(){
         </form>
         <div id="output"></div>
         </fieldset>
-    </body>
+    </div>
     </fieldset>
 <fieldset><h2><a href="Gradients.html">Draw Gradients</a></h2></fieldset>
 <fieldset><h2><a href="countdown.html">Date Countdown</a></h2></fieldset>
-<fieldset<h2><a href="RoleRandomizer.html">Role Randomizer</a></fieldset>
-<fieldset<h2><a href="SVGgrid.html">SVG Grid</a></fieldset>
+<fieldset><h2><a href="RoleRandomizer.html">Role Randomizer</a></h2></fieldset>
+<fieldset><h2><a href="SVGgrid.html">SVG Grid</a></h2></fieldset>
+<fieldset><h2><a href="tictactoe.html">Tic-Tac-Toe (2 Player)</a></h2></fieldset>
 </body>
 </html>

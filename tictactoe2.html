@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>TIC-TAC-TOE (Vs Computer)</title>
+    <style>
+        .cell {
+            width:120px;    
+            height:120px;
+            border: 1px solid #000000;
+            background: #FFFFFF;
+            font-size: 56pt;
+            font-family: arial;
+            font-weight: bold;
+            text-align: center;
+            }
+            .cell:hover {
+            background: #C2DBFC;
+            }
+            #board{
+                position:absolute;
+                left:500;
+            }
+            body{
+                text-align: center;
+            }
+    </style>
+    <script>
+        var player=1;
+        var grid=new Array(3);
+        grid[0]=new Array(3);
+        grid[1]=new Array(3);
+        grid[2]=new Array(3);
+        for(var i=0; i<=2;i++){
+            for(var j=0; j<=2;j++){
+                grid[i][j]=0;
+            }
+        }
+        var moves=0;
+        function clickCell(x,y){
+            if(grid[x][y]>0){
+                alert("Cell is not empty\nPlease choose another");
+            }
+            else{
+                if(player==1){
+                    document.getElementById("turn").innerHTML="<h4>Turn: O </h4>";
+                    document.getElementById("cell_"+x+"_"+y).style.color="#FF0000";
+                    document.getElementById("cell_"+x+"_"+y).innerHTML="X";
+                    grid[x][y]=1;
+                    player=2;
+                    moves++;
+                }
+                else {
+                    document.getElementById("turn").innerHTML="<h4>Turn:  X</h4>";
+                    document.getElementById("cell_"+x+"_"+y).style.color="#0000FF";
+                    document.getElementById("cell_"+x+"_"+y).innerHTML="O";
+                    grid[x][y]=2;
+                    player=1;
+                    moves++;
+                }
+            }
+            checkWin();
+        }
+        function reset() {
+            for (var i=0; i<=2; i++) {
+            for (var j=0; j<=2; j++) {
+            grid[i][j]=0;
+            document.getElementById("cell_"+i+"_"+j).innerHTML="&nbsp;";
+                }
+            }
+            document.getElementById("turn").innerHTML="<h4>Turn:  X</h4>";
+            player=1;
+            moves=0; 
+        }
+        function checkWin(){
+ //Horizontal
+            if((grid[0][0]==1)&&(grid[0][1]==1)&&(grid[0][2]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[1][0]==1)&&(grid[1][1]==1)&&(grid[1][2]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[2][0]==1)&&(grid[2][1]==1)&&(grid[2][2]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+
+            if((grid[0][0]==2)&&(grid[0][1]==2)&&(grid[0][2]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[1][0]==2)&&(grid[1][1]==2)&&(grid[1][2]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[2][0]==2)&&(grid[2][1]==2)&&(grid[2][2]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";    
+//vertical
+            if((grid[0][0]==1)&&(grid[1][0]==1)&&(grid[2][0]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][1]==1)&&(grid[1][1]==1)&&(grid[2][1]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][2]==1)&&(grid[1][2]==1)&&(grid[2][2]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+
+            if((grid[0][0]==2)&&(grid[1][0]==2)&&(grid[2][0]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][1]==2)&&(grid[1][1]==2)&&(grid[2][1]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][2]==2)&&(grid[1][2]==2)&&(grid[2][2]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                  
+//diagonal
+            if((grid[0][0]==1)&&(grid[1][1]==1)&&(grid[2][2]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][0]==2)&&(grid[1][1]==2)&&(grid[2][2]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][2]==1)&&(grid[1][1]==1)&&(grid[2][0]==1))
+                document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+            if((grid[0][2]==2)&&(grid[1][1]==2)&&(grid[2][0]==2))
+                document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                
+//Draw
+            if(moves==9)
+                document.getElementById("turn").innerHTML="<h4>DRAW!</h4><h3>Reset To Play Again!</h3>";    
+        }
+    </script>
+    </head>
+    <body>
+        <h2>TIC-TAC-TOE (Vs Computer)</h2>
+        <h3>Click a cell to make your mark</h3>
+        <h4 id="turn">Turn: X </h4>
+        <div id="board" style="background-color:#000000;height:368; width:360; 
+    border:1px solid black; text-align:center;">
+        <table>
+            <tr>
+            <td id="cell_0_0" class="cell" onClick="JavaScript:clickCell(0,0);">&nbsp;</td>
+            <td id="cell_0_1" class="cell" onClick="JavaScript:clickCell(0,1);">&nbsp;</td>
+            <td id="cell_0_2" class="cell" onClick="JavaScript:clickCell(0,2);">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="cell_1_0" class="cell" onClick="JavaScript:clickCell(1,0);">&nbsp;</td>
+                <td id="cell_1_1" class="cell" onClick="JavaScript:clickCell(1,1);">&nbsp;</td>
+                <td id="cell_1_2" class="cell" onClick="JavaScript:clickCell(1,2);">&nbsp;</td>
+            </tr>
+            <tr>
+                <td id="cell_2_0" class="cell" onClick="JavaScript:clickCell(2,0);">&nbsp;</td>
+                <td id="cell_2_1" class="cell" onClick="JavaScript:clickCell(2,1);">&nbsp;</td>
+                <td id="cell_2_2" class="cell" onClick="JavaScript:clickCell(2,2);">&nbsp;</td>
+            </tr>
+        </table>
+        <br>
+        <input type="button" onclick="Javascript: reset();" value="Reset">
+        </div>
+    </body>
+    
+</html>
