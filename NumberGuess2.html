@@ -2,16 +2,16 @@
     <head>
         <Title>Guess a Number</Title>
         <script language="Javascript" type="text/javascript">
-        var tries=2;
+        var tries=1;
         var max=100, min=1;
         var num=50;
             function higher(){
                 min=num;
                 num=(max+min)/2
                 if(num>100) num=100;
-                document.form1.hint.value="Guess #"+(tries)+" = "+num.toFixed(0);
                 tries++;
-                if(tries>11){
+                document.form1.hint.value="Guess #"+(tries)+" = "+num.toFixed(0);
+                if(tries>10){
                     window.alert("You win!");
                     location.reload();
                 }
@@ -20,8 +20,8 @@
                 max=num;
                 num=(max+min)/2;
                 if(num<0)num=0;
-                document.form1.hint.value="Guess #"+(tries)+" = "+num.toFixed(0);
                 tries++;
+                document.form1.hint.value="Guess #"+(tries)+" = "+num.toFixed(0);
                 if(tries>11){
                     window.alert("You win!");
                     location.reload();
