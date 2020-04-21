@@ -1,0 +1,273 @@
+<html>
+    <head>
+        <title>Checkers</title>
+        <style>
+            body{
+                background-image: url("images/woodBg.jpeg");
+                background-size: 100%;
+            }
+            .cell{
+                width: 70px;    
+                height:70px;
+            }
+            .cell:active {
+                border-color: blue;
+            }
+            #board{
+                margin-left: auto;
+                margin-right: auto;
+                border:2px solid black;
+                width: 595px;
+                height: 585px;
+                background-color: gold;
+                position: relative;
+            }
+            #queue{
+                position:absolute;
+                top:65px;
+                width:300px;
+                padding: 10px;
+                border:2px solid black;
+                background-color: tan;
+                text-align: center;
+            }
+            #blackCaptured{
+                position:absolute;
+                top:65px;
+                right:10px;
+                width:250;
+                border:1px solid black;
+                background-color: tan;
+                text-align: center;
+            }
+            #redCaptured{
+                position:absolute;
+                top:400px;
+                right:10px;
+                width:250;
+                border:1px solid black;
+                background-color: tan;
+                text-align: center;
+            }
+        </style>
+        <script>
+            //TO DO:
+            //Move pieces (hide / show img?)
+            //King pieces
+            //Prevent pieces from moving backward
+            //Remove pieces
+            var grid=new Array(8);
+        grid[0]=new Array(8);
+        grid[1]=new Array(8);
+        grid[2]=new Array(8);
+        grid[3]=new Array(8);
+        grid[4]=new Array(8);
+        grid[5]=new Array(8);
+        grid[6]=new Array(8);
+        grid[7]=new Array(8);
+        for(var i=0; i<=2;i++){
+            for(var j=0; j<=2;j++){
+                grid[i][j]=0;
+            }
+        }
+        grid[0][0]=1;grid[0][2]=1;grid[0][4]=1;grid[0][6]=1;
+        grid[1][1]=1;grid[1][3]=1;grid[1][5]=1;grid[1][7]=1;
+        grid[2][0]=1;grid[2][2]=1;grid[2][4]=1;grid[2][6]=1;
+
+        grid[5][1]=1;grid[5][3]=1;grid[5][5]=1;grid[5][7]=1;
+        grid[6][0]=1;grid[6][2]=1;grid[6][4]=1;grid[6][6]=1;
+        grid[7][1]=1;grid[7][3]=1;grid[7][5]=1;grid[7][7]=1;
+        function selected(){
+            for(var i=0; i<8;i++){
+                for(var j=0; j<8;j++){
+                    square=document.getElementById("cell_"+i+"_"+j);
+                if(square.style.background=="blue")
+                    square.style.background="black";
+                }
+            }
+        }
+        function clickCell(x,y){
+            selected();
+            if(grid[x][y]!=1)
+                alert("Please choose a piece to move");
+            else{
+                square=document.getElementById("cell_"+x+"_"+y);
+            if(square.style.background=="blue")
+                square.style.background="black";
+            else
+                square.style.background="blue";
+                }
+            moveSquare();
+            }
+        function jumpR(){
+            document.getElementById("bC").innerHTML+='<img src="images/RChecker.png"; height=25; width=25;>'
+            +"  ";
+        }
+        function jumpB(){
+            document.getElementById("rC").innerHTML+='<img src="images/BChecker.png"; height=25; width=25;>'
+            +"  ";
+        }
+        function rules(){
+            document.getElementById("queue").innerHTML='<h1 style="text-align:center;">Rules:</h1>'
+            +'<p>The two players alternate turns and can only move their own pieces.</p>'
+            +'<p>The black squares are the only ones that may be occupied on the board.' 
+            +'Red squares must remain empty.</p>'
+            +'<p>Each turn involves the moving of one piece, which can consist of a' 
+            +'piece moving forward to a diagonally adjacent square that is unoccupied,' 
+            +'or jumping forward over an occupied diagonally adjacent square,' 
+            +'provided that the square beyond is also empty.</p>'
+            +'<p>If a player jumps over their opponent’s piece,' 
+            +'they have successfully captured that piece and it is removed from the game.</p>'
+            +'<p>Each piece is initially referred to as a man, but if it reaches the furthest side' 
+            +'of the board it becomes a king.</p>'
+            +'<p>Men may only move forward, but kings can move diagonally forwards as well as backwards.'
+            +'</p><p>Multiple pieces maybe jumped by both men and kings provided that there'
+            +'are successive unoccupied squares beyond each piece that is jumped.</p></p>'
+        }
+        </script>
+    </head>
+    <body style="text-align:center;">
+            <h1 style="border:solid 1px black;background-color:tan; width:250px; margin-left: 40%;">Checkers</h1>
+        <div id="blackCaptured">
+            <h5>Black Captures:</h5>
+            <p id="bC"></p>
+                <button type="button" onclick="jumpR()";>Add</button></div>
+        <div id="redCaptured">
+            <h5>Red Captures:</h5>
+            <p id="rC"></p>
+                <button type="button" onclick="jumpB();">Add</button></div>
+        <div id="queue"><button type="button" onclick="rules()">Click For Rules</button></div>
+    <div id="board">
+    <table>
+        <tr>
+        <td id="cell_0_0" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(0,0);">
+            <img src="images\RChecker.png"; height=65; width=65;></td>
+        <td id="cell_0_1" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_0_2" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(0,2);">
+            <img src="images\RChecker.png"; height=65; width=65;></td>
+        <td id="cell_0_3" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_0_4" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(0,4);">
+            <img src="images\RChecker.png"; height=65; width=65;></td>
+        <td id="cell_0_5" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_0_6" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(0,6);">
+            <img src="images\RChecker.png"; height=65; width=65;></td>
+        <td id="cell_0_7" class="cell" style="background-color:red">&nbsp;</td>
+        </tr>
+        <tr>
+        <td id="cell_1_0" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_1_1" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(1,1);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_1_2" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_1_3" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(1,3);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_1_4" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_1_5" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(1,5);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_1_6" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_1_7" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(1,7);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        </tr>
+        <tr>
+        <td id="cell_2_0" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(2,0);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_2_1" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_2_2" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(2,2);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_2_3" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_2_4" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(2,4);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_2_5" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_2_6" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(2,6);">
+            <img src="images\RChecker.png"; height=70; width=70;></td>
+        <td id="cell_2_7" class="cell" style="background-color:red">&nbsp;</td>
+        </tr>
+        <tr>
+        <td id="cell_3_0" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_3_1" class="cell" style="background-color: black;" onClick="JavaScript:clickCell(3,1);">&nbsp;</td>
+        <td id="cell_3_2" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_3_3" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(3,3);">&nbsp;</td>
+        <td id="cell_3_4" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_3_5" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(3,5);">&nbsp;</td>
+        <td id="cell_3_6" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_3_7" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(3,7);">&nbsp;</td>
+        </tr>
+        <tr>
+        <td id="cell_4_0" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(4,0);">&nbsp;</td>
+        <td id="cell_4_1" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_4_2" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(4,2);">&nbsp;</td>
+        <td id="cell_4_3" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_4_4" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(4,4);">&nbsp;</td>
+        <td id="cell_4_5" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_4_6" class="cell" style="background-color: black;"onClick="JavaScript:clickCell(4,6);">&nbsp;</td>
+        <td id="cell_4_7" class="cell" style="background-color:red">&nbsp;</td>
+        </tr>
+        <tr>
+        <td id="cell_5_0" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_5_1" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(5,1);">
+            <img src="images\BChecker.png"; height=70; width=70;></td>
+        <td id="cell_5_2" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_5_3" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(5,3);">
+            <img src="images\BChecker.png"; height=70; width=70;></td>
+        <td id="cell_5_4" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_5_5" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(5,5);">
+            <img src="images\BChecker.png"; height=70; width=70;></td>
+        <td id="cell_5_6" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_5_7" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(5,7);">
+            <img src="images\bChecker.png"; height=70; width=70;></td>
+        </tr>
+        <tr>
+        <td id="cell_6_0" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(6,0);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_6_1" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_6_2" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(6,2);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_6_3" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_6_4" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(6,4);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_6_5" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_6_6" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(6,6);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_6_7" class="cell" style="background-color:red">&nbsp;</td>
+        </tr>
+        <tr>
+        <td id="cell_7_0" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_7_1" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(7,1);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_7_2" class="cell" style="background-color:red"></td>
+        <td id="cell_7_3" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(7,3);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_7_4" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_7_5" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(7,5);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        <td id="cell_7_6" class="cell" style="background-color:red">&nbsp;</td>
+        <td id="cell_7_7" class="cell" style="background-color: black;"
+            onClick="JavaScript:clickCell(7,7);">
+            <img src="images\BChecker.png"; height=65; width=65;></td>
+        </tr>
+        </tr>
+    </table>
+    </div>
+</html>
