@@ -46,7 +46,6 @@
             else{
                 if(player==1){
                     document.getElementById("turn").innerHTML="<h4>Turn: O </h4>";
-                    document.getElementById("cell_"+x+"_"+y).style.color="#FF0000";
                     document.getElementById("cell_"+x+"_"+y).innerHTML="X";
                     grid[x][y]=1;
                     player=2;
@@ -54,7 +53,6 @@
                 }
                 else {
                     document.getElementById("turn").innerHTML="<h4>Turn:  X</h4>";
-                    document.getElementById("cell_"+x+"_"+y).style.color="#0000FF";
                     document.getElementById("cell_"+x+"_"+y).innerHTML="O";
                     grid[x][y]=2;
                     player=1;
@@ -68,6 +66,7 @@
             for (var j=0; j<=2; j++) {
             grid[i][j]=0;
             document.getElementById("cell_"+i+"_"+j).innerHTML="&nbsp;";
+            document.getElementById("cell_"+i+"_"+j).style.background="white";
                 }
             }
             document.getElementById("turn").innerHTML="<h4>Turn:  X</h4>";
@@ -79,75 +78,128 @@
  //Horizontal
             if((grid[0][0]==1)&&(grid[0][1]==1)&&(grid[0][2]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_0").style.background = "green";
+                document.getElementById("cell_0_1").style.background = "green";
+                document.getElementById("cell_0_2").style.background = "green";
                 win=true;    
             }
             if((grid[1][0]==1)&&(grid[1][1]==1)&&(grid[1][2]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_1_0").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_1_2").style.background = "green";
                 win=true;
             }
             if((grid[2][0]==1)&&(grid[2][1]==1)&&(grid[2][2]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_2_0").style.background = "green";
+                document.getElementById("cell_2_1").style.background = "green";
+                document.getElementById("cell_2_2").style.background = "green";
                 win=true; 
             }
             if((grid[0][0]==2)&&(grid[0][1]==2)&&(grid[0][2]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_0").style.background = "green";
+                document.getElementById("cell_0_1").style.background = "green";
+                document.getElementById("cell_0_2").style.background = "green";
                 win=true; 
             }
             if((grid[1][0]==2)&&(grid[1][1]==2)&&(grid[1][2]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_1_0").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_1_2").style.background = "green";
                 win=true; 
             }
             if((grid[2][0]==2)&&(grid[2][1]==2)&&(grid[2][2]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";    
+                document.getElementById("cell_2_0").style.background = "green";
+                document.getElementById("cell_2_1").style.background = "green";
+                document.getElementById("cell_2_2").style.background = "green";
                 win=true; 
             }
 //vertical
             if((grid[0][0]==1)&&(grid[1][0]==1)&&(grid[2][0]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_0").style.background = "green";
+                document.getElementById("cell_1_0").style.background = "green";
+                document.getElementById("cell_2_0").style.background = "green";
                 win=true; 
             }
             if((grid[0][1]==1)&&(grid[1][1]==1)&&(grid[2][1]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_1").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_2_1").style.background = "green";
                 win=true; 
             }
             if((grid[0][2]==1)&&(grid[1][2]==1)&&(grid[2][2]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_2").style.background = "green";
+                document.getElementById("cell_1_2").style.background = "green";
+                document.getElementById("cell_2_2").style.background = "green";
                 win=true; 
             }
             if((grid[0][0]==2)&&(grid[1][0]==2)&&(grid[2][0]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_0").style.background = "green";
+                document.getElementById("cell_1_0").style.background = "green";
+                document.getElementById("cell_2_0").style.background = "green";
                 win=true; 
             }
             if((grid[0][1]==2)&&(grid[1][1]==2)&&(grid[2][1]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_1").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_2_1").style.background = "green";
                 win=true; 
             }
             if((grid[0][2]==2)&&(grid[1][2]==2)&&(grid[2][2]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_2").style.background = "green";
+                document.getElementById("cell_1_2").style.background = "green";
+                document.getElementById("cell_2_2").style.background = "green";
                 win=true;
             }   
 //diagonal
             if((grid[0][0]==1)&&(grid[1][1]==1)&&(grid[2][2]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_0").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_2_2").style.background = "green";
                 win=true;
                 }
                 if((grid[0][0]==2)&&(grid[1][1]==2)&&(grid[2][2]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_0").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_2_2").style.background = "green";
                 win=true;
                 }
                 if((grid[0][2]==1)&&(grid[1][1]==1)&&(grid[2][0]==1)){
                 document.getElementById("turn").innerHTML="<h4>X WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_2").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_2_0").style.background = "green";
                 win=true; 
                 }
                 if((grid[0][2]==2)&&(grid[1][1]==2)&&(grid[2][0]==2)){
                 document.getElementById("turn").innerHTML="<h4>O WINS!</h4><h3>Reset To Play Again!</h3>";
+                document.getElementById("cell_0_2").style.background = "green";
+                document.getElementById("cell_1_1").style.background = "green";
+                document.getElementById("cell_2_0").style.background = "green";
                 win=true; }
 
 //Draw
             if(moves==9){
                 document.getElementById("turn").innerHTML="<h4>DRAW!</h4><h3>Reset To Play Again!</h3>";
-                win=true; 
-            }    
+                for (var i=0; i<=2; i++) {
+            for (var j=0; j<=2; j++) {
+            document.getElementById("cell_"+i+"_"+j).style.background="red";
+            win=true; 
+                                    }    
+                                }
+                        }
         }
     </script>
     </head>
