@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>Math Homework Generator</title>
+        <style>
+.no-print {
+    font-weight:bold;
+    font-family: trebuchet ms;
+    line-height: 1.5;
+}
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+#title {
+  font-size: 20pt;
+  font-weight:bold;
+  font-family: Times New Roman;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: #000000 solid 1px;
+  margin-bottom: 5px;
+}
+#instructions{
+    text-align: center;
+    
+}
+#score{
+    text-align: center;
+    font-size: 20pt;
+}
+
+
+.equation {
+    text-align: center;
+  font-size: 20pt;
+  font-family: Times New Roman;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: black dashed 1px;
+}
+
+body{
+    background-image: url("images/math.jpg");
+    background-size: 100%;
+}
+</style>
+<script>
+var score=0;
+function getDropDownListValue(name) {
+  var list = document.getElementById(name);
+  return list.options[list.selectedIndex].value;
+}
+
+function generateEquations(){
+  var typeOfEquations = getDropDownListValue("typeOfEquations");
+  var numberOfEquations = getDropDownListValue("numberOfEquations");
+  var numberOfDigits = getDropDownListValue("numberOfDigits");
+
+  var operand1, operand2, operator, equation, operators;
+  document.getElementById("score").innerHTML="";
+  switch(typeOfEquations) {
+    case '1':
+        operators=['+'];
+        document.getElementById('title').innerHTML='Additions';
+        document.getElementById('instructions').innerHTML='<h3>Enter your answers into the box, then press "Submit"';
+        break;
+    case '2':
+        operators=['-'];
+        document.getElementById('title').innerHTML='Subtractions';
+        document.getElementById('instructions').innerHTML='<h3>Enter your answers into the box, then press "Submit"';
+        break;
+    case '3':
+        document.getElementById('title').innerHTML='Multiplications';
+        document.getElementById('instructions').innerHTML='<h3>Enter your answers into the box, then press "Submit"';
+        operators=['x'];
+        break;
+    case '4':
+        document.getElementById('title').innerHTML='Divisions';
+        document.getElementById('instructions').innerHTML='<h3>Enter your answers into the box, then press "Submit"';
+        document.getElementById('instructions').innerHTML+='<h4>Round up to 2 decimal points</h4>';
+        operators=['/'];
+        break;      
+    case '5':
+        document.getElementById('title').innerHTML='Arithmetic Calculations';
+        document.getElementById('instructions').innerHTML='<h3>Enter your answers into the box, then press "Submit"';
+        document.getElementById('instructions').innerHTML+='<h4>Round up to 2 decimal points</h4>';
+        operators=['+','-','x','/']
+        break;
+   }
+
+  document.getElementById('worksheet').innerHTML = '';
+  
+  for (i = 1; i <= parseInt(numberOfEquations); i++) {
+    operand1 = Math.floor((Math.random() * (Math.pow(10,numberOfDigits)+1)));
+    operand2 = Math.ceil((Math.random() * (Math.pow(10,numberOfDigits)+1)));
+    operator = operators[Math.floor(Math.random() * operators.length)];
+    switch(operator){
+        case("+"):{var ans=operand1+operand2; break;}
+        case("-"):{var ans=operand1-operand2; break;}
+        case("x"):{var ans=operand1*operand2; break;}
+        case("/"):{var ans=operand1/operand2; ans=ans.toFixed(2);break;}
+    }
+    equation = String(operand1) + ' ' + operator + ' ' + String(operand2) + ' = <input type="text" size="4" id="guess'+i+'"><input type="button" value="Submit" onclick="doSubmit('+i+','+ans+')"></input><span id="eval'+i+'"></span>';
+    document.getElementById('worksheet').innerHTML =  document.getElementById('worksheet').innerHTML + '<div class=equation><span class=number>' +String(i) + ')&nbsp;&nbsp;&nbsp;</span>' + equation + '</div>';
+  }
+}
+function doSubmit(i, ans){
+    var a=document.getElementById("guess"+i).value;
+    var eq=getDropDownListValue("numberOfEquations");
+    if(a==ans){
+        document.getElementById("eval"+i).innerHTML="<span style='color: green; font-weight:bold;'>Correct!";
+        score++;
+        var per=(score/eq).toFixed(2)*100;
+        document.getElementById("score").innerHTML="Score: "+score+"/"+eq+"("+per+"%)";
+        }
+    else{document.getElementById("eval"+i).innerHTML="<span style='color: red;font-weight:bold;'>Try Again!"}
+    
+}
+
+        </script>
+    </head>
+    <body>
+        <!-- Maths Homework Generator by 101Computing.net - www.101computing.net/maths-homework-generator -->
+<div class="no-print" style="text-align: center;"> 
+    Type of equations: <select id=typeOfEquations>
+      <option value=1>Addition, 2 operands</option>
+      <option value=2>Subtraction, 2 operands</option>
+      <option value=3>Multiplication, 2 operands</option>
+      <option value=4>Division, 2 operands</option>
+      <option value=5 selected>+ - x / , 2 operands</option>
+    </select><br/>
+    Number of digits per operand:<select id=numberOfDigits>
+      <option value=1>1 digit</option>
+      <option value=2>2 digits</option>
+     <option value=3>3 digits</option>
+      <option value=4>4 digits</option>
+      <option value=5>5 digits</option>
+      <option value=6>6 digits</option> 
+    </select><br/>  
+    Number of equation: <select id=numberOfEquations>
+      <option value=5>5 equations</option>
+      <option value=10 selected>10 equations</option>
+      <option value=15>15 equations</option>
+      <option value=20>20 equations</option>
+      </select></br>
+    
+    <input type=button value="Create Worksheet" onclick="JavaScript: generateEquations();">
+    <input type=button value="Print Worksheet" onclick="JavaScrit:window.print();">
+    </div>
+    <div id=title></div>
+    <div id=instructions></div>
+    <div id=score></div>
+    <div id=worksheet>
+    </div> 
+    </body>
+</html>
