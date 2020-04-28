@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>Study Grid</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            table{
+                border:3px solid black;
+                margin-left:auto;
+                margin-right:auto; 
+                font-size:18pt;
+
+            }
+            th, td, tr{
+                text-align:center;
+                border:1px solid black;
+                margin-left:auto;
+                margin-right:auto; 
+                padding: 5px;
+                width:300px;
+            }
+            th{
+                border:2px solid black;
+            }
+        </style>
+    <script>
+        function hov(x,y){
+            x.innerHTML=y;
+        }
+    </script>
+    </head>
+    <body>
+        <h1>Study Grid</h1>
+        <h3>Click To See Definitions</h3>
+        <table>
+            <tr><th colspan="4">Formal Specification</th></tr>
+            <tr>
+                <td onclick="hov(this, 'Technique that uses at set of notations to derive from formal logic to explicitly specify the requirements');"
+                    ondblclick="hov(this, 'Formal Specification')">Formal Specification</td>
+                <td onclick="hov(this, 'Use of verification methods from formal logic to examine specs for required consistency & completeness to ensure that design will satisfy requirements');"
+                    ondblclick="hov(this, 'Formal Verification')">Formal Verification</td>
+            </tr>
+            <tr><th colspan="4">Languages</th></tr>
+                <td onclick="hov(this, 'Describe system in terms of operations & relationships');"
+                    ondblclick="hov(this, 'Algebraic Languages')">Algebraic</td>
+                <td onclick="hov(this, 'Model is built using mathematical constructs such as sets, sequences; Operations are defined by how they change system state');"
+                    ondblclick="hov(this, 'Model-Based Languages')">Model-Based</td>
+            </tr>
+            <tr><th colspan="4">Concurrency</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Which process goes first when multiple processes are looking to use a resource?');"
+                    ondblclick="hov(this, 'Non-Determinism')">Non-Determinism</td>
+                <td onclick="hov(this, 'Processes fight for a resource, & neither will succumb until they get it');"
+                    ondblclick="hov(this, 'Deadlock')">Deadlock</td>
+                <td onclick="hov(this, 'Set of Places (P)<br>Set of Transitions (T)<br>Input Fn (I)<br>Output Fn (O)<br>Token (M)');"
+                    ondblclick="hov(this, 'Petri Net Components')">Petri Net Components</td>
+            </tr>
+            <tr><th colspan="4">Software Design Principles</th></tr>
+                <tr>
+                <td onclick="hov(this, 'The ability to satisfy requirements');"
+                    ondblclick="hov(this, 'Sufficiency')">Sufficiency</td>
+                <td onclick="hov(this, 'The ability to handle requirement changes');"
+                    ondblclick="hov(this, 'Flexibility')">Flexibility</td>   
+                <td onclick="hov(this, 'Can be comprehended by intended audience');"
+                    ondblclick="hov(this, 'Understandability')">Understandability</td>  
+                <td onclick="hov(this, 'The ability to divide the project into well-defined parts<br>(Best if 1:1 ratio)');"
+                    ondblclick="hov(this, 'Modularity')">Modularity</td>                           
+                </tr>
+                <tr>
+                <td onclick="hov(this, 'All portions work well together<br>(Should be strong)');"
+                    ondblclick="hov(this, 'Cohesion')">Cohesion</td>
+                <td onclick="hov(this, 'Dependency on other processes<br>(Should be weak)');"
+                    ondblclick="hov(this, 'Coupling')">Coupling</td>                
+                <td onclick="hov(this, 'Ability to recycle some or all used code');"
+                    ondblclick="hov(this, 'Reusability')">Reusability</td>  
+                <td onclick="hov(this, 'Restricting access to information users do not need to know');"
+                    ondblclick="hov(this, 'Information Hiding')">Information Hiding</td> 
+                </tr>   
+                <tr>
+                <td onclick="hov(this, 'How well the project works in a real environment');"
+                    ondblclick="hov(this, 'Efficiency')">Efficiency</td>        
+                <td onclick="hov(this, 'Likelyhood of frequent successful use');"
+                    ondblclick="hov(this, 'Reliability')">Reliability</td>  
+                </tr>
+                <tr><th colspan="4">Software Design Viewpoints</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Describes data objects used within the system, & their requirements');"
+                    ondblclick="hov(this, 'Data-Modeling')">Data-Modeling</td>        
+                <td onclick="hov(this, 'Describes casual links between events & system responses during execution concerned with dynamic relationships');"
+                    ondblclick="hov(this, 'Behavior-Modeling')">Behavior-Modeling</td>  
+                <td onclick="hov(this, 'Describes static static relationships between design objects');"
+                    ondblclick="hov(this, 'Structural')">Structural</td>        
+                <td onclick="hov(this, 'Describes what system does, in terms of tasks');"
+                    ondblclick="hov(this, 'Functional')">Functional</td>
+                </tr>
+                <tr><th colspan="4">Software Design Views</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Partition of the system into design entities');"
+                    ondblclick="hov(this, 'Decomposition Description')">Decomposition Description</td>        
+                <td onclick="hov(this, 'Description pf relationships among entities & system resources');"
+                    ondblclick="hov(this, 'Dependency Description')">Dependency Description</td>  
+                <td onclick="hov(this, 'List of everything a designer, programmer, or tester needs to know to use the design entities of the system');"
+                    ondblclick="hov(this, 'Structural')">Interface Description</td>        
+                <td onclick="hov(this, 'Description of internal design detail of an entity');"
+                    ondblclick="hov(this, 'Detail Description')">Detail Description</td>
+                </tr>
+                <tr><th colspan="4">System Modeling</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Process of developing abstract models of a system, which each model presenting a different view of that system');"
+                    ondblclick="hov(this, 'System Modeling')">System Modeling</td>        
+                <td onclick="hov(this, 'Unified Modeling Language');"
+                    ondblclick="hov(this, 'UML')">UML</td>  
+                </tr>
+                <tr><th colspan="4">System Modeling Perspectives</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Model the context of environment of the system');"
+                    ondblclick="hov(this, 'External')">External</td>        
+                <td onclick="hov(this, 'Model interactions between system & environment, or between system components');"
+                    ondblclick="hov(this, 'Interaction')">Interaction</td>  
+                <td onclick="hov(this, 'Model organization or structure of how data is processed by the system');"
+                    ondblclick="hov(this, 'Structural')">Structural</td>        
+                <td onclick="hov(this, 'Model dynamic behaviors of the system & how it responds to events');"
+                    ondblclick="hov(this, 'Behavioral')">Behavioral</td> 
+                </tr>
+                <tr><th colspan="4">Use Case Diagrams</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Describes interqctions between the system & its environment');"
+                    ondblclick="hov(this, 'Use Case Diagram')">Use Case Diagram</td> 
+                <td onclick="hov(this, 'Anything that communicated with the system<br>(Role, based on functionality');"
+                    ondblclick="hov(this, 'User')">User</td> 
+                <td onclick="hov(this, 'Following actor to function, and function to actor');"
+                        ondblclick="hov(this, 'Traceability')">Traceability</td> 
+                </tr>
+                <tr><th colspan="4">Diagram Types</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Shows tasks involved in a process');"
+                    ondblclick="hov(this, 'Activity')">Activity</td> 
+                <td onclick="hov(this, 'Describes interqctions between the system & its environment');"
+                    ondblclick="hov(this, 'Use Case Diagram')">Use Case</td> 
+                <td onclick="hov(this, 'Shows interactions between actors & system, & between components');"
+                    ondblclick="hov(this, 'Sequence')">Sequence</td> 
+                <td onclick="hov(this, 'Object classes in the system, & associations between classes');"
+                    ondblclick="hov(this, 'UML')">UML</td>    
+                </tr>
+                <tr>
+                    <td onclick="hov(this, 'How the system reacts to internal & external events');"
+                    ondblclick="hov(this, 'State')">State</td> 
+                </tr>
+
+                <tr><th colspan="4">Acronyms</th></tr>
+                <tr>
+                <td onclick="hov(this, 'Unified Modeling Language');"
+                    ondblclick="hov(this, 'UML')">UML</td> 
+                </tr>
+              </table>
+              
+    </body>
+    </html>
