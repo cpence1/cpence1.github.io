@@ -4,9 +4,10 @@
         <style>
             body{
                 text-align: center;
+                background-image: url("images/Matrix Background.jpg");
+                background-size: 100%;
             }
             table{
-                border:3px solid black;
                 margin-left:auto;
                 margin-right:auto; 
                 font-size:18pt;
@@ -14,14 +15,14 @@
             }
             th, td, tr{
                 text-align:center;
-                border:1px solid black;
                 margin-left:auto;
                 margin-right:auto; 
                 padding: 5px;
                 width:300px;
+                background-color: greenyellow;
             }
-            th{
-                border:2px solid black;
+            h1, h3{
+                background-color: greenyellow;
             }
         </style>
     <script>
@@ -34,26 +35,110 @@
         <h1>Study Grid</h1>
         <h3>Click To See Definitions</h3>
         <table>
+            <tr><th colspan="4">Software Processes</th></tr>
+            <tr>
+                <td onclick="hov(this, 'A structured set of activities required to develop a software system');"
+                    ondblclick="hov(this, 'The Software Process')">The Software Process</td>
+                    <td onclick="hov(this, 'Defining what the system should do');"
+                    ondblclick="hov(this, 'Specification')">Specification</td>
+                    <td onclick="hov(this, 'Defining the organization of the system & implementing the system');"
+                    ondblclick="hov(this, 'Design & Implementation')">Design & Implementation</td>
+                    <td onclick="hov(this, 'Checking the system does what the customer wants');"
+                    ondblclick="hov(this, 'Validation')">Validation</td>
+            </tr>
+            <tr>
+                <td onclick="hov(this, 'Changing the system in response to chaning customer needs');"
+                    ondblclick="hov(this, 'Evolution')">Evolution</td>
+                    <td onclick="hov(this, 'Abstract representation of a process, describing the process from a particular perspective');"
+                    ondblclick="hov(this, 'Software Process Model')">Software Process Model</td>
+                    <td onclick="hov(this, 'Planned in advance, & progress is measured against this plan');"
+                    ondblclick="hov(this, 'Plan-Driven Processes')">Plan-Driven Processes</td>
+                    <td onclick="hov(this, 'Planning is incremental, making changes easier to handle');"
+                    ondblclick="hov(this, 'Agile Processes')">Agile Processes</td>
+            </tr>
+            <tr>
+                <td onclick="hov(this, 'Based on systematic reuse where systems are integrated from existing components or COTS systems');"
+                    ondblclick="hov(this, 'Reuse-Oriented Software Engineering')">Reuse-Oriented Software Engineering</td>
+                    <td onclick="hov(this, 'Establishing what systems are required, & constraints on system operation & development');"
+                    ondblclick="hov(this, 'Software Specification')">Software Specification</td>
+                    <td onclick="hov(this, 'Is it technically & financially feasible to build the system?');"
+                    ondblclick="hov(this, 'Feasibility Study')">Feasibility Study</td>
+                    <td onclick="hov(this, 'What do stakeholders require or expect from the system?');"
+                    ondblclick="hov(this, 'Requirements Elicitation & Analysis')">Requirements Elicitation & Analysis</td>
+                    
+            </tr>
+            <tr>
+                <td onclick="hov(this, 'Defining requirements in detail');"
+                    ondblclick="hov(this, 'Requirements Specification')">Requirements Specification</td>
+                    <td onclick="hov(this, 'Checking the validity of requirements');"
+                    ondblclick="hov(this, 'Requirements Validation')">Requirements Validation</td>
+                    <td onclick="hov(this, 'Converting system specifications into a working system');"
+                    ondblclick="hov(this, 'Software Design & Implementation')">Software Design & Implementation</td>
+                    <td onclick="hov(this, 'Identifying overall system structure, principal componenets, their relationships, & distribution');"
+                    ondblclick="hov(this, 'Architectural Design')">Architectural Design</td>
+            </tr>
+            <tr>
+                <td onclick="hov(this, 'Defining interfaces between system components');"
+                    ondblclick="hov(this, 'Interface Design')">Interface Design</td>
+                    <td onclick="hov(this, 'Designing how each system component will operate');"
+                    ondblclick="hov(this, 'Component Design')">Component Design</td>
+                    <td onclick="hov(this, 'Designing system data structures & their representations in the database');"
+                    ondblclick="hov(this, 'Database Design')">Database Design</td>
+                    <td onclick="hov(this, 'Checking that a system conforms to specifications & meets customer requirements');"
+                    ondblclick="hov(this, 'Verification & Validation<br>(V&V)')">Verification & Validation<br>(V&V)</td>
+            </tr>
+            <tr>
+                <td onclick="hov(this, 'Individual components are tested individually');"
+                    ondblclick="hov(this, 'Development Or Component Testing')">Development Or Component Testing</td>
+                    <td onclick="hov(this, 'Testing of the system as a whole');"
+                    ondblclick="hov(this, 'System Testing')">System Testing</td>
+                    <td onclick="hov(this, 'Testing with customer data to ensure the system meets customer needs');"
+                    ondblclick="hov(this, 'Acceptance Testing')">Acceptance Testing</td>
+                    <td onclick="hov(this, 'Software Processes include activities that can anticipate possible changes before significant rework is needed');"
+                    ondblclick="hov(this, 'Cost Avoidance')">Cost Avoidance</td>
+            </tr>
+            <tr>
+                <td onclick="hov(this, 'Processes are designed so changes can be accomodated at relativly low cost');"
+                    ondblclick="hov(this, 'Change Tolerance')">Change Tolerance</td>
+                    <td onclick="hov(this, 'Initial verison of a system used to demonstrate concepts & try out design options');"
+                    ondblclick="hov(this, 'Prototype')">Prototype</td>
+                    <td onclick="hov(this, 'REpeated executions of waterfall phases, in whole or part, to refine requirements, design, & implementation');"
+                    ondblclick="hov(this, 'Iterative')">Iterative</td>
+                    <td onclick="hov(this, 'Operational code is produced at the end of each iteration, which supports a subset of final product functionality & features');"
+                    ondblclick="hov(this, 'Incremental')">Incremental</td>
+            </tr>
+            <!-- BOOKMARK => Software Processes, Slide 39 -->
+            <!-- <tr>
+                <td onclick="hov(this, '');"
+                    ondblclick="hov(this, '')"></td>
+                    <td onclick="hov(this, '');"
+                    ondblclick="hov(this, '')"></td>
+                    <td onclick="hov(this, '');"
+                    ondblclick="hov(this, '')"></td>
+                    <td onclick="hov(this, '');"
+                    ondblclick="hov(this, '')"></td>
+            </tr> -->
             <tr><th colspan="4">Formal Specification</th></tr>
             <tr>
                 <td onclick="hov(this, 'Technique that uses at set of notations to derive from formal logic to explicitly specify the requirements');"
                     ondblclick="hov(this, 'Formal Specification')">Formal Specification</td>
-                <td onclick="hov(this, 'Use of verification methods from formal logic to examine specs for required consistency & completeness to ensure that design will satisfy requirements');"
+                    <td onclick="hov(this, 'Use of verification methods from formal logic to examine specs for required consistency & completeness to ensure that design will satisfy requirements');"
                     ondblclick="hov(this, 'Formal Verification')">Formal Verification</td>
             </tr>
             <tr><th colspan="4">Languages</th></tr>
+            <tr>
                 <td onclick="hov(this, 'Describe system in terms of operations & relationships');"
                     ondblclick="hov(this, 'Algebraic Languages')">Algebraic</td>
-                <td onclick="hov(this, 'Model is built using mathematical constructs such as sets, sequences; Operations are defined by how they change system state');"
+                    <td onclick="hov(this, 'Model is built using mathematical constructs such as sets, sequences; Operations are defined by how they change system state');"
                     ondblclick="hov(this, 'Model-Based Languages')">Model-Based</td>
             </tr>
             <tr><th colspan="4">Concurrency</th></tr>
-                <tr>
+            <tr>
                 <td onclick="hov(this, 'Which process goes first when multiple processes are looking to use a resource?');"
                     ondblclick="hov(this, 'Non-Determinism')">Non-Determinism</td>
-                <td onclick="hov(this, 'Processes fight for a resource, & neither will succumb until they get it');"
+                    <td onclick="hov(this, 'Processes fight for a resource, & neither will succumb until they get it');"
                     ondblclick="hov(this, 'Deadlock')">Deadlock</td>
-                <td onclick="hov(this, 'Set of Places (P)<br>Set of Transitions (T)<br>Input Fn (I)<br>Output Fn (O)<br>Token (M)');"
+                    <td onclick="hov(this, 'Set of Places (P)<br>Set of Transitions (T)<br>Input Fn (I)<br>Output Fn (O)<br>Token (M)');"
                     ondblclick="hov(this, 'Petri Net Components')">Petri Net Components</td>
             </tr>
             <tr><th colspan="4">Software Design Principles</th></tr>
@@ -129,7 +214,7 @@
                     ondblclick="hov(this, 'Use Case Diagram')">Use Case Diagram</td> 
                 <td onclick="hov(this, 'Anything that communicated with the system<br>(Role, based on functionality');"
                     ondblclick="hov(this, 'User')">User</td> 
-                <td onclick="hov(this, 'Following actor to function, and function to actor');"
+                <td onclick="hov(this, 'Following actor to function, & function to actor');"
                         ondblclick="hov(this, 'Traceability')">Traceability</td> 
                 </tr>
                 <tr><th colspan="4">Diagram Types</th></tr>
@@ -151,7 +236,11 @@
                 <tr><th colspan="4">Acronyms</th></tr>
                 <tr>
                 <td onclick="hov(this, 'Unified Modeling Language');"
-                    ondblclick="hov(this, 'UML')">UML</td> 
+                    ondblclick="hov(this, 'UML')">UML</td>
+                <td onclick="hov(this, 'Commerical-Off-The-Shelf');"
+                    ondblclick="hov(this, 'COTS');">COTS</td>  
+                <td onclick="hov(this, 'Verification & Validation');"
+                    ondblclick="hov(this, 'V & V');">V & V</td>
                 </tr>
               </table>
               
