@@ -1,0 +1,110 @@
+<html>
+    <head>
+<h2>Draw Gradients</h2>
+<script>
+    function drawR(){
+        document.write('<canvas id="drawing" width="400" height="400"><p>Browser not supported</p></canvas>');
+        var drawing=document.getElementById("drawing");
+        var con=drawing.getContext("2d");
+       // Radial
+        rGrad=con.createRadialGradient(100,100,0,100,100,100);
+        rGrad.addColorStop(0,"red");
+        rGrad.addColorStop(.05,"black");
+        rGrad.addColorStop(.1,"white");
+        rGrad.addColorStop(.15,"black");
+        rGrad.addColorStop(.2,"red");
+        rGrad.addColorStop(.25,"black");
+        rGrad.addColorStop(.3,"white");
+        rGrad.addColorStop(.35,"black");
+        rGrad.addColorStop(.4,"red");
+        rGrad.addColorStop(.45,"black");
+        rGrad.addColorStop(.5, "white");
+        rGrad.addColorStop(.55,"black");
+        rGrad.addColorStop(.6,"red");
+        rGrad.addColorStop(.65,"black");
+        rGrad.addColorStop(.7,"white");
+        rGrad.addColorStop(.75,"black");
+        rGrad.addColorStop(.8,"red");
+        rGrad.addColorStop(.85,"black");
+        rGrad.addColorStop(.9,"white");
+        rGrad.addColorStop(.95,"black");
+        rGrad.addColorStop(1,"black"); //background / outer circle
+        con.fillStyle=rGrad;
+        con.fillRect(0,0,200,200);
+
+        rGrad=con.createRadialGradient(300,100,0,300,100,100);
+        rGrad.addColorStop(0,"yellow");
+            rGrad.addColorStop(.09,"rgb(25,25,25)");
+        rGrad.addColorStop(.1,"yellow");
+            rGrad.addColorStop(.19,"rgb(25,25,25)");
+        rGrad.addColorStop(.2,"red");
+            rGrad.addColorStop(.29,"rgb(25,25,25)");
+        rGrad.addColorStop(.3,"red");
+            rGrad.addColorStop(.39,"rgb(25,25,25)");
+        rGrad.addColorStop(.4,"blue");
+            rGrad.addColorStop(.49,"rgb(25,25,25)");
+        rGrad.addColorStop(.5, "blue");
+            rGrad.addColorStop(.59,"rgb(25,25,25)");
+        rGrad.addColorStop(.6,"black");
+            rGrad.addColorStop(.69,"rgb(25,25,25)");
+        rGrad.addColorStop(.7,"black");
+            rGrad.addColorStop(.79,"rgb(25,25,25)");
+        rGrad.addColorStop(.8,"white");
+            rGrad.addColorStop(.89,"rgb(25,25,25)");
+        rGrad.addColorStop(.9,"white");
+            rGrad.addColorStop(.99,"rgb(25,25,25)");
+        rGrad.addColorStop(1,"#c46404"); //background / outer circle
+        con.fillStyle=rGrad;
+        con.fillRect(200,0,200,200);
+
+        rGrad=con.createRadialGradient(100,300,0,100,300,100);
+        rGrad.addColorStop(0,"red");
+            rGrad.addColorStop(.05,"black");
+        rGrad.addColorStop(.1,"orange");
+            rGrad.addColorStop(.15,"black");
+        rGrad.addColorStop(.2,"yellow");
+            rGrad.addColorStop(.25,"black");
+        rGrad.addColorStop(.3,"green");
+            rGrad.addColorStop(.35,"black");
+        rGrad.addColorStop(.4,"blue");
+            rGrad.addColorStop(.45,"black");
+        rGrad.addColorStop(.5, "purple");
+            rGrad.addColorStop(.55,"black");
+        rGrad.addColorStop(.6,"blue");
+            rGrad.addColorStop(.65,"black");
+        rGrad.addColorStop(.7,"green");
+            rGrad.addColorStop(.75,"black");
+        rGrad.addColorStop(.8,"yellow");
+            rGrad.addColorStop(.85,"black");
+        rGrad.addColorStop(.9,"red");
+            rGrad.addColorStop(.95,"black");
+        rGrad.addColorStop(1,"#2565AE"); //background / outer circle
+        con.fillStyle=rGrad;
+        con.fillRect(0,200,200,200);
+
+        rGrad=con.createRadialGradient(300,300,0,300,300,100);
+        rGrad.addColorStop(0,"violet");
+            rGrad.addColorStop(0.13,"black");
+        rGrad.addColorStop(.14,"indigo");
+            rGrad.addColorStop(.27,"black");
+        rGrad.addColorStop(.28,"blue");
+            rGrad.addColorStop(.41,"black");
+        rGrad.addColorStop(.42,"green");
+            rGrad.addColorStop(.55,"black");
+        rGrad.addColorStop(.56,"yellow");
+            rGrad.addColorStop(.69,"black");
+        rGrad.addColorStop(.70,"orange");
+            rGrad.addColorStop(.83,"black");
+        rGrad.addColorStop(.84,"red");
+            rGrad.addColorStop(.99,"black");
+        rGrad.addColorStop(1,"#66D3FA"); //background / outer circle
+        con.fillStyle=rGrad;
+        con.fillRect(200,200,200,200);
+    }
+</script>
+</head>
+<body>
+    <button type="button" onclick="drawR()">Draw Radial</button>
+    <div id="d1"></div>
+</body>
+</html>
