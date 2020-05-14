@@ -1,0 +1,157 @@
+<html>  
+<head>
+    <title>Basic Animation</title>
+    <style>
+        td{
+            border:1px solid black;
+            width:128;
+            height: 128;
+        }
+        table{
+            background-color: black;
+        }
+    </style>
+    <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      document.getElementById('txt').innerHTML ="<b>Time: </b>"+
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 1000);
+
+      if(s%9==0){
+        document.getElementById("8").style.backgroundImage="";
+        document.getElementById("1").style.backgroundColor="red";
+        document.getElementById("2").style.backgroundColor="orange";
+        document.getElementById("3").style.backgroundColor="yellow";
+        document.getElementById("4").style.backgroundColor="green";
+        document.getElementById("5").style.backgroundColor="blue";
+        document.getElementById("6").style.backgroundColor="indigo";
+        document.getElementById("7").style.backgroundColor="violet";
+        document.getElementById("8").style.backgroundColor="brown";
+        document.getElementById("9").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==1){
+        document.getElementById("9").style.backgroundImage="";
+        document.getElementById("2").style.backgroundColor="red";
+        document.getElementById("3").style.backgroundColor="orange";
+        document.getElementById("4").style.backgroundColor="yellow";
+        document.getElementById("5").style.backgroundColor="green";
+        document.getElementById("6").style.backgroundColor="blue";
+        document.getElementById("7").style.backgroundColor="indigo";
+        document.getElementById("8").style.backgroundColor="violet";
+        document.getElementById("9").style.backgroundColor="brown";
+        document.getElementById("1").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==2){
+        document.getElementById("1").style.backgroundImage="";
+        document.getElementById("3").style.backgroundColor="red";
+        document.getElementById("4").style.backgroundColor="orange";
+        document.getElementById("5").style.backgroundColor="yellow";
+        document.getElementById("6").style.backgroundColor="green";
+        document.getElementById("7").style.backgroundColor="blue";
+        document.getElementById("8").style.backgroundColor="indigo";
+        document.getElementById("9").style.backgroundColor="violet";
+        document.getElementById("1").style.backgroundColor="brown";
+        document.getElementById("2").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==3){
+        document.getElementById("2").style.backgroundImage="";
+        document.getElementById("4").style.backgroundColor="red";
+        document.getElementById("5").style.backgroundColor="orange";
+        document.getElementById("6").style.backgroundColor="yellow";
+        document.getElementById("7").style.backgroundColor="green";
+        document.getElementById("8").style.backgroundColor="blue";
+        document.getElementById("9").style.backgroundColor="indigo";
+        document.getElementById("1").style.backgroundColor="violet";
+        document.getElementById("2").style.backgroundColor="brown";
+        document.getElementById("3").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==4){
+        document.getElementById("3").style.backgroundImage="";
+        document.getElementById("5").style.backgroundColor="red";
+        document.getElementById("6").style.backgroundColor="orange";
+        document.getElementById("7").style.backgroundColor="yellow";
+        document.getElementById("8").style.backgroundColor="green";
+        document.getElementById("9").style.backgroundColor="blue";
+        document.getElementById("1").style.backgroundColor="indigo";
+        document.getElementById("2").style.backgroundColor="violet";
+        document.getElementById("3").style.backgroundColor="brown";
+        document.getElementById("4").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==5){
+        document.getElementById("4").style.backgroundImage="";
+        document.getElementById("6").style.backgroundColor="red";
+        document.getElementById("7").style.backgroundColor="orange";
+        document.getElementById("8").style.backgroundColor="yellow";
+        document.getElementById("9").style.backgroundColor="green";
+        document.getElementById("1").style.backgroundColor="blue";
+        document.getElementById("2").style.backgroundColor="indigo";
+        document.getElementById("3").style.backgroundColor="violet";
+        document.getElementById("4").style.backgroundColor="brown";
+        document.getElementById("5").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==6){
+        document.getElementById("5").style.backgroundImage="";
+        document.getElementById("7").style.backgroundColor="red";
+        document.getElementById("8").style.backgroundColor="orange";
+        document.getElementById("9").style.backgroundColor="yellow";
+        document.getElementById("1").style.backgroundColor="green";
+        document.getElementById("2").style.backgroundColor="blue";
+        document.getElementById("3").style.backgroundColor="indigo";
+        document.getElementById("4").style.backgroundColor="violet";
+        document.getElementById("5").style.backgroundColor="brown";
+        document.getElementById("6").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==7){
+        document.getElementById("6").style.backgroundImage="";
+        document.getElementById("8").style.backgroundColor="red";
+        document.getElementById("9").style.backgroundColor="orange";
+        document.getElementById("1").style.backgroundColor="yellow";
+        document.getElementById("2").style.backgroundColor="green";
+        document.getElementById("3").style.backgroundColor="blue";
+        document.getElementById("4").style.backgroundColor="indigo";
+        document.getElementById("5").style.backgroundColor="violet";
+        document.getElementById("6").style.backgroundColor="brown";
+        document.getElementById("7").style.backgroundImage="url('images/tina.jpg')";
+      }
+      else if(s%9==8){
+        document.getElementById("7").style.backgroundImage="";
+        document.getElementById("9").style.backgroundColor="red";
+        document.getElementById("1").style.backgroundColor="orange";
+        document.getElementById("2").style.backgroundColor="yellow";
+        document.getElementById("3").style.backgroundColor="green";
+        document.getElementById("4").style.backgroundColor="blue";
+        document.getElementById("5").style.backgroundColor="indigo";
+        document.getElementById("6").style.backgroundColor="violet";
+        document.getElementById("7").style.backgroundColor="brown";
+        document.getElementById("8").style.backgroundImage="url('images/tina.jpg')";
+      }
+    }
+    </script>
+    </head>
+    <body onload="startTime()">
+        <h1 style="text-align: center;">Basic Animation 1</h1>
+    <div id="txt1"></div>
+    <table style="margin-left:auto; margin-right:auto; border: 1px solid black;">
+        <tr style="text-align: center;">
+            <td id="1"></td>
+            <td id="2"></td>
+            <td id="3"></td>
+        </tr>
+        <tr style="text-align: center;">
+            <td id="4"></td>
+            <td id="5"></td>
+            <td id="6"></td>
+        </tr>
+        <tr style="text-align: center;">
+            <td id="7"></td>
+            <td id="8"></td>
+            <td id="9"></td>
+        </tr>
+          </table>
+          <h3 style="text-align: center;"><div id="txt"></div></h3>
+    </body>
+    </html>
