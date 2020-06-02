@@ -17,8 +17,9 @@
       var h = today.getHours();
       var m = today.getMinutes();
       var s = today.getSeconds();
+      var mil=today.getMilliseconds();
       document.getElementById('txt').innerHTML ="<b>Time: </b>"+
-      h + ":" + m + ":" + s;
+      h + ":" + m + ":" + s+":"+mil;
       var t = setTimeout(startTime, 1000);
 
       if(s%9==0){

@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <title>Colors</title>
+        <script>
+            function reset(){
+                location.reload();
+            }
+            function change(r,g,b){
+                if((r>=0)&&(r<256)&&(g>=0)&&(g<256)&&(b>=0)&&(b<256)){
+                document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+                rIn.value=r;
+                red.value=r;
+                rV.innerHTML = r;
+                gIn.value=g;
+                green.value=g;
+                gV.innerHTML = g;
+                bIn.value=b;
+                blue.value=b;
+                bV.innerHTML = b;
+                }
+                else{
+                    if(!(r>=0)||!(r<256))alert("Please enter a value for Red between 0 and 255.");
+                    if(!(g>=0)||!(g<256))alert("Please enter a value for Green between 0 and 255.");
+                    if(!(b>=0)||!(b<256))alert("Please enter a value for Blue between 0 and 255.");
+                    reset();
+                    }
+
+            }
+        </script>
+    </head>
+        <body style="text-align: center;" onload="change(128,128,128)">
+            <h2>RGB Sliders & Numbers</h2>
+        <div class="slidecontainer" style="margin-left:auto; margin-right:auto;
+        text-align:center;width:150px; height:300px;
+        border:1px solid black; background-color: white;
+        position:absolute; left:688; top:55;">
+        <h4>Sliders:</h1>
+            <p>Red: <span id="rVal"></span></p>
+        <input type="range" min="0" max="255" class="slider" id="rSlider">
+        <br>
+            <p>Green: <span id="gVal"></span></p>
+            <input type="range" min="0" max="255" class="slider" id="gSlider">
+            <br>
+        <p>Blue: <span id="bVal"></span></p>
+        <input type="range" min="0" max="255" class="slider" id="bSlider">
+        </div>
+        <div class="type" style="margin-left:auto; margin-right:auto;
+        text-align:center;width:150px; height:300px;
+        border:1px solid black; background-color: white;
+        position:absolute; left:535; top:55;">
+            <h4>Enter Color (0-255):</h1>
+                <label for="rIn">Red: </label>
+                <input type="number" id="rIn" value="128" min="0" max="255">
+            <br>
+                <label for="gIn">Green: </label>
+                <input type="number" id="gIn" value="128" min="0" max="255">
+            <br>
+                <label for="bIn">Blue: </label>
+                <input type="number" id="bIn" value="128" min="0" max="255"><br>
+            </div>
+            <div class="type" style="margin-left:auto; margin-right:auto;
+            text-align:center;width:150px; height:60px;
+            border:1px solid black; background-color: white;
+            position:absolute; left:610; top:370;">
+            <br>
+            <button type="button" onclick="change(rIn.value, gIn.value, bIn.value);">Submit</button>
+            <button type="button" onclick="reset()">Reset</button>
+            </div>  
+
+        <script>
+        var red = document.getElementById("rSlider");
+        var rV = document.getElementById("rVal");
+        rV.innerHTML = red.value;
+        red.oninput = function() {
+          rV.innerHTML = this.value;
+          change(red.value,green.value,blue.value);
+          
+        }
+        var green = document.getElementById("gSlider");
+        var gV = document.getElementById("gVal");
+        gV.innerHTML = green.value;
+        green.oninput = function() {
+          gV.innerHTML = this.value;
+          change(red.value,green.value,blue.value);
+        }
+        var blue = document.getElementById("bSlider");
+        var bV = document.getElementById("bVal");
+        bV.innerHTML = blue.value;
+        blue.oninput = function() {
+          bV.innerHTML = this.value;
+          change(red.value,green.value,blue.value);
+        }
+        </script>
+        <style>
+            th, td{
+                border:1px solid black;
+            }
+        </style>
+        <table style="margin-left:auto; margin-right:auto; border: 1px solid black; 
+        background-color: white; position:absolute;">
+            <tr style="text-align: center;">
+                <th>Color Name</th>
+                <th>Example</th>
+                <th>Red</th>
+                <th>Green</th>
+                <th>Blue</th>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Red</th>
+                <td bgcolor="red"></td>
+                <td>255</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Orange</th>
+                <td bgcolor="Orange"></td>
+                <td>255</td>
+                <td>165</td>
+                <td>0</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Yellow</th>
+                <td bgcolor="Yellow"></td>
+                <td>255</td>
+                <td>255</td>
+                <td>0</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Green</th>
+                <td bgcolor="Green"></td>
+                <td>0</td>
+                <td>128</td>
+                <td>0</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Blue</th>
+                <td bgcolor="Blue"></td>
+                <td>0</td>
+                <td>0</td>
+                <td>128</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Indigo</th>
+                <td bgcolor="Indigo"></td>
+                <td>75</td>
+                <td>0</td>
+                <td>130</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Violet</th>
+                <td bgcolor="Violet"></td>
+                <td>238</td>
+                <td>130</td>
+                <td>238</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Brown</th>
+                <td bgcolor="saddlebrown"></td>
+                <td>139</td>
+                <td>69</td>
+                <td>19</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>White</th>
+                <td></td>
+                <td>255</td>
+                <td>255</td>
+                <td>255</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Gray</th>
+                <td bgcolor="gray"></td>
+                <td>128</td>
+                <td>128</td>
+                <td>128</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th>Black</th>
+                <td bgcolor="black"></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+              </table>
+        </body>
+    </head>
+</html>

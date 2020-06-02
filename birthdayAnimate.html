@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Birthday Grid</title>
+        <style>
+            table{
+                background-color: black;
+            }
+        </style>
+        <body onload="startTime()">
+        </body>
+    </head>
+    <script> 
+    var grid=[
+    [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+    [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+    [2,0,0,0,3,0,0,0,1,0,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,0,1,0,0,0,3,0,0,0,2],
+    [2,0,3,0,3,0,3,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,3,0,3,0,3,0,2],
+    [2,0,0,3,3,3,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,3,3,3,0,0,2],
+    [2,0,0,0,3,0,0,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,0,1,0,0,0,0,3,0,0,0,2],
+    [2,0,0,3,3,3,0,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,3,3,3,0,0,2],
+    [2,0,3,0,3,0,3,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0,3,0,3,0,3,0,2],
+    [2,0,0,0,3,0,0,0,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,3,0,0,0,2],
+    [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+    [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+    [2,0,0,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1,1,0,0,1,1,1,0,1,0,1,0,0,2],
+    [2,0,0,1,0,1,0,1,0,1,0,1,0,0,1,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,2],
+    [2,0,0,1,1,0,0,1,0,1,1,1,0,0,1,0,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,2],
+    [2,0,0,1,0,1,0,1,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,1,0,1,1,1,0,0,1,0,0,0,2],
+    [2,0,0,1,0,1,0,1,0,1,0,1,0,0,1,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,0,0,2],
+    [2,0,0,1,1,1,0,1,0,1,0,1,0,0,1,0,0,1,0,1,0,1,1,0,0,1,0,1,0,0,1,0,0,0,2],
+    [2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],
+    [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+    ];
+    document.write("<table style='border:1px solid black; margin-left:auto; margin-right:auto; font-size:0pt'"+
+    "width='100%' height='90%' cellspacing='0' cellpadding='0'>");
+    for(var a = 0; a < 19; a++) {
+    document.write("<tr>");
+    for(var b = 0; b < 35; b++) {
+        var x=grid[a][b];
+        if(x==1) document.write("<td class='r'></td>");
+        else if(x==2) document.write("<td class='g'></td>");
+        else if(x==3) document.write("<td class='fw'></td>");
+        else document.write("<td class='b'></td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table></center>");
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      var mil=today.getMilliseconds();
+      var t = setTimeout(startTime, 1000);
+      fw1(s);
+      fw2(s);
+      fw3(s);
+      fw4(s);
+    }
+    function fw4(s){
+        for(i=0; i<374;i++){ //Need to be sure the iterator reflects the 
+                           //number of instances of each class there are
+        var x=document.getElementsByClassName("g");
+        if(s%2==0) x[i].style.backgroundColor="red";    
+        else x[i].style.backgroundColor="green";
+      }
+    }
+    function fw3(s){
+        for(i=0; i<374;i++){
+        var x=document.getElementsByClassName("b");
+        if(s%6==1) x[i].style.backgroundColor="red";
+        else if(s%6==5) x[i].style.backgroundColor="orange";
+        else if(s%6==0) x[i].style.backgroundColor="yellow";
+        else if(s%6==4) x[i].style.backgroundColor="green";
+        else if(s%6==2) x[i].style.backgroundColor="rgb(0,0,255)";
+        else if(s%6==3) x[i].style.backgroundColor="indigo";
+        }
+      }
+    function fw2(s){
+        for(i=0; i<30;i++){
+        var x=document.getElementsByClassName("fw");
+        if(s%6==3) x[i].style.backgroundColor="red";
+        else if(s%6==4) x[i].style.backgroundColor="orange";
+        else if(s%6==5) x[i].style.backgroundColor="yellow";
+        else if(s%6==0) x[i].style.backgroundColor="green";
+        else if(s%6==1) x[i].style.backgroundColor="rgb(0,0,255)";
+        else if(s%6==2) x[i].style.backgroundColor="indigo";
+      }
+    }
+    function fw1(s){
+        for(i=0; i<157;i++){
+        var x=document.getElementsByClassName("r");
+        if(s%6==0) x[i].style.backgroundColor="red";
+        else if(s%6==1) x[i].style.backgroundColor="orange";
+        else if(s%6==2) x[i].style.backgroundColor="yellow";
+        else if(s%6==3) x[i].style.backgroundColor="green";
+        else if(s%6==4) x[i].style.backgroundColor="rgb(0,0,255)";
+        else if(s%6==5) x[i].style.backgroundColor="indigo";
+        }
+      }
+</script>
+<body>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Interactive Grid</title>
+    </head>
+    <script language="Javascript">
+    document.write("<table style='margin-left:auto; margin-right:auto; font-size:11pt'"+
+    "border='1px' width='50%' cellspacing='0' cellpadding='1'>");
+    for(var a = 1; a <= 20; a++) {
+    document.write("<tr>");
+    for(var b = 1; b <= 20; b++) {
+        var x=0;
+            document.write("<td style='text-align:center;'onclick='fn1(this);'ondblclick='fn2(this);'<b>"+x +"</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table></center>");
+    function fn1(x){
+        x.style.backgroundColor="red";
+        x.innerHTML="1";
+    }
+    function fn2(x){
+        x.style.backgroundColor="white";
+        x.innerHTML="0";
+    }
+    </script>
+    <body></body>
+    </html>
+    
