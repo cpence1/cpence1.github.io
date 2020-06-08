@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>Conversions</title>
+        <style>
+            div{
+                border:1px solid black;
+                height: 200px;
+                width:300px;
+            }
+            #tempDiv{
+                position:absolute;
+                top:10px;
+                left:10px;
+            }
+            #binDiv{
+                position:absolute;
+                top:10px;
+                left:320px;
+            }
+        </style>
+        <script>
+            function tempFn(){
+                x=document.tempForm.temp.value;
+                y=document.tempForm.selTemp1.value;
+                z=document.tempForm.selTemp2.value
+                if((y!="F")&&(y!="C")){alert("Please choose a temperature to convert from.")}
+                else if((z!="F")&&(z!="C")){alert("Please choose a temperature to convert to.")}
+                else{
+                    if(y=="F"){
+                        if(z=="C"){
+                            a=(x-32)/1.8;
+                            a=a.toFixed(2);
+                        }
+                        else{
+                            a=x;
+                        }
+                    }
+                    else if(y=="C"){
+                        if(z=="F"){
+                            a=((x/5)*9)+32;
+                            a=a.toFixed(2);
+                        }
+                        else{
+                            a=x;
+                        }
+
+                    }
+                    document.getElementById("tempAns").innerHTML=x+"&deg;"+y+" = "+a+"&deg;"+z;
+                }
+            };
+    function dec2bin(dec){
+        return (dec >>> 0).toString(2);
+    }
+    function bin2dec(bin){
+  return parseInt(bin, 2).toString(10);
+}
+    function binFn(){
+                x=document.binForm.bin.value;
+                y=document.binForm.selBin1.value;
+                z=document.binForm.selBin2.value;
+                if((y!="binary")&&(y!="decimal")){alert("Please choose a base to convert from.")}
+                else if((z!="binary")&&(z!="decimal")){alert("Please choose a base to convert to.")}
+                else{
+                    if(y=="decimal")
+                        a=dec2bin(x);
+                    else if(y=="binary"){
+                         a=bin2dec(x);
+                         }
+                         if(((a==1)&&(x!=1))||((a==0)&&(x!=0))||(a=="NaN")){
+                             alert("Please change the form of your input");
+                         }
+                        else{
+                            document.getElementById("binAns").innerHTML=x+" in "+y+" = "+a+" in "+z;
+                            document.binForm.bin.value=0;
+                            x=0;
+                        }
+                }
+    };
+    function deg(){
+        y=document.binForm.selBin1.value;
+        z=document.binForm.selBin2.value;
+        if(y=="decimal"){
+            document.binForm.selBin2.value="binary";
+            z=document.binForm.selBin2.value;
+        }
+        if(z=="decimal"){
+            document.binForm.selBin1.value="binary";
+            y=document.binForm.selBin1.value;
+        }
+        if(y=="binary"){
+            document.binForm.selBin2.value="decimal";
+            z=document.binForm.selBin2.value;
+        }
+        if(z=="binary"){
+            document.binForm.selBin1.value="decimal";
+            y=document.binForm.selBin1.value;
+        }
+    }
+        </script>
+    </head>
+    <body>
+        <div id="tempDiv" style="text-align: center;"><form name="tempForm">
+            <h3>Temperature:</h3>
+            From:
+            <select id="selTemp1">
+                <option></option>
+                <option value="F">Fahrenheit (&deg;F)</option>
+                <option value="C">Celsius (&deg;C)</option>
+            </select><br>
+            To:<select id="selTemp2">
+                <option></option>
+                <option value="F">Fahrenheit (&deg;F)</option>
+                <option value="C">Celsius (&deg;C)</option>
+            </select><br>
+        Enter Temperature:<input name="temp" type="number" value="0";>
+        <button type="button" onclick="tempFn()">Submit</button><br>
+        <p id="tempAns"></p>
+        </form></div>
+
+        <div id="binDiv" style="text-align: center;"><form name="binForm">
+            <h3>Binary:</h3>
+            From:
+            <select id="selBin1" value="" onchange="deg();">
+                <option></option>
+                <option value="decimal">Decimal</option>
+                <option value="binary">Binary</option>
+            </select><br>
+            To:<select id="selBin2" value=""onchange="deg();">
+                <option></option>
+                <option value="decimal">Decimal</option>
+                <option value="binary">Binary</option>
+            </select><br>
+        Enter Number:<input name="bin" type="number" value="0";>
+        <button type="button" onclick="binFn()">Submit</button><br>
+        <p id="binAns"></p>
+        </form></div>
+    </body>
+</html>
