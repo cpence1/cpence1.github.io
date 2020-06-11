@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>Craps</title>
+        <style>
+            td{
+                border:0;
+                width:128;
+                height: 128;
+                background-size: contain;
+            }
+            table{
+                border:0;
+                background-color:red;
+            }
+            body{
+                background-color: darkred;
+            }
+            #rolled{
+                text-align: center;
+                position:absolute;
+                top:10px;
+                left:10px;
+                width: 150px;
+                background-color: green;
+            }
+            #comeout{
+                text-align: center;
+                position:absolute;
+                top:10px;
+                right:10px;
+                width: 150px;
+                background-color: green;
+            }
+            fieldset{
+                background-color: yellow;
+                border: 0;
+            }
+            #resultDiv{
+                background-color: yellow;
+                width: 200px;
+                margin-left:43%;
+            }
+            em{
+                font-size: large;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function start(){
+
+                document.getElementById("1").style.backgroundImage="url('images/die_1.png')";
+                document.getElementById("2").style.backgroundImage="url('images/die_1.png')";
+            }
+            function restart(){
+                location.reload();
+            }
+            function roll(){
+                var d1=Math.floor(Math.random() * 6)+1;
+                document.getElementById("1").style.backgroundImage="url('images/die_"+d1+".png')";
+                var d2=Math.floor(Math.random() * 6)+1;
+                document.getElementById("2").style.backgroundImage="url('images/die_"+d2+".png')";
+                var total=d1+d2;
+                document.getElementById("rolls").innerHTML+="<fieldset>"+total+"</fieldset><br>";
+                document.getElementById("co").innerHTML="<fieldset>"+total+"</fieldset><br>";
+                switch(total){
+                    case 2: {total1="2<br><b>Snake Eyes!"; break;}
+                    case 3: {total1="3<br><b>Ace Caught A Deuce!";break;}
+                    case 4: {total1="4<br><b>Little Joe From Kokomo!";break;}
+                    case 5: {total1="5<br><b>After Five, The Field's Alive!";break;}
+                    case 6: {total1="6"; break;}
+                    case 7: {total1="7<br><b>Lucky Number 7!";break;}
+                    case 8: {total1="8<br><b>A Square Pair!";break;}
+                    case 9: {total1="9<br><b>Nina From Pasadena!";break;}
+                    case 10: {total1="10<br><b>Puppy Paws!";break;}
+                    case 11: {total1="11<br><b>Six Five, No Jive!";break;}
+                    case 12: {total1="12<br><b>Boxcars!";break;}
+                    }
+                document.getElementById("result").innerHTML="<b>Come-Out:</b><br>You have rolled "+total1+"<br>";
+                if((total==7)||(total1==11)){
+                    document.getElementById("result").innerHTML+="<em>YOU WIN!!!";
+                        document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
+                }
+                else if((total==2)||(total==3)||(total==12)){
+                    document.getElementById("result").innerHTML+="<em>CRAP OUT!<br>YOU LOSE!!!";
+                        document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
+                }
+                else{
+                    var point=total;
+                    document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="roll2('+total+');">Roll Again</button>';
+                }
+            }
+            function roll2(x){
+                d1=Math.floor(Math.random() * 6)+1;
+                document.getElementById("1").style.backgroundImage="url('images/die_"+d1+".png')";
+                d2=Math.floor(Math.random() * 6)+1;
+                document.getElementById("2").style.backgroundImage="url('images/die_"+d2+".png')";
+                var total=d1+d2;
+                document.getElementById("rolls").innerHTML+="<fieldset>"+total+"</fieldset><br>";
+                switch(total){
+                    case 2: {total1="2<br><b>Snake Eyes!"; break;}
+                    case 3: {total1="3<br><b>Ace Caught A Deuce!";break;}
+                    case 4: {total1="4<br><b>Little Joe From Kokomo!";break;}
+                    case 5: {total1="5<br><b>After Five, The Field's Alive!";break;}
+                    case 6: {total1="6";break;}
+                    case 7: {
+                        total1="7.<br><b>Seven Out! You Lose!";
+                            document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
+                            break;}
+                    case 8: {total1="8<br><b>A Square Pair!";break;}
+                    case 9: {total1="9<br><b>Nina From Pasadena!";break;}
+                    case 10: {total1="10<br><b>Puppy Paws!";break;}
+                    case 11: {total1="11<br><b>Six Five, No Jive!";break;}
+                    case 12: {total1="12<br><b>Boxcars!";break;}
+                    }
+                document.getElementById("result").innerHTML="You have rolled "+total1+"<br>";
+                if(total==7){
+                    document.getElementById("result").innerHTML+="<em>SEVEN OUT!<br>YOU LOSE!!!";
+                        document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
+                }
+
+                else if(total==x){
+                    document.getElementById("result").innerHTML+="<em>POINT MET!!!<br>YOU WIN!!!";
+                        document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
+                }  
+            }
+        </script>
+    </head>
+    <body style="text-align: center;" onload="start();">
+        <h1 style="width: 270px; background-color: yellow; margin-left: 40%;">Dice Roller</h1>
+                <table style="margin-left:auto; margin-right:auto;">
+        <tr style="text-align: center;">
+            <td id="1"></td>
+            <td id="2"></td>
+        </tr>
+        </table>
+        <br>
+        <div id="b"><button type="button" onclick="roll();">Roll</button></div>
+        <br>
+        <div id="resultDiv">
+        <p id="result"></p>
+        </div>
+        <div id="rolled" style="border:1px solid black; ">
+            <h3 style="background-color:yellow;">Numbers Rolled:</h3>
+            <p id="rolls"></p>
+        </div>
+        <div id="comeout" style="border:1px solid black">
+        <h3 style="background-color: yellow;">Come-Out:</h3>
+        <p id="co"></p>
+    </div>
+    </body>
+</html>

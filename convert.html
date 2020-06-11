@@ -4,18 +4,23 @@
         <style>
             div{
                 border:1px solid black;
-                height: 200px;
+                height: 250px;
                 width:300px;
             }
             #tempDiv{
                 position:absolute;
-                top:10px;
-                left:10px;
+                top:75px;
+                left:215px;
             }
             #binDiv{
                 position:absolute;
-                top:10px;
-                left:320px;
+                top:75px;
+                left:525px;
+            }
+            #inchDiv{
+                position:absolute;
+                top:75px;
+                left:835px;
             }
         </style>
         <script>
@@ -23,8 +28,8 @@
                 x=document.tempForm.temp.value;
                 y=document.tempForm.selTemp1.value;
                 z=document.tempForm.selTemp2.value
-                if((y!="F")&&(y!="C")){alert("Please choose a temperature to convert from.")}
-                else if((z!="F")&&(z!="C")){alert("Please choose a temperature to convert to.")}
+                if(y=="") {alert("Please choose a temperature to convert from.")}
+                else if(z==""){alert("Please choose a temperature to convert to.")}
                 else{
                     if(y=="F"){
                         if(z=="C"){
@@ -58,8 +63,8 @@
                 x=document.binForm.bin.value;
                 y=document.binForm.selBin1.value;
                 z=document.binForm.selBin2.value;
-                if((y!="binary")&&(y!="decimal")){alert("Please choose a base to convert from.")}
-                else if((z!="binary")&&(z!="decimal")){alert("Please choose a base to convert to.")}
+                if(y==""){alert("Please choose a base to convert from.")}
+                else if(z==""){alert("Please choose a base to convert to.")}
                 else{
                     if(y=="decimal")
                         a=dec2bin(x);
@@ -71,8 +76,6 @@
                          }
                         else{
                             document.getElementById("binAns").innerHTML=x+" in "+y+" = "+a+" in "+z;
-                            document.binForm.bin.value=0;
-                            x=0;
                         }
                 }
     };
@@ -96,9 +99,24 @@
             y=document.binForm.selBin1.value;
         }
     }
+    function inchFn(){
+                x=document.inchForm.inch.value;
+                x=parseFloat(x).toFixed(2);
+                y=document.inchForm.selInch1.value;
+                z=document.inchForm.selInch2.value;
+                if(y==""){alert("Please choose units to convert from.")}
+                else if(z==""){alert("Please choose units to convert to.")}
+                else{
+                    if((y=="inches")&&(z=="centimeters")){a=x*2.54; a=a.toFixed(2);}
+                    else if((y=="centimeters")&&(z=="inches")){a=x/2.54; a=a.toFixed(2);}
+                    else {a=x;}
+                    }
+                    document.getElementById("inchAns").innerHTML=x+" "+y+" = "+a+" "+z;
+                    };
         </script>
     </head>
     <body>
+        <h1 style="text-align: center;">Conversions</h1>
         <div id="tempDiv" style="text-align: center;"><form name="tempForm">
             <h3>Temperature:</h3>
             From:
@@ -112,7 +130,7 @@
                 <option value="F">Fahrenheit (&deg;F)</option>
                 <option value="C">Celsius (&deg;C)</option>
             </select><br>
-        Enter Temperature:<input name="temp" type="number" value="0";>
+        Enter Temperature:<input name="temp" type="number" value="0"; onchange="tempFn();">
         <button type="button" onclick="tempFn()">Submit</button><br>
         <p id="tempAns"></p>
         </form></div>
@@ -130,9 +148,27 @@
                 <option value="decimal">Decimal</option>
                 <option value="binary">Binary</option>
             </select><br>
-        Enter Number:<input name="bin" type="number" value="0";>
+        Enter Number:<input name="bin" type="number" value="0"; onchange="binFn();">
         <button type="button" onclick="binFn()">Submit</button><br>
         <p id="binAns"></p>
+        </form></div>
+
+        <div id="inchDiv" style="text-align: center;"><form name="inchForm">
+            <h3>Length:</h3>
+            From:
+            <select id="selInch1" value="" onchange="deg();">
+                <option></option>
+                <option value="inches">Inches</option>
+                <option value="centimeters">Centimeters</option>
+            </select><br>
+            To:<select id="selInch2" value=""onchange="deg();">
+                <option></option>
+                <option value="inches">Inches</option>
+                <option value="centimeters">Centimeters</option>
+            </select><br>
+        Enter Number:<input name="inch" type="number" value="0"; min="0"; onchange="inchFn();">
+        <button type="button" onclick="inchFn()">Submit</button><br>
+        <p id="inchAns"></p>
         </form></div>
     </body>
 </html>
