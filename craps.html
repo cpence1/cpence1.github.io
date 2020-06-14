@@ -32,17 +32,25 @@
                 background-color: green;
             }
             fieldset{
-                background-color: yellow;
+                background-color: darkgoldenrod;
                 border: 0;
             }
             #resultDiv{
-                background-color: yellow;
+                background-color: darkgoldenrod;
                 width: 200px;
                 margin-left:43%;
             }
             em{
                 font-size: large;
                 font-weight: bold;
+            }
+            #rules{
+                background-color: darkgoldenrod;
+                width: 200px;
+                margin-left:43%;
+                margin-bottom: 25%;
+                text-align: center;
+                border:1px solid black;
             }
         </style>
         <script>
@@ -103,7 +111,7 @@
                     case 5: {total1="5<br><b>After Five, The Field's Alive!";break;}
                     case 6: {total1="6";break;}
                     case 7: {
-                        total1="7.<br><b>Seven Out! You Lose!";
+                        total1="7";
                             document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
                             break;}
                     case 8: {total1="8<br><b>A Square Pair!";break;}
@@ -126,7 +134,7 @@
         </script>
     </head>
     <body style="text-align: center;" onload="start();">
-        <h1 style="width: 270px; background-color: yellow; margin-left: 40%;">Dice Roller</h1>
+        <h1 style="border:1px solid black; width: 270px; background-color: darkgoldenrod; margin-left: 40%;">Craps</h1>
                 <table style="margin-left:auto; margin-right:auto;">
         <tr style="text-align: center;">
             <td id="1"></td>
@@ -140,12 +148,23 @@
         <p id="result"></p>
         </div>
         <div id="rolled" style="border:1px solid black; ">
-            <h3 style="background-color:yellow;">Numbers Rolled:</h3>
+            <h3 style="background-color:darkgoldenrod;">Numbers Rolled:</h3>
             <p id="rolls"></p>
         </div>
         <div id="comeout" style="border:1px solid black">
-        <h3 style="background-color: yellow;">Come-Out:</h3>
+        <h3 style="background-color: darkgoldenrod;">Come-Out:</h3>
         <p id="co"></p>
-    </div>
+        </div>
+        <div id="rules">
+            <h2><u>The Rules</u></h2>
+            <p><b>Come-Out:</b></p>
+            7 or 11 - Bet Wins<br>2, 3, or 11 - Craps
+            <br>All Other Values Set Point
+            <p><b>Point Set:</b></p>
+            Point Hit - Bet Wins<br>
+            7 - Seven Out
+            <br>
+            <br>
+        </div>
     </body>
 </html>
