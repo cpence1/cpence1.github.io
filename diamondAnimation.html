@@ -52,13 +52,10 @@
 
 </style>
 <script>
+    var x=0;
+    var myVar = setInterval(startTime, 200);
     function startTime() {
-      var today = new Date();
-      var h = today.getHours();
-      var m = today.getMinutes();
-      var s = today.getSeconds();
-      var t = setTimeout(startTime, 1);
-        if(s%7==0){
+        if(x%7==0){
                 document.getElementById("a").style.backgroundColor="red";
                 document.getElementById("b").style.backgroundColor="orange";
                 document.getElementById("c").style.backgroundColor="yellow";
@@ -66,8 +63,9 @@
                 document.getElementById("e").style.backgroundColor="blue";
                 document.getElementById("f").style.backgroundColor="indigo";
                 document.getElementById("g").style.backgroundColor="violet";
+                x++;
             }
-        else if(s%7==1){
+        else if(x%7==1){
                 document.getElementById("b").style.backgroundColor="red";
                 document.getElementById("c").style.backgroundColor="orange";
                 document.getElementById("d").style.backgroundColor="yellow";
@@ -75,8 +73,9 @@
                 document.getElementById("f").style.backgroundColor="blue";
                 document.getElementById("g").style.backgroundColor="indigo";
                 document.getElementById("a").style.backgroundColor="violet";
+                x++;
             }
-        else if(s%7==2){
+        else if(x%7==2){
                 document.getElementById("c").style.backgroundColor="red";
                 document.getElementById("d").style.backgroundColor="orange";
                 document.getElementById("e").style.backgroundColor="yellow";
@@ -84,8 +83,9 @@
                 document.getElementById("g").style.backgroundColor="blue";
                 document.getElementById("a").style.backgroundColor="indigo";
                 document.getElementById("b").style.backgroundColor="violet";
+                x++;
             }
-        else if(s%7==3){
+        else if(x%7==3){
                 document.getElementById("d").style.backgroundColor="red";
                 document.getElementById("e").style.backgroundColor="orange";
                 document.getElementById("f").style.backgroundColor="yellow";
@@ -93,8 +93,9 @@
                 document.getElementById("a").style.backgroundColor="blue";
                 document.getElementById("b").style.backgroundColor="indigo";
                 document.getElementById("c").style.backgroundColor="violet";
+                x++;
             }
-        else if(s%7==4){
+        else if(x%7==4){
                 document.getElementById("e").style.backgroundColor="red";
                 document.getElementById("f").style.backgroundColor="orange";
                 document.getElementById("g").style.backgroundColor="yellow";
@@ -102,8 +103,9 @@
                 document.getElementById("b").style.backgroundColor="blue";
                 document.getElementById("c").style.backgroundColor="indigo";
                 document.getElementById("d").style.backgroundColor="violet";
+                x++;
             }
-        else if(s%7==5){
+        else if(x%7==5){
                 document.getElementById("f").style.backgroundColor="red";
                 document.getElementById("g").style.backgroundColor="orange";
                 document.getElementById("a").style.backgroundColor="yellow";
@@ -111,8 +113,9 @@
                 document.getElementById("c").style.backgroundColor="blue";
                 document.getElementById("d").style.backgroundColor="indigo";
                 document.getElementById("e").style.backgroundColor="violet";
+                x++;
             }
-        else if(s%7==6){
+        else if(x%7==6){
                 document.getElementById("g").style.backgroundColor="red";
                 document.getElementById("a").style.backgroundColor="orange";
                 document.getElementById("b").style.backgroundColor="yellow";
@@ -120,11 +123,13 @@
                 document.getElementById("d").style.backgroundColor="blue";
                 document.getElementById("e").style.backgroundColor="indigo";
                 document.getElementById("f").style.backgroundColor="violet";
+                x++;
             }
+            if(x>6) x=0;
     }
 </script>
 </head>
-<body onload="startTime()">
+<body onload="startTime();">
         <div id="g"></div>
         <div id="f"></div>
         <div id="e"></div>
