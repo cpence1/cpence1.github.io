@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Circle Animation</title>
+    </head>
+<style>
+    .dot {
+      border-radius: 50%;
+      display: inline-block;
+      border:1px solid black;
+      position: absolute;
+    }
+    #a{
+        height: 50px;
+        width: 50px;
+        top:275;
+        left:275;
+    }
+    #b{
+        height: 100px;
+        width: 100px;
+        top:250;
+        left:250;
+    }
+    #c{
+        height: 150px;
+        width: 150px;
+        top:225;
+        left:225;
+    }
+    #d{
+        height: 200px;
+        width: 200px;
+        top:200;
+        left:200;
+    }
+    #e{
+        height: 250px;
+        width: 250px;
+        top:175;
+        left:175;
+    }
+    #f{
+        height: 300px;
+        width: 300px;
+        top:150;
+        left:150;
+    }
+    #g{
+        height: 350px;
+        width: 350px;
+        top:125;
+        left:125;
+    }
+    #h{
+        height: 400px;
+        width: 400px;
+        top:100;
+        left:100;
+        background-color: black;
+    }
+    </style>
+    <script>
+        var x=0;
+    var myVar = setInterval(startTime, 300);
+    function startTime() {
+        if(x%2==0){
+                document.getElementById("a").style.backgroundColor="red";
+                document.getElementById("b").style.backgroundColor="white";
+                document.getElementById("c").style.backgroundColor="red";
+                document.getElementById("d").style.backgroundColor="white";
+                document.getElementById("e").style.backgroundColor="red";
+                document.getElementById("f").style.backgroundColor="white";
+                document.getElementById("g").style.backgroundColor="red";
+                x++;
+            }
+        else{
+                document.getElementById("a").style.backgroundColor="white";
+                document.getElementById("b").style.backgroundColor="red";
+                document.getElementById("c").style.backgroundColor="white";
+                document.getElementById("d").style.backgroundColor="red";
+                document.getElementById("e").style.backgroundColor="white";
+                document.getElementById("f").style.backgroundColor="red";
+                document.getElementById("g").style.backgroundColor="white";
+                x++;
+            }
+            if(x>2){x=0;}
+    }
+    </script>
+    </head>
+    <body>
+    <span class="dot" id="h"></span>
+      <span class="dot" id="g"></span>
+      <span class="dot" id="f"></span>
+      <span class="dot" id="e"></span>
+      <span class="dot" id="d"></span>
+      <span class="dot" id="c"></span>
+      <span class="dot" id="b"></span>
+      <span class="dot" id="a"></span>
+    </body>
+    </html>
+    
