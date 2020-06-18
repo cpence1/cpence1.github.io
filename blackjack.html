@@ -50,7 +50,11 @@
         </style>
         <script>
             var score=0;
+            var dScore=0;
+            var flag=false;
+            var bust=false;
         function deal(){
+            if(flag==false){
             var suit=Math.floor(Math.random() * 4)+1;
             switch(suit){
                 case 1:{
@@ -78,7 +82,10 @@
                     card="k"; score+=10; break;
                 }
                 case 1:{
-                    card="a"; score+=1; break;
+                    card="a";
+                    if(score<=10)score+=11;
+                    else score+=10;
+                    break;
                 }
                 default:{
                     score+=card;
@@ -88,20 +95,84 @@
             document.getElementById("player").innerHTML+='<img src="images/Cards/'+card+'-'+suit+'.png">';
             document.getElementById("score").innerHTML="<b>Hand Total: "+score+"</b>";
             if(score==21){
-                document.getElementById("score").innerHTML="<b>You Hit 21!";
+                alert("You Hit 21! You Win!");
+                stand();
             }
             else if(score>21){
-                document.getElementById("score").innerHTML="<b>BUST! You Lose!</b>";
+                alert("BUST! You Lose!");
+                bust=true;
+                stand();
             }
+            }
+        }
+        function stand(){
+            flag=true;
+            if(score==0){
+                alert("Please click to deal player cards first.");
+                document.location.reload();
+            }
+            if(dScore==0){
+            while(dScore<17){
+            suit=Math.floor(Math.random() * 4)+1;
+            switch(suit){
+                case 1:{
+                    suit="c"; break;
+                }
+                case 2:{
+                    suit="d"; break;
+                }
+                case 3:{
+                    suit="h"; break;
+                }
+                case 4:{
+                    suit="s"; break;
+                }
+            }
+            card=Math.floor(Math.random() * 13)+1;
+            switch(card){
+                case 11:{
+                    card="j"; dScore+=10; break;
+                }
+                case 12:{
+                    card="q"; dScore+=10; break;
+                }
+                case 13:{
+                    card="k"; dScore+=10; break;
+                }
+                case 1:{
+                    card="a"; dScore+=1; break;
+                }
+                default:{
+                    dScore+=card;
+                }
+        }
+        document.getElementById("dealer").innerHTML+='<img src="images/Cards/'+card+'-'+suit+'.png">';
+        document.getElementById("dScore").innerHTML="<b>Dealer Total: "+dScore+"</b>";
+        }
+        if(bust==false)win();
+        else document.getElementById("score").innerHTML+='<button id="rButton" type="button" onclick="reload();">Play Again</button>';
+        }
+    }
+        function win(){
+        if(dScore>21) alert("Dealer Bust! You Win!");
+        else if(dScore>score) alert("Dealer Wins!");
+        else if(dScore==score) alert("Push!");
+        else if(dScore<score) alert("You Win!");
+        document.getElementById("score").innerHTML+='<button id="rButton" type="button" onclick="reload();">Play Again</button>';
+            
+        }
+        function reload(){
+            document.location.reload();
         }
         </script>
         <body>
             <div id="pSpace">
                 <div id="player"><p id="score" style="background-color: yellow; width:75px;"></p></div>
                 <button id="pButton" type="button" onclick="deal();">Deal</button>
+                <button id="dButton" type="button" onclick="stand();">Stand</button>
             </div>
             <div id="dSpace">
-                <div id="dealer"></div>
+                <div id="dealer"><p id="dScore" style="background-color: yellow; width:75px;"></p></div>
             </div>
         </body>
 </html>
