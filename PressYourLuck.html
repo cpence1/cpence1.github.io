@@ -1,0 +1,323 @@
+<html>
+    <head>
+        <title>Press Your Luck Board</title>
+        <style>
+            #bk{
+                border:5px solid black;
+                text-align: center;
+                background-color: yellow;
+                width:100px;
+                position:absolute;
+                bottom:15%;
+                left:34%;
+            }
+            #sn{
+                border:5px solid black;
+                text-align: center;
+                background-color: yellow;
+                width:100px;
+                position:absolute;
+                bottom:15%;
+                right:34%;
+            }
+            #x1{
+                border:5px solid black;
+                text-align: center;
+                background-color: yellow;
+                width:100px;
+                position:absolute;
+                top:5%;
+                left:10%;
+            }
+            tr, td{
+                border:5px solid black;
+                text-align: center;
+                background-color: white;
+            }
+            td{
+                width:93px;
+                height: 63px;
+            }
+            #center{
+                background-image: url("images/PressYourLuck/Logo.png");
+                background-size:contain;
+                background-repeat: no-repeat;
+                background-color: red;
+                border:5px solid black;
+                background-position: center;
+            }
+            table{
+                background-color: red;
+                border:5px solid red;
+            }
+            img{
+                width:inherit;
+                height: inherit;
+            }
+            body{
+                background-image: url("images/PressYourLuck/bulbs.jpg");
+            }
+            /* <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"> */
+        </style>
+        <script>
+            var bank=0;
+            var sp=5;
+            var w="";
+            var c=0;
+            function win(){
+                if(w!=""){
+                alert("You've won "+w+"\n$"+c+" in cash\nTotal: $"+bank+"!!!\nPlay Again Soon!");
+                }
+                else{
+                    alert("You've won $"+c+" in cash, for a total of $"+bank+"!!!\nPlay Again Soon!");
+                }
+                location.reload();
+            }
+            function reset(){
+                for(i=1; i<21;i++){
+                    document.getElementById(i).style.borderColor="black";
+                }
+            }
+            function startTime(){
+                document.getElementById('center').style.backgroundImage='url("images/PressYourLuck/Logo.png"';
+                document.getElementById('center').innerHTML="";
+                var u=setTimeout(reset, 750);
+                var today = new Date();
+                var t = setTimeout(startTime, 500);
+                var r=Math.floor(Math.random() * 20)+1;
+                document.getElementById(r).style.borderColor="Yellow";
+                document.getElementById("spin").innerHTML=
+                '<img src="images/PressYourLuck/buzzer.jpg" onclick="stop('+r+","+u+","+t+');">';
+            }
+            function stop(r,u,t){
+                clearTimeout(t);
+                clearTimeout(u);
+                switch (r){
+                    case 1:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$1.png"';
+                        r="$1000";
+                        bank+=1000;
+                        c+=1000;
+                        break;
+                        }
+                    case 2:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/W3.gif"';
+                        r="WHAMMY!";
+                        bank=0;
+                        c=0;
+                        w="";
+                        break;
+                        }
+                    case 3:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$2.png"';
+                        r="$2000";
+                        bank+=2000;
+                        c+=2000;
+                        break;
+                        }
+                    case 4:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Shop.png"';
+                        r="Shopping Spree<br>$2500";
+                        bank+=2500;
+                        w+="\nShopping Spree ($2500)";
+                        break;
+                        }
+                    case 5:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$5S.png"';
+                        r="$500 + 1 Spin";
+                        bank+=500;
+                        c+=500;
+                        sp++;
+                        break;
+                        }
+                    case 6:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/BB.png"';
+                        r="BIG BUCKS!!!<br>$7500";
+                        bank+=7500;
+                        c+=7500;
+                        break;
+                        }
+                    case 7:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Boat.png"';
+                        r="Sailboat<br>$6800";
+                        w+="\nSailboat ($6800)"
+                        bank+=6800;
+                        break;
+                        }
+                    case 8:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$5.png"';
+                        r="$500";
+                        bank+=500;
+                        c+=500;
+                        break;
+                        }
+                    case 9:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$4S.png"';
+                        r="$4000 + 1 Spin";
+                        bank+=4000;
+                        c+=4000;
+                        sp++;
+                        break;
+                        }
+                    case 10:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/W2.png"';
+                        r="WHAMMY!";
+                        bank=0;
+                        c=0;
+                        w="";
+                        break;
+                        }
+                    case 11:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Rome.png"';
+                        r="Trip to Rome<br>$8700";
+                        bank+=8700;
+                        w+="\nTrip To Rome ($8700)";
+                        break;
+                        }
+                    case 12:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$7S.png"';
+                        r="$700 + 1 Spin";
+                        bank+=700;
+                        c+=700;
+                        sp++;
+                        break;
+                        }
+                    case 13:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$17.png"';
+                        r="$1750";
+                        bank+=1750;
+                        c+=1750;
+                        break;
+                        }
+                    case 14:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Fishing.png"';
+                        r="Fishing Expedition<br>$450";
+                        bank+=450;
+                        w+="\nFishing Expedition ($450)"
+                        break;
+                        }
+                    case 15:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Cruise.png"';
+                        r="Caribbean Cruise<br>$7350";
+                        bank+=7350;
+                        w+="\nCaribbean Cruise ($7350)";
+                        break;
+                        }
+                    case 16:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Dresses.png"';
+                        r="Designer Dresses<br>$5600";
+                        bank+=5600;
+                        w+="\nDesigner Dresses ($5600)";
+                        break;
+                        }
+                    case 17:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/Car.png"';
+                        r="New Car<br>$8925";
+                        bank+=8925;
+                        w+="\nNew Car ($8925)";
+                        break;
+                        }
+                    case 18:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/W1.jpg"';
+                        r="WHAMMY!"
+                        bank=0;
+                        c=0;
+                        w="";
+                        break;
+                        }
+                    case 19:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$15.png"';
+                        r="$1500";
+                        bank+=1500;
+                        c+=1500;
+                        break;
+                        }
+                    case 20:{
+                        document.getElementById('center').style.backgroundImage=
+                        'url("images/PressYourLuck/$75S.png"';
+                        r="$750 + 1 Spin";
+                        bank+=750;
+                        c+=750;
+                        sp++;
+                        break;}
+                    default:{document.getElementById('center').style.backgroundImage='url("images/PressYourLuck/Logo.png"';break;}
+                }
+                sp=sp-1;
+                document.getElementById('x').innerHTML=r;
+                document.getElementById('b').innerHTML="$"+bank;
+                document.getElementById('s').innerHTML=sp;
+                document.getElementById("spin").innerHTML='<img src="images/PressYourLuck/buzzer.jpg" onclick="startTime();">';
+                '';
+                if(sp==0){
+                    setTimeout(win, 500);
+                }
+            }
+        </script>
+    </head>
+    <body style="text-align: center;">
+        <table style="margin-left:auto; margin-right:auto; border: 1px solid black;">
+            <tr>
+                <td id="1"><img src="images\PressYourLuck\$1.png"></td>
+                <td id="2"><img src="images\PressYourLuck\W3.gif"></td>
+                <td id="3"><img src="images\PressYourLuck\$2.png"></td>
+                <td id="4"><img src="images\PressYourLuck\Shop.png"></td>
+                <td id="5"><img src="images\PressYourLuck\$5S.png"></td>
+                <td id="6"><img src="images\PressYourLuck\BB.png"></td>
+            </tr>
+            <tr>
+                <td id="7"><img src="images\PressYourLuck\Boat.png"></td>
+                <td colspan="4" rowspan="4" id="center" margin-left="auto" margin-bottom="auto"></td>
+                <td id="8"><img src="images\PressYourLuck\$5.png"></td>
+            </tr>
+            <tr>
+                <td id="9"><img src="images\PressYourLuck\$4S.png"></td>
+                <td id="10"><img src="images\PressYourLuck\W2.png"></td>
+            </tr>
+            <tr>
+                <td id="11"><img src="images\PressYourLuck\Rome.png"></td>
+                <td id="12"><img src="images\PressYourLuck\$7S.png"></td>
+            </tr>
+            <tr>
+                <td id="13"><img src="images\PressYourLuck\$17.png"></td>
+                <td id="14"><img src="images\PressYourLuck\Fishing.png"></td>
+            </tr>
+            <tr>
+                <td id="15"><img src="images\PressYourLuck\Cruise.png"></td>
+                <td id="16"><img src="images\PressYourLuck\Dresses.png"></td>
+                <td id="17"><img src="images\PressYourLuck\Car.png"></td>
+                <td id="18"><img src="images\PressYourLuck\W1.jpg"></td>
+                <td id="19"><img src="images\PressYourLuck\$15.png"></td>
+                <td id="20"><img src="images\PressYourLuck\$75S.png"></td>
+            </tr>
+            </table>
+            <br>
+
+            <div id="spin"><img src="images\PressYourLuck\buzzer.jpg" onclick="startTime();"></div>
+            <div id="x1"><b>WINNINGS:<div id="x"></div></b></div>
+            <div id="bk">
+            <b>BANK: </b> <div id="b">$0</div>
+            </div>
+            <div id="sn">
+                <b>SPINS: </b><div id='s'>5</div>
+        </div>
+    </body>
+</html>
