@@ -5,6 +5,51 @@
             function reset(){
                 location.reload();
             }
+            function search(x){
+                x=x.replace(/\s+/g, ''); //Erases spaces in input
+                x=x.trim();
+                x=x.toUpperCase();
+                switch(x){
+                    case "RED":{change(255,0,0);break;}
+                    case "ORANGE":{change(255,165,0);break;}
+                    case "YELLOW":{change(255,255,0);break;}
+                    case "GREEN":{change(0,128,0);break;}
+                    case "BLUE":{change(0,0,128);break;}
+                    case "INDIGO":{change(75,0,30);break;}
+                    case "VIOLET":{change(238,130,238);break;}
+                    case "WHITE":{change(255,255,255);break;}
+                    case "BLACK":{change(128,128,128);break;}
+                    case "GRAY": case "GREY":{change(128,128,128);break;}
+                    case "SALMON":{change(250, 128,114);break;}
+                    case "CRIMSON":{change(220,20,60); break;}
+                    case "PINK":{change(255,192,203);break;}
+                    case "GOLD":{change(255,215,0);break;}
+                    case "KHAKI":{change(240, 230,140);break;}
+                    case "LAVENDER":{change(230,230,250);break;}
+                    case "FUCHSIA":{change(255,0,255);break;}
+                    case "MAGENTA":{change(255,0,255);break;}
+                    case "PURPLE":{change(128,0,128);break;}
+                    case "CHARTREUSE":{change(127,255,0);break;}
+                    case "LIME":{change(0,255,0); break;}
+                    case "AQUA": case "CYAN":{change(0,255,255);break;}
+                    case "TEAL":{change(0,128,128);break;}
+                    case "AQUAMARINE":{change(127,255,212);break;}
+                    case "TURQUOISE":{change(64, 224, 208);break;}
+                    case "NAVY":{change(0,0,128);break;}
+                    case "TAN":{change(210,180,140);break;}
+                    case "GOLDENROD":{change(218,165,32);break;}
+                    case "BROWN":{change(165,42,42);break;}
+                    case "MAROON":{change(128,0,0); break;}
+                    case "BEIGE":{change(245,245,220);break;}
+                    case "IVORY":{change(225,225,240); break;}
+                    case "SILVER":{change(192,192,192); break;}
+                    case "HOTPINK":{change(255, 105, 180); break;}
+
+                    default:{x="Undefined";break;}
+
+                }
+                document.getElementById("sVal").innerHTML=x.toUpperCase();
+            }
             function change(r,g,b){
                 if((r>=0)&&(r<256)&&(g>=0)&&(g<256)&&(b>=0)&&(b<256)){
                 document.body.style.backgroundColor="rgb("+r+","+g+","+b+")";
@@ -17,6 +62,157 @@
                 bIn.value=b;
                 blue.value=b;
                 bV.innerHTML = b;
+                var name="Undefined";
+                //Basic
+                if((r==255)&&(g==0)&&(b==0)){name="Red";}
+                else if((r==255)&&(g==165)&&(b==0)){name="Orange";}
+                else if((r==255)&&(g==255)&&(b==0)){name="Yellow";}
+                else if((r==0)&&(g==128)&&(b==0)){name="Green";}
+                else if((r==0)&&(g==0)&&(b==128)){name="Blue";}
+                else if((r==75)&&(g==0)&&(b==30)){name="Indigo";}
+                else if((r==238)&&(g==130)&&(b==238)){name="Violet";}
+                else if((r==255)&&(g==255)&&(b==255)){name="White";}
+                else if((r==0)&&(g==0)&&(b==0)){name="Black";}
+                else if((r==128)&&(g==128)&&(b==128)){name="Gray";}
+                //Red
+                else if((r==205)&&(g==92)&&(b==92)){name="IndianRed";}
+                else if((r==240)&&(g==128)&&(b==128)){name="LightCoral";}
+                else if((r==250)&&(g==128)&&(b==114)){name="Salmon";}
+                else if((r==233)&&(g==150)&&(b==122)){name="DarkSalmon";}
+                else if((r==255)&&(g==160)&&(b==122)){name="LightSalmon";}
+                else if((r==220)&&(g==20)&&(b==60)){name="Crimson";}
+                else if((r==178)&&(g==34)&&(b==34)){name="FireBrick";}
+                else if((r==139)&&(g==0)&&(b==0)){name="DarkRed";}
+                //Pink
+                else if((r==255)&&(g==192)&&(b==203)){name="Pink";}
+                else if((r==255)&&(g==182)&&(b==193)){name="LightPink";}
+                else if((r==255)&&(g==105)&&(b==180)){name="HotPink";}
+                else if((r==255)&&(g==20)&&(b==147)){name="DeepPink";}
+                else if((r==199)&&(g==21)&&(b==133)){name="MediumVioletRed";}
+                else if((r==219)&&(g==112)&&(b==147)){name="PaleVioletRed";}
+                //Orange
+                else if((r==255)&&(g==127)&&(b==80)){name="Coral";}
+                else if((r==255)&&(g==99)&&(b==71)){name="Tomato";}
+                else if((r==255)&&(g==69)&&(b==0)){name="OrangeRed";}
+                else if((r==255)&&(g==140)&&(b==0)){name="DarkOrange";}
+                //Yellow
+                else if((r==255)&&(g==215)&&(b==0)){name="Gold";}
+                else if((r==255)&&(g==255)&&(b==224)){name="LightYellow";}
+                else if((r==255)&&(g==250)&&(b==205)){name="LemonChiffon";}
+                else if((r==255)&&(g==255)&&(b==210)){name="LightGoldenrodYellow";}
+                else if((r==255)&&(g==239)&&(b==213)){name="PapayaWhip";}
+                else if((r==255)&&(g==228)&&(b==181)){name="Moccasin";}
+                else if((r==255)&&(g==218)&&(b==185)){name="PeachPuff";}
+                else if((r==238)&&(g==232)&&(b==170)){name="PaleGoldenrod";}
+                else if((r==240)&&(g==230)&&(b==140)){name="Khaki";}
+                else if((r==189)&&(g==183)&&(b==107)){name="DarkKhaki";}
+                //Purple
+                else if((r==230)&&(g==230)&&(b==250)){name="Lavender";}
+                else if((r==216)&&(g==191)&&(b==216)){name="Thistle";}
+                else if((r==221)&&(g==160)&&(b==221)){name="Plum";}
+                else if((r==218)&&(g==112)&&(b==214)){name="Orchid";}
+                else if((r==255)&&(g==0)&&(b==255)){name="Fuchsia";}
+                else if((r==255)&&(g==0)&&(b==255)){name="Magenta";}
+                else if((r==186)&&(g==85)&&(b==211)){name="MediumOrchid";}
+                else if((r==147)&&(g==112)&&(b==219)){name="MediumPurple";}
+                else if((r==138)&&(g==43)&&(b==226)){name="BlueViolet";}
+                else if((r==148)&&(g==0)&&(b==211)){name="DarkViolet";}
+                else if((r==153)&&(g==50)&&(b==204)){name="DarkOrchid";}
+                else if((r==139)&&(g==0)&&(b==139)){name="DarkMagenta";}
+                else if((r==128)&&(g==0)&&(b==128)){name="Purple";}
+                else if((r==102)&&(g==51)&&(b==153)){name="RebeccaPurple";}
+                else if((r==123)&&(g==104)&&(b==238)){name="MediumSlateBlue";}
+                else if((r==106)&&(g==90)&&(b==205)){name="SlateBlue";}
+                else if((r==72)&&(g==61)&&(b==139)){name="DarkSlateBlue";}
+                //Green
+                else if((r==173)&&(g==255)&&(b==47)){name="GreenYellow";}
+                else if((r==127)&&(g==255)&&(b==0)){name="Chartreuse";}
+                else if((r==0)&&(g==255)&&(b==0)){name="Lime";}
+                else if((r==0)&&(g==250)&&(b==154)){name="MediumSpringGreen";}
+                else if((r==0)&&(g==255)&&(b==127)){name="SpringGreen";}
+                else if((r==60)&&(g==179)&&(b==113)){name="MediumSeaGreen";}
+                else if((r==46)&&(g==139)&&(b==87)){name="SeaGreen";}
+                else if((r==34)&&(g==139)&&(b==34)){name="ForestGreen";}
+                else if((r==0)&&(g==100)&&(b==0)){name="DarkGreen";}
+                else if((r==154)&&(g==205)&&(b==50)){name="YellowGreen";}
+                else if((r==107)&&(g==142)&&(b==35)){name="OliveDrab";}
+                else if((r==128)&&(g==128)&&(b==0)){name="Olive";}
+                else if((r==85)&&(g==107)&&(b==47)){name="DarkOliveGreen";}
+                else if((r==102)&&(g==205)&&(b==170)){name="MediumAquaMarine";}
+                else if((r==143)&&(g==188)&&(b==143)){name="DarkSeaGreen";}
+                else if((r==32)&&(g==178)&&(b==170)){name="LightSeaGreen";}
+                else if((r==0)&&(g==139)&&(b==139)){name="DarkCyan";}
+                else if((r==0)&&(g==128)&&(b==128)){name="Teal";}
+                //Blues
+                else if((r==0)&&(g==255)&&(b==255)){name="Aqua\nCyan";}
+                else if((r==224)&&(g==255)&&(b==255)){name="LightCyan";}
+                else if((r==175)&&(g==238)&&(b==238)){name="PaleTurquoise";}
+                else if((r==127)&&(g==255)&&(b==212)){name="Aquamarine";}
+                else if((r==64)&&(g==224)&&(b==208)){name="Turquoise";}
+                else if((r==72)&&(g==209)&&(b==204)){name="MediumTurquoise";}
+                else if((r==0)&&(g==206)&&(b==209)){name="DarkTurquoise";}
+                else if((r==95)&&(g==158)&&(b==160)){name="CadetBlue";}
+                else if((r==70)&&(g==130)&&(b==180)){name="SteelBlue";}
+                else if((r==176)&&(g==196)&&(b==222)){name="LightSteelBlue";}
+                else if((r==176)&&(g==224)&&(b==230)){name="PowderBlue";}
+                else if((r==173)&&(g==216)&&(b==230)){name="LightBlue";}
+                else if((r==135)&&(g==206)&&(b==235)){name="SkyBlue";}
+                else if((r==135)&&(g==206)&&(b==250)){name="LightSkyBlue";}
+                else if((r==0)&&(g==191)&&(b==255)){name="DeepSkyBlue";}
+                else if((r==30)&&(g==144)&&(b==255)){name="DodgerBlue";}
+                else if((r==100)&&(g==149)&&(b==237)){name="CornflowerBlue";}
+                else if((r==65)&&(g==105)&&(b==225)){name="RoyalBlue";}
+                else if((r==0)&&(g==0)&&(b==205)){name="MediumBlue";}
+                else if((r==0)&&(g==0)&&(b==139)){name="DarkBlue";}
+                else if((r==0)&&(g==0)&&(b==128)){name="Navy";}
+                else if((r==25)&&(g==25)&&(b==112)){name="MidnightBlue";}
+                //Brown
+                else if((r==255)&&(g==235)&&(b==205)){name="Cornsilk";}
+                else if((r==255)&&(g==228)&&(b==205)){name="BlanchedAlmond";}
+                else if((r==255)&&(g==228)&&(b==196)){name="Bisque";}
+                else if((r==255)&&(g==222)&&(b==173)){name="NavajoWhite";}
+                else if((r==245)&&(g==222)&&(b==179)){name="Wheat";}
+                else if((r==222)&&(g==184)&&(b==135)){name="BurlyWood";}
+                else if((r==210)&&(g==180)&&(b==140)){name="Tan";}
+                else if((r==188)&&(g==143)&&(b==143)){name="RosyBrown";}
+                else if((r==244)&&(g==164)&&(b==96)){name="SandyBrown";}
+                else if((r==218)&&(g==165)&&(b==32)){name="Goldenrod";}
+                else if((r==184)&&(g==134)&&(b==11)){name="DarkGoldenrod";}
+                else if((r==205)&&(g==133)&&(b==63)){name="Peru";}
+                else if((r==210)&&(g==105)&&(b==30)){name="Chocolate";}
+                else if((r==139)&&(g==69)&&(b==19)){name="SaddleBrown";}
+                else if((r==160)&&(g==82)&&(b==45)){name="Sienna";}
+                else if((r==165)&&(g==42)&&(b==42)){name="Brown";}
+                else if((r==128)&&(g==0)&&(b==0)){name="Maroon";}
+                //White
+                else if((r==255)&&(g==250)&&(b==250)){name="Snow";}
+                else if((r==240)&&(g==255)&&(b==240)){name="Honeydew";}
+                else if((r==245)&&(g==255)&&(b==250)){name="MintCream";}
+                else if((r==240)&&(g==255)&&(b==255)){name="Azure";}
+                else if((r==240)&&(g==248)&&(b==255)){name="AliceBlue";}
+                else if((r==248)&&(g==248)&&(b==255)){name="GhostWhite";}
+                else if((r==245)&&(g==245)&&(b==238)){name="WhiteSmoke";}
+                else if((r==255)&&(g==245)&&(b==238)){name="Seashell";}
+                else if((r==245)&&(g==245)&&(b==220)){name="Beige";}
+                else if((r==253)&&(g==245)&&(b==230)){name="OldLace";}
+                else if((r==255)&&(g==250)&&(b==240)){name="FloralWhite";}
+                else if((r==255)&&(g==255)&&(b==240)){name="Ivory";}
+                else if((r==250)&&(g==235)&&(b==215)){name="AntiqueWhite";}
+                else if((r==250)&&(g==240)&&(b==230)){name="Linen";}
+                else if((r==255)&&(g==240)&&(b==245)){name="LavenderBlush";}
+                else if((r==255)&&(g==228)&&(b==225)){name="MistyRose";}
+                //Gray
+                else if((r==220)&&(g==220)&&(b==220)){name="Gainsboro";}
+                else if((r==211)&&(g==211)&&(b==211)){name="LightGray";}
+                else if((r==192)&&(g==192)&&(b==192)){name="Silver";}
+                else if((r==169)&&(g==169)&&(b==169)){name="DarkGray";}
+                else if((r==105)&&(g==105)&&(b==105)){name="DimGray";}
+                else if((r==119)&&(g==136)&&(b==153)){name="LightSlateGray";}
+                else if((r==112)&&(g==128)&&(b==144)){name="SlateGray";}
+                else if((r==47)&&(g==79)&&(b==79)){name="DarkSlateGray";}
+                //Else
+                else{name="Undefined"};
+                document.getElementById("name").innerHTML="Color Name: "+name;
                 }
                 else{
                     if(!(r>=0)||!(r<256))alert("Please enter a value for Red between 0 and 255.");
@@ -29,7 +225,7 @@
         </script>
     </head>
         <body style="text-align: center;" onload="change(128,128,128)">
-            <h2>RGB Sliders & Numbers</h2>
+            <h2>RGB Sliders, Numbers, & Search</h2>
         <div class="slidecontainer" style="margin-left:auto; margin-right:auto;
         text-align:center;width:150px; height:300px;
         border:1px solid black; background-color: white;
@@ -50,22 +246,34 @@
         position:absolute; left:535; top:55;">
             <h4>Enter Color (0-255):</h1>
                 <label for="rIn">Red: </label>
-                <input type="number" id="rIn" value="128" min="0" max="255">
+                <input type="number" id="rIn" value="128" min="0" max="255" onchange="change(rIn.value, gIn.value, bIn.value);">
             <br>
                 <label for="gIn">Green: </label>
-                <input type="number" id="gIn" value="128" min="0" max="255">
+                <input type="number" id="gIn" value="128" min="0" max="255" onchange="change(rIn.value, gIn.value, bIn.value);">
             <br>
                 <label for="bIn">Blue: </label>
-                <input type="number" id="bIn" value="128" min="0" max="255"><br>
+                <input type="number" id="bIn" value="128" min="0" max="255" onchange="change(rIn.value, gIn.value, bIn.value);"><br>
             </div>
             <div class="type" style="margin-left:auto; margin-right:auto;
-            text-align:center;width:150px; height:60px;
+            text-align:center;width:200px; height:100px;
             border:1px solid black; background-color: white;
             position:absolute; left:610; top:370;">
             <br>
+            <p id="name"></p>
             <button type="button" onclick="change(rIn.value, gIn.value, bIn.value);">Submit</button>
             <button type="button" onclick="reset()">Reset</button>
-            </div>  
+            </div>
+            
+            <div class="type" style="margin-left:auto; margin-right:auto;
+            text-align:center;width:200px; height:200px;
+            border:1px solid black; background-color: white;
+            position:absolute; right:20; top:50;">
+            <h1>Search</h1>
+            <p id="sVal"></p>
+            <input type="text" id="s1">
+            <button type="button" onclick="search(s1.value)">Submit</button>
+            <button type="button" onclick="reset()">Reset</button>
+            </div>
 
         <script>
         var red = document.getElementById("rSlider");
@@ -98,6 +306,7 @@
         </style>
         <table style="margin-left:auto; margin-right:auto; border: 1px solid black; 
         background-color: white; position:absolute;">
+        <tr style="text-align: center;"><th colspan="5">Basic Colors</th></tr>
             <tr style="text-align: center;">
                 <th>Color Name</th>
                 <th>Example</th>
@@ -156,10 +365,10 @@
             </tr>
             <tr style="text-align: center;">
                 <th>Brown</th>
-                <td bgcolor="saddlebrown"></td>
-                <td>139</td>
-                <td>69</td>
-                <td>19</td>
+                <td bgcolor="brown"></td>
+                <td>165</td>
+                <td>42</td>
+                <td>42</td>
             </tr>
             <tr style="text-align: center;">
                 <th>White</th>

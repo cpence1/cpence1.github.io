@@ -1,6 +1,7 @@
 {
     "cSpell.enabled": true,
     "cSpell.words": [
+        "bgcolor",
         "lyft"
     ],
     "cSpell.ignoreWords": [
@@ -15,6 +16,7 @@
         "katastrophe",
         "leonato",
         "ntildeero",
+        "slidecontainer",
         "widing"
     ]
 }
