@@ -1,0 +1,242 @@
+<html>
+    <head>
+        <title>Morse Code Machine</title>
+    </head>
+    <style>
+        table, th, td, tr, caption{
+            border: 1px solid black;
+            text-align: center;
+        }
+        table{
+            position: absolute;
+            left:22%;
+            bottom:2%;
+
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var arr=[
+        A={letter:"A",morse:"*-"}, B={letter:"B", morse:"-***"},C={letter:"C", morse:"-*-*"},
+        D={letter:"D", morse:"-**"},E={letter:"E", morse:"*"},F={letter:"F", morse:"**-*"},
+        G={letter:"G", morse:"--*"},H={letter:"H", morse:"****"},I={letter:"I",morse:"**"},
+        J={letter:"J", morse:"*---"},K={letter:"K",morse:"-*-"},L={letter:"L", morse:"*-**"},
+        M={letter:"M",morse:"--"},N={letter:"N", morse:"-*"},O={letter:"O", morse:"---"},
+        P={letter:"P",morse:"*--*"},Q={letter:"Q",morse:"--*-"},R={letter: "R",morse:"*-*"},
+        S={letter:"S",morse:"***"},T={letter: "T",morse:"-"},U={letter: "U",morse:"**-"},
+        V={letter: "V",morse:"***-"},W={letter: "W",morse:"*--"},X={letter: "X",morse:"-**-"},
+        Y={letter: "Y",morse:"-*--"},Z={letter: "Z",morse:"--**"},ONE={letter: "1",morse:"*----"},
+        TWO={letter: "2",morse:"**---"},THREE={letter: "3",morse:"***--"},FOUR={letter: "4",morse:"****-"},
+        FIVE={letter: "5",morse:"*****"},SIX={letter: "6",morse:"-****"},SEVEN={letter: "7",morse:"--***"},
+        EIGHT={letter: "8",morse:"---**"},NINE={letter: "9",morse:"----*"},ZERO={letter: "0",morse:"-----"}];
+        // function play(x){ 
+        //     x=x+"_Morse";
+        //     document.getElementById(x).currentTime=0;
+        //     document.getElementById(x).play();
+        // }
+        function sleep() {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > 2000){
+            break;
+                }
+            }
+        }
+        function convertTo(x){
+            document.getElementById("resultM").innerHTML="";
+            document.getElementById("resultL").innerHTML="";
+                x=x.toUpperCase();
+        for(i=0; i<x.length;i++){
+            var ch=x.charAt(i);
+            for(j=0; j<arr.length;j++){
+                if(ch==arr[j].letter){
+                    document.getElementById("resultM").innerHTML+=arr[j].morse+"&nbsp&nbsp";
+                    play(arr[j].letter);
+                    sleep();
+                }
+            }
+        }
+    }
+    function convertFrom(x){
+        i2.value="";
+        var flag=0;
+            for(i=0; i<arr.length; i++){
+                if(x==arr[i].morse){
+                    document.getElementById("resultM2").innerHTML+=arr[i].letter;
+                    flag=1;
+                    // play(arr[i].letter);
+                }
+            }
+            if(flag==0){alert("Please check your input & try again.");}
+    }
+    function addDot(){
+        i2.value+="*";
+        document.getElementById("Dot").play();
+
+    }
+    function addDash(){
+        i2.value+="-";
+        document.getElementById("Dash").play();
+    }
+    function clearM(){
+        i1.value="";
+        i2.value="";
+        document.getElementById("resultM").innerHTML="";
+        document.getElementById("resultL").innerHTML="";
+        document.getElementById("resultM2").innerHTML="";
+        document.getElementById("resultL2").innerHTML="";
+    }
+    </script>
+    <body>
+        <audio id="Dot"><source src="Music/Dot.mp3" type="audio/mp3"></audio>
+        <audio id="Dash"><source src="Music/Dash.mp3" type="audio/mp3"></audio>
+        <audio id="A_Morse"><source src="Music/A_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="B_Morse"><source src="Music/B_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="C_Morse"><source src="Music/C_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="D_Morse"><source src="Music/D_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="E_Morse"><source src="Music/E_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="F_Morse"><source src="Music/F_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="G_Morse"><source src="Music/G_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="H_Morse"><source src="Music/H_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="I_Morse"><source src="Music/I_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="J_Morse"><source src="Music/J_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="K_Morse"><source src="Music/K_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="L_Morse"><source src="Music/L_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="M_Morse"><source src="Music/M_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="N_Morse"><source src="Music/N_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="O_Morse"><source src="Music/O_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="P_Morse"><source src="Music/P_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="Q_Morse"><source src="Music/Q_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="R_Morse"><source src="Music/R_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="S_Morse"><source src="Music/S_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="T_Morse"><source src="Music/T_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="U_Morse"><source src="Music/U_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="V_Morse"><source src="Music/V_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="W_Morse"><source src="Music/W_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="X_Morse"><source src="Music/X_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="Y_Morse"><source src="Music/Y_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="Z_Morse"><source src="Music/Z_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="1_Morse"><source src="Music/1_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="2_Morse"><source src="Music/2_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="3_Morse"><source src="Music/3_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="4_Morse"><source src="Music/4_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="5_Morse"><source src="Music/5_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="6_Morse"><source src="Music/6_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="7_Morse"><source src="Music/7_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="8_Morse"><source src="Music/8_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="9_Morse"><source src="Music/9_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="0_Morse"><source src="Music/0_Morse.mp3" type="audio/mp3"></audio>
+        <audio id="Pause_Morse"><source src="Music\Pause_Morse.mp3" type="audio/mp3"></audio>
+        <h1>Morse Code Machine</h1>
+        Enter Plain Text:
+        <br>
+        <input type="text" id="i1">
+        <br>
+        <button type="button" onclick="convertTo(i1.value)">Submit</button>
+        <p id="resultM"></p>
+        <p id="resultL"></p>
+        Enter Morse Code One Letter At A Time:
+        <br><input type="text" id="i2">
+        <br>
+        <button type="button" onclick="addDot()">Dot ( * )</button>
+        <button type="button" onclick="addDash()">Dash ( - )</button>
+        <br>
+        <button type="button" onclick="convertFrom(i2.value)">Submit</button>
+        <p id="resultL2"></p>
+        <p id="resultM2"></p>
+        <br>
+        <button type="button" onclick="clearM()">Clear</button>
+        <table id="chart">
+            <caption><b>Morse Code</b></caption>
+            <th>Letter</th><th>Morse Code</th><th>Audio</th>
+            <th>Letter</th><th>Morse Code</th><th>Audio</th>
+            <th>Letter</th><th>Morse Code</th><th>Audio</th>
+            <th>Letter</th><th>Morse Code</th><th>Audio</th>
+        </tr>
+            <td>A</td><td>*-</td>
+            <td><button type="button" onclick='document.getElementById("A_Morse").play()';>Audio</button></td>
+            <td>B</a></td><td>-***</td>
+            <td><button type="button" onclick='document.getElementById("B_Morse").play()';>Audio</button></td>
+            <td>C</a></td><td>-*-*</td>
+            <td><button type="button" onclick='document.getElementById("C_Morse").play()';>Audio</button></td>
+            <td>D</a></td><td>-**</td>
+            <td><button type="button" onclick='document.getElementById("D_Morse").play()';>Audio</button></td>
+        </tr>
+            <td>E</td><td>*</td>
+            <td><button type="button" onclick='document.getElementById("E_Morse").play()';>Audio</button></td>
+            <td>F</a></td><td>**-*</td>
+            <td><button type="button" onclick='document.getElementById("F_Morse").play()';>Audio</button></td>
+            <td>G</a></td><td>--*</td>
+            <td><button type="button" onclick='document.getElementById("G_Morse").play()';>Audio</button></td>
+            <td>H</a></td><td>****</td>
+            <td><button type="button" onclick='document.getElementById("H_Morse").play()';>Audio</button></td>
+        </tr>
+            <td>I</td><td>**</td>
+            <td><button type="button" onclick='document.getElementById("I_Morse").play()';>Audio</button></td>
+            <td>J</a></td><td>*---</td>
+            <td><button type="button" onclick='document.getElementById("J_Morse").play()';>Audio</button></td>
+            <td>K</a></td><td>-*-</td>
+            <td><button type="button" onclick='document.getElementById("K_Morse").play()';>Audio</button></td>
+            <td>L</a></td><td>*-**</td>
+            <td><button type="button" onclick='document.getElementById("L_Morse").play()';>Audio</button></td>
+        </tr>
+            <td>M</td><td>--</td>
+            <td><button type="button" onclick='document.getElementById("M_Morse").play()';>Audio</button></td>
+            <td>N</a></td><td>-*</td>
+            <td><button type="button" onclick='document.getElementById("N_Morse").play()';>Audio</button></td>
+            <td>O</a></td><td>---</td>
+            <td><button type="button" onclick='document.getElementById("O_Morse").play()';>Audio</button></td>
+            <td>P</a></td><td>*--*</td>
+            <td><button type="button" onclick='document.getElementById("P_Morse").play()';>Audio</button></td>
+        </tr>
+            <td>Q</td><td>--*-</td>
+            <td><button type="button" onclick='document.getElementById("Q_Morse").play()';>Audio</button></td>
+            <td>R</a></td><td>*-*</td>
+            <td><button type="button" onclick='document.getElementById("R_Morse").play()';>Audio</button></td>
+            <td>S</a></td><td>***</td>
+            <td><button type="button" onclick='document.getElementById("S_Morse").play()';>Audio</button></td>
+            <td>T</a></td><td>-</td>
+            <td><button type="button" onclick='document.getElementById("T_Morse").play()';>Audio</button></td>
+        </tr>
+            <td>U</td><td>**-</td>
+            <td><button type="button" onclick='document.getElementById("U_Morse").play()';>Audio</button></td>
+            <td>V</a></td><td>**-</td>
+            <td><button type="button" onclick='document.getElementById("V_Morse").play()';>Audio</button></td>
+            <td>W</a></td><td>*--</td>
+            <td><button type="button" onclick='document.getElementById("W_Morse").play()';>Audio</button></td>
+            <td>X</a></td><td>-**-</td>
+            <td><button type="button" onclick='document.getElementById("X_Morse").play()';>Audio</button></td>
+        </tr>
+            <td>Y</td><td>-*--</td>
+            <td><button type="button" onclick='document.getElementById("Y_Morse").play()';>Audio</button></td>
+            <td>Z</a></td><td>--**</td>
+            <td><button type="button" onclick='document.getElementById("Z_Morse").play()';>Audio</button></td>
+            <td>1</a></td><td>*----</td>
+            <td><button type="button" onclick='document.getElementById("1_Morse").play()';>Audio</button></td>
+            <td>2</a></td><td>**---</td>
+            <td><button type="button" onclick='document.getElementById("2_Morse").play()';>Audio</button></td>
+        
+        </tr>
+            <td>3</td><td>***--</td>
+            <td><button type="button" onclick='document.getElementById("3_Morse").play()';>Audio</button></td>
+            <td>4</a></td><td>****-</td>
+            <td><button type="button" onclick='document.getElementById("4_Morse").play()';>Audio</button></td>
+            <td>5</a></td><td>*****</td>
+            <td><button type="button" onclick='document.getElementById("5_Morse").play()';>Audio</button></td>
+            <td>6</a></td><td>-****</td>
+            <td><button type="button" onclick='document.getElementById("6_Morse").play()';>Audio</button></td>
+    
+    </tr>
+            <td>7</td><td>--***</td>
+            <td><button type="button" onclick='document.getElementById("7_Morse").play()';>Audio</button></td>
+            <td>8</a></td><td>---**</td>
+            <td><button type="button" onclick='document.getElementById("8_Morse").play()';>Audio</button></td>
+            <td>9</a></td><td>----*</td>
+            <td><button type="button" onclick='document.getElementById("9_Morse").play()';>Audio</button></td>
+            <td>0</a></td><td>-----</td>
+            <td><button type="button" onclick='document.getElementById("0_Morse").play()';>Audio</button></td>    
+    </table>
+</body>
+</html>
