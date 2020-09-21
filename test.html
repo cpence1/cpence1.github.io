@@ -398,6 +398,7 @@ function fn(){
         <h2>Multiple Selection Dropdown Box</h2>
         <script type="text/javascript">
             function showChoices(){
+                var mine=8;
                 var selLanguage = document.getElementById("selLanguage");
                 var result = "<h2>Your Languages<\/h2>";
                 result+="<ul style='text-align: center;list-style-position: inside;'>\n";
@@ -405,9 +406,16 @@ function fn(){
                     currentOption=selLanguage[i];
                     if(currentOption.selected==true){
                         result+=" <li>"+currentOption.value+"</li>\n";
+                        mine--;
                     }
                 }
                 result+="<\/ul>\n";
+                if(mine==0){
+                    result+="We know all the same languages!";
+                }
+                else{
+                    result+="I know "+mine+" more languages than you!";
+                }
                 output=document.getElementById("output");
                 output.innerHTML=result;
             }
@@ -416,17 +424,15 @@ function fn(){
         <form action="">
             <fieldset>
                 <label>Select Languages You Know (Ctrl-Click to Select Multiple)</label><br>
-                <select id="selLanguage" multiple="multiple" size="10">
+                <select id="selLanguage" multiple="multiple" size="8">
                     <option value="HTML">HTML</option>
                     <option value="CSS">CSS</option>
                     <option value="Javascript">Javascript</option>
-                    <option value="PHP">PHP</option>
                     <option value="MySQL">MySQL</option>
                     <option value="Java">Java</option>
-                    <option value="VB.NET">VB.NET</option>
-                    <option value="Python">Python</option>
-                    <option value="Flash">Flash</option>
-                    <option value="Perl">Perl</option>
+                    <option value="VBA">VBA</option>
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
                 </select>
                 <button type="button" onclick="showChoices()">Submit</button>
         </form>
