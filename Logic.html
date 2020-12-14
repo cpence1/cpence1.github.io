@@ -1,0 +1,374 @@
+<html>
+    <head>
+        <title>Logic Puzzle</title>
+        <style>
+            body{
+                text-align: center;
+                background-image: url("images/logic.jpeg");
+                background-size: 25%;
+            }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+                border: 6px solid black;
+                text-align: center;
+            }
+            th, td {
+                border: 1px solid black;
+                background-color: gray;
+            }
+            #t_head{
+                background-color: black;
+                color:white;
+                font-weight: bold;
+            }
+            #mpty{
+                background-image: url("images/logic.jpeg");
+                background-size: auto;
+            }
+            #s_head{
+                font-weight: bold;
+            }
+            #g_box{
+                background-color: black;
+            }
+            input{
+                text-align: center;
+            }
+            #Instructions{
+                position:absolute;
+                top:175;
+                width:300;
+                border:2px solid black;
+            }
+            #dir{
+                border:2px solid black;
+                background-color: gray;
+            }
+        </style>
+        <script>
+            var flag=0;
+            var correct=0;
+            function play(f, i, x){
+                f=f.toUpperCase();
+                if((f!="O")&&(f!="X")){alert("Please enter X or O."); flag=1;}
+                else if(f==i){alert("Correct"); flag=0;correct++;}
+                else{alert("Incorrect"); flag=1;}
+            }
+            function check(){
+                if((flag!=0)&&(correct>=150)){
+                    alert("You Win!");
+                    location.reload();
+                }
+                else{
+                    alert("You're Not Finished Yet!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="dir">Logic Puzzle</h1>
+        <div id="dir">THE KARATE DOJO ON FIRST STREET HAS SCHEDULED A PUBLIC DEMONSTRATION
+            FEATURING FIVE OF ITS CURRENT STUDENTS.EACH IS A DIFFERENT LEVEL, SIGNIFIED BY BELT COLOR,
+            AND A DIFFERENT AGE, AND NONE OF THE FIVE STUDENTS ARE FROM THE SAME HOMETOWN. USING ONLY
+            THE CLUES HERE, MATCH EACH STUDENT TO THEIR BELT COLOR, AGE, AND TOWN.<br><br>
+            TO PLAY: Enter X or O in each box, then press Enter. When you're done, click Submit to check your work.
+        </div>
+        <br>
+        <table style="margin-left: 25%;">
+            <tr>
+                <td id="mpty" colspan=2; rowspan="2"></td>
+                <td colspan=5; id="t_head">STUDENTS</td>
+                <td colspan=5; id="t_head">BELTS</td>
+                <td colspan=5; id="t_head">TOWNS</td>
+            <tr id="s_head">
+                <td>B<br>E<br>T<br>H<br>A<br>N<br>Y</td>
+                <td>C<br>H<br>R<br>I<br>S</td>
+                <td>J<br>A<br>S<br>M<br>I<br>N<br>E</td>
+                <td>P<br>L<br>A<br>T<br>O</td>
+                <td>R<br>A<br>L<br>P<br>H</td>
+                <td>B<br>L<br>A<br>C<br>K</td>
+                <td>B<br>L<br>U<br>E</td>
+                <td>O<br>R<br>A<br>N<br>G<br>E</td>
+                <td>R<br>E<br>D</td>
+                <td>Y<br>E<br>L<br>L<br>O<br>W</td>
+                <td>A<br>V<br>A<br>L<br>O<br>N</td>
+                <td>D<br>A<br>N<br>D<br>R<br>I<br>D<br>G<br>E</td>
+                <td>F<br>L<br>E<br>T<br>C<br>H<br>E<br>R</td>
+                <td>M<br>A<br>R<br>T<br>O<br>N</td>
+                <td>S<br>A<br>Y<br>V<br>I<br>L<br>L<br>E</td>
+
+            </tr>
+            <tr>
+                <td rowspan=5; id="t_head">A<br>G<br>E<br>S</td>
+
+                <td id="s_head">10</td>
+
+                <td id="g_box"><input id="b1" type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+            </tr>
+            <tr>
+                <td id="s_head">11</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+            
+            </tr>
+            <tr>
+                <td id="s_head">12</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></input></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></input></td>    
+            </tr>
+            <tr>
+                <td id="s_head">13</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box" id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box" id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            
+            </tr>
+            <tr>
+                <td id="s_head">14</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            
+            </tr>
+            <tr>
+                <td rowspan=5; id="t_head">T<br>O<br>W<br>N<br>S</td>
+
+                <td id="s_head">AVALON</td>
+
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            </tr>
+            <tr>
+                <td id="s_head">DANDRIDGE</td>
+
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            </tr>
+            <tr>
+                <td id="s_head">FLETCHER</td>
+
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            </tr>
+            <tr>
+                <td id="s_head">MARTON</td>
+
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+            </tr>
+            <tr>
+                <td id="s_head">SAYVILLE</td>
+
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            </tr>
+            <tr>
+                <td rowspan=5; id="t_head">B<br>E<br>L<br>T<br>S</td>
+
+                <td id="s_head">Black</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                
+            </tr>
+            <tr>
+                <td id="s_head">BLUE</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                
+            </tr>
+            <tr>
+                <td id="s_head">ORANGE</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                
+            </tr>
+            <tr>
+                <td id="s_head">RED</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td> 
+            </tr>
+            <tr>
+                <td id="s_head">YELLOW</td>
+
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'O');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+                <td id="g_box"><input type="text" size=1 onchange="play(this.value,'X');"></td>
+            </tr>
+        </table>
+        <br><br>
+        <table id="Instructions">
+            <tr><th colspan="2">INSTRUCTIONS</th></tr>
+            <tr>
+                <td>1</td>
+                <td>CHRIS ISN'T THE RED BELT</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>OF PLATO & THE YELLOW BELT, ONE IS ELEVEN YEARS OLD, 
+                AND THE OTHER IS FROM FLETCHER</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>JASMINE, THE FOURTEEN-YEAR-OLD, AND THE STUDENT FROM 
+                DANDRIDGE ARE THREE DIFFERENT PEOPLE</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>THE STUDENT FRO FLETCHER, WHO ISN'T THE RED BELT,
+                    IS ONE YEAR OLDER THAN THE BLACK BELT, WHO IS ONE
+                    YEAR OLDER THAN THE YELLOW BELT
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>NEITHER CHRIS NOR JASMINE ARE IS THE TWELVE-YEAR-OLD</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>THE STUDENT FROM AVALON IS OLDER THAN THE ONE FROM MARTON</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>OF CHRIS AND THE ELEVEN-YEAR-OLD, ONE IS A YELLOW BELT, & THE OTHER
+                    LIVES IN DANDRIDGE</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>RALPH LIVES IN SAYVILLE, BUT HE ISN'T THE OLDEST STUDENT</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>THE BLUE BELT DOESN'T LIVE IN DANDRIDGE</td>
+            </tr>        
+        </table>
+        <button type="button" onclick="check();">Submit</button>
+    </body>
+   
+    </html>

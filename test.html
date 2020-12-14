@@ -89,29 +89,22 @@
       var m = today.getMinutes();
       var s = today.getSeconds();
       var ap="AM";
-      var greet;
-      switch(h){
-            case 0: case 1: case 2: case 3: case 4: case 5:greet="Good Night!";
-            case 6: case 7: case 8: case 9: case 10: case 11:greet="Good Morning!";
-            case 12:case 13:case 14:case 15:case 16: greet="Good Afternoon!";
-            case 17:case 18:case 19:case 20:case 21: case 22: case 23: greet="Good Evening!";
-      }
-      m = checkTime(m);
-      s = checkTime(s);
-      document.getElementById('txt').innerHTML ="<b>Military Time: </b>"+
+      var greet, zero;
+      if(h>12) ap="PM";
+      if(h<4) greet="Good Night!";
+      else if(h>=4&&h<12) greet="Good Morning!";
+      else if(h>=12&&h<17) greet="Good Afternoon!";
+      else if(h>=17) greet="Good Evening!!";
+      if(h<10) zero=" </b>0";
+      else zero=" </b>";
+      document.getElementById('txt').innerHTML ="<b>Military Time:"+ zero+
       h + ":" + m + ":" + s+ "<br>"+greet;
-      if(h>12){
-          h=h-12;
-          ap="PM";
-      }
-      h=checkTime(h);
-      document.getElementById('txt1').innerHTML ="<b>Standard Time: </b>"+
+      if(h>12) h-=12;
+      if(h<10) zero=" </b>0";
+      else zero=" </b>";
+      document.getElementById('txt1').innerHTML ="<b>Standard Time:"+zero+
       h + ":" + m + ":" + s+ap+"<br>"+greet;
       var t = setTimeout(startTime, 500);
-    }
-    function checkTime(i) {
-      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-      return i;
     }
     </script>
     </head>

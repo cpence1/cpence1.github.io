@@ -5,12 +5,17 @@
         var num=Math.floor(Math.random()*100)+1;
         var tries=0;
         function Guess(){
-            var guess=document.form1.guess1.value;
+            var guess=Math.round(document.form1.guess1.value);
+            document.form1.guess1.value=guess;
             tries++;
             status="Tries: "+tries;
-            if(guess<num)
+            if((guess>100)||(guess<1)){
+                window.alert("That's not between 1 and 100! Try again!");
+                document.form1.hint.value="Try again! Guesses Left="+(10-tries);
+            }
+            else if(guess<num)
             document.form1.hint.value="Guess higher. Guesses Left="+(10-tries);
-            if(guess>num)
+            else if(guess>num)
             document.form1.hint.value="Guess lower. Guesses Left="+(10-tries);
             if(tries>10){
                 window.alert("Sorry, time's up. The number was "+num);
