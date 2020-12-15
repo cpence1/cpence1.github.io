@@ -55,10 +55,6 @@
         <script>
             var flag=0;
             var correct=0;
-            function play(f, i){
-                if(f==i){alert("Correct"); correct++;}
-                else{alert("Incorrect");}
-            }
             function check(){
                 if(n1.value=='hawk'){
                     if(s1.value=='mj95'){
@@ -80,8 +76,8 @@
                                 }}}
                             }}}
                         }}}
-                    }}} 
-                else{
+                    }}}
+                 else{
                     alert("You're Not Finished Yet!");
                 }
             }
@@ -416,7 +412,7 @@
             <tr>
                 <td>DECEMBER 10</td>
                 <td>
-                    <select id="n1" onchange="play(this.value,'hawk')">
+                    <select id="n1">
                         <option></option>
                         <option value="fang">FANG</option>
                         <option value="hawk">HAWK</option>
@@ -426,7 +422,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="s1" onchange="play(this.value,'mj95')">
+                    <select id="s1">
                         <option></option>
                         <option value="ib25">IB-25</option>
                         <option value="jc44">JC-44</option>
@@ -436,7 +432,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="c1" onchange="play(this.value,'england')">
+                    <select id="c1">
                         <option></option>
                         <option value="brazil">BRAZIL</option>
                         <option value="england">ENGLAND</option>
@@ -449,7 +445,7 @@
             <tr>
                 <td>DECEMBER 11</td>
                 <td>
-                    <select id="n2" onchange="play(this.value,'scarecrow')">
+                    <select id="n2">
                         <option></option>
                         <option value="fang">FANG</option>
                         <option value="hawk">HAWK</option>
@@ -459,7 +455,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="s2" onchange="play(this.value,'ur12')">
+                    <select id="s2">
                         <option></option>
                         <option value="ib25">IB-25</option>
                         <option value="jc44">JC-44</option>
@@ -469,7 +465,7 @@
                     </select>
                 </td>
                     <td>
-                        <select id="c2" onchange="play(this.value,'iran')">
+                        <select id="c2">
                             <option></option>
                             <option value="brazil">BRAZIL</option>
                             <option value="england">ENGLAND</option>
@@ -482,7 +478,7 @@
             <tr>
                 <td>DECEMBER 12</td>
                 <td>
-                    <select id="n3" onchange="play(this.value,'widow')">
+                    <select id="n3">
                         <option></option>
                         <option value="fang">FANG</option>
                         <option value="hawk">HAWK</option>
@@ -492,7 +488,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="s3" onchange="play(this.value,'ib25')">
+                    <select id="s3">
                         <option></option>
                         <option value="ib25">IB-25</option>
                         <option value="jc44">JC-44</option>
@@ -502,7 +498,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="c3" onchange="play(this.value,'russia')">
+                    <select id="c3">
                         <option></option>
                         <option value="brazil">BRAZIL</option>
                         <option value="england">ENGLAND</option>
@@ -515,7 +511,7 @@
             <tr>
                 <td>DECEMBER 13</td>
                 <td>
-                    <select id="n4" onchange="play(this.value,'tarantula')">
+                    <select id="n4">
                         <option></option>
                         <option value="fang">FANG</option>
                         <option value="hawk">HAWK</option>
@@ -525,7 +521,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="s4" onchange="play(this.value,'jc44')">
+                    <select id="s4">
                         <option></option>
                         <option value="ib25">IB-25</option>
                         <option value="jc44">JC-44</option>
@@ -535,7 +531,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="c4" onchange="play(this.value,'germany')">
+                    <select id="c4">
                         <option></option>
                         <option value="brazil">BRAZIL</option>
                         <option value="england">ENGLAND</option>
@@ -548,7 +544,7 @@
             <tr>
                 <td>DECEMBER 14</td>
                 <td>
-                    <select id="n5" onchange="play(this.value,'fang')">
+                    <select id="n5">
                         <option></option>
                         <option value="fang">FANG</option>
                         <option value="hawk">HAWK</option>
@@ -558,7 +554,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="s5" onchange="play(this.value,'ou81')">
+                    <select id="s5">
                         <option></option>
                         <option value="ib25">IB-25</option>
                         <option value="jc44">JC-44</option>
@@ -568,7 +564,7 @@
                     </select>
                 </td>
                 <td>
-                    <select id="c5" onchange="play(this.value,'brazil')">
+                    <select id="c5">
                         <option></option>
                         <option value="brazil">BRAZIL</option>
                         <option value="england">ENGLAND</option>
