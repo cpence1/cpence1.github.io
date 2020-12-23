@@ -77,9 +77,15 @@
                     case 5: {total1="5<br><b>After Five, The Field's Alive!";break;}
                     case 6: {total1="6"; break;}
                     case 7: {total1="7<br><b>Lucky Number 7!";break;}
-                    case 8: {total1="8<br><b>A Square Pair!";break;}
+                    case 8: {
+                        if(d1==4)total1="8<br><b>A Square Pair!";
+                            else total1="8";
+                        break;}
                     case 9: {total1="9<br><b>Nina From Pasadena!";break;}
-                    case 10: {total1="10<br><b>Puppy Paws!";break;}
+                    case 10: {
+                        if(d1==5) total1="10<br><b>Puppy Paws!";
+                            else total1="10";
+                        break;}
                     case 11: {total1="11<br><b>Six Five, No Jive!";break;}
                     case 12: {total1="12<br><b>Boxcars!";break;}
                     }
@@ -114,9 +120,15 @@
                         total1="7";
                             document.getElementById("b").innerHTML='<button id="roll1" type="button" onclick="restart();">Play Again</button>';
                             break;}
-                    case 8: {total1="8<br><b>A Square Pair!";break;}
+                    case 8:{
+                        if(d1==4)total1="8<br><b>A Square Pair!";
+                            else total1="8";
+                        break;}
                     case 9: {total1="9<br><b>Nina From Pasadena!";break;}
-                    case 10: {total1="10<br><b>Puppy Paws!";break;}
+                    case 10: {
+                        if(d1==5) total1="10<br><b>Puppy Paws!";
+                            else total1="10";
+                        break;}
                     case 11: {total1="11<br><b>Six Five, No Jive!";break;}
                     case 12: {total1="12<br><b>Boxcars!";break;}
                     }

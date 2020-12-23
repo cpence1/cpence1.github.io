@@ -51,34 +51,76 @@
                 border:2px solid black;
                 background-color: gray;
             }
+            select{
+                font-weight: bold;
+            }
         </style>
         <script>
-            var flag=0;
+            var cells=0;
             var correct=0;
+            function cellAdd(mark,a,b,c,d,e,f,g,h){
+                if(mark=="O"){
+                    cell=document.getElementById("cell"+a);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+b);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+c);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+d);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+e);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+f);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+g);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cell=document.getElementById("cell"+h);
+                    if((cell.value!="O")&&(cell.value!="X")) cell.value="X";
+                    cells+=9;
+                }
+                else if(mark==""){
+                    cell=document.getElementById("cell"+a);
+                    cell.value="";
+                    cell=document.getElementById("cell"+b);
+                    cell.value="";
+                    cell=document.getElementById("cell"+c);
+                    cell.value="";
+                    cell=document.getElementById("cell"+d);
+                    cell.value="";
+                    cell=document.getElementById("cell"+e);
+                    cell.value="";
+                    cell=document.getElementById("cell"+f);
+                    cell.value="";
+                    cell=document.getElementById("cell"+g);
+                    cell.value="";
+                    cell=document.getElementById("cell"+h);
+                    cell.value="";
+            }
+        }
             function check(){
-                if(n1.value=='hawk'){
-                    if(s1.value=='mj95'){
-                        if(c1.value=='england'){
-                if(n2 .value=='scarecrow'){
-                    if(s2.value=='ur12'){ 
-                        if(c2.value=='iran'){
-                if(n3.value=='widow'){
-                    if(s3.value=='ib25'){
-                        if(c3.value=='russia'){                
-                if(n4.value=='tarantula'){
-                    if(s4.value=='jc44'){
-                        if(c4.value=='germany'){                
-                if(n5.value=='fang'){
-                    if(s5.value=='ou81'){
-                        if(c5.value=='brazil'){
-                            alert("You Win!");
-                                    }}}
-                                }}}
-                            }}}
-                        }}}
-                    }}}
+                    if((n1.value=='hawk')&&(s1.value=='mj95')&&(c1.value=='england')&&
+                    (n2 .value=='scarecrow')&&(s2.value=='ur12')&&(c2.value=='iran')&&
+                    (n3.value=='widow')&&(s3.value=='ib25')&&(c3.value=='russia')&&
+                    (n4.value=='tarantula')&&(s4.value=='jc44')&&(c4.value=='germany')&&
+                    (n5.value=='fang')&&(s5.value=='ou81')&&(c5.value=='brazil'))
+                        {
+                                alert("You Win!");}
                  else{
                     alert("You're Not Finished Yet!");
+                }
+            }
+            function reset(){
+                for(i=1; i<151;i++){
+                    cell=document.getElementById("cell"+i);
+                    cell.value="";
+                }
+                for(j=1; j<6;j++){
+                    cell=document.cell=document.getElementById("n"+j);
+                    cell.value="";
+                    cell=document.cell=document.getElementById("s"+j);
+                    cell.value="";
+                    cell=document.cell=document.getElementById("c"+j);
+                    cell.value="";
                 }
             }
         </script>
@@ -97,7 +139,7 @@
                 <td style="font-weight: bold;">TO PLAY:</td>
             </tr>
             <tr>
-                <td>Select From The Dropdown Boxes:<br>X - Eliminate A Fact<br>O - Confirm A Fact</td>
+                <td>Select From The Dropdown Boxes:<br>X - Eliminate A Fact<br>O - Confirm A Fact<br>" "- Clear The Rows & Columns</td>
             </tr>
             <tr>
                 <td>When You Confirm A Fact, Use the Dropdown Boxes Below To Fill Out The Schedule</td>
@@ -137,99 +179,99 @@
 
                 <td id="s_head">DECEMBER 10</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell1" onchange="cellAdd(this.value,2,3,4,5,16,31,46,61)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell2" onchange="cellAdd(this.value,1,3,4,5,17,32,47,62)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell3" onchange="cellAdd(this.value,1,2,4,5,18,33,48,63)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell4" onchange="cellAdd(this.value, 1,2,3,5,19,34,49,64)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell5" onchange="cellAdd(this.value, 1,2,3,4,20,35,50,65)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell6"onchange="cellAdd(this.value, 7,8,9,10, 21,36,51,66)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell7"onchange="cellAdd(this.value, 6,8,9,10,22,37,52,67)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell8"onchange="cellAdd(this.value, 6,7,9,10,23,38,53,68)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell9"onchange="cellAdd(this.value, 6,7,8,10,24,39,54,69)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell10"onchange="cellAdd(this.value, 6,7,8,9,25,40,55,70)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell11"onchange="cellAdd(this.value, 12,13,14,15,26,41,56,71)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell12"onchange="cellAdd(this.value, 11,13,14,15,27,42,57,72)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell13"onchange="cellAdd(this.value, 11,12,14,15,28,43,58,73)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell14"onchange="cellAdd(this.value, 11,12,13,15,29,44,59,74)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell15"onchange="cellAdd(this.value, 11,12,13,14,30,45,60,75)"><option></option><option>X</option><option>O</option></select></td>
             </tr>
             <tr>
                 <td id="s_head">DECEMBER 11</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></input></td>
-                <td><select><option></option><option>X</option><option>O</option></select></input></td>
-                <td><select><option></option><option>X</option><option>O</option></select></input></td>
-                <td><select><option></option><option>X</option><option>O</option></select></input></td>
-                <td><select><option></option><option>X</option><option>O</option></select></input></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell16"onchange="cellAdd(this.value, 17,18,19,20,1,31,46,61)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell17"onchange="cellAdd(this.value, 16,18,19,20,2,32,47,62)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell18"onchange="cellAdd(this.value, 16,17,19,20,3,33,48,63)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell19"onchange="cellAdd(this.value, 16,17,18,20,4,34,49,64)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell20"onchange="cellAdd(this.value, 16,17,18,19,5,35,50,65)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell21"onchange="cellAdd(this.value,22,23,24,25,6,36,51,66)"><option></option><option>X</option><option>O</option></select></input></td>
+                <td><select id="cell22"onchange="cellAdd(this.value,21,23,24,25,7,37,52,67)"><option></option><option>X</option><option>O</option></select></input></td>
+                <td><select id="cell23"onchange="cellAdd(this.value,21,22,24,25,8,38,53,68)"><option></option><option>X</option><option>O</option></select></input></td>
+                <td><select id="cell24"onchange="cellAdd(this.value,21,22,23,25,9,39,54,69)"><option></option><option>X</option><option>O</option></select></input></td>
+                <td><select id="cell25"onchange="cellAdd(this.value,21,22,23,24,10,40,55,70)"><option></option><option>X</option><option>O</option></select></input></td>
+                <td id="g_box"><select id="cell26"onchange="cellAdd(this.value,27,28,29,30,11,41,56,71)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell27"onchange="cellAdd(this.value,26,28,29,30,12,42,57,72)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell28"onchange="cellAdd(this.value,26,27,29,30,13,43,58,73)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell29"onchange="cellAdd(this.value,26,27,28,30,14,44,59,74)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell30"onchange="cellAdd(this.value,,26,27,28,29,15,45,60,75)"><option></option><option>X</option><option>O</option></select></td>
             
             </tr>
             <tr>
                 <td id="s_head">DECEMBER 12</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>    
+                <td id="g_box"><select id="cell31"onchange="cellAdd(this.value,32,33,34,35,1,16,46,61)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell32"onchange="cellAdd(this.value,31,33,34,35,2,17,47,62)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell33"onchange="cellAdd(this.value,31,32,34,35,3,18,48,63)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell34"onchange="cellAdd(this.value,31,32,33,35,4,19,49,64)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell35"onchange="cellAdd(this.value,31,32,33,34,5,20,50,65)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell36"onchange="cellAdd(this.value,37,38,39,40,6,21,51,66)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell37"onchange="cellAdd(this.value,36,38,39,40,7,22,52,67)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell38"onchange="cellAdd(this.value,36,37,39,40,8,23,53,68)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell39"onchange="cellAdd(this.value,36,37,38,40,9,24,54,69)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell40"onchange="cellAdd(this.value,36,37,38,39,10,25,55,70)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell41"onchange="cellAdd(this.value,42,43,44,45,11,26,56,71)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell42"onchange="cellAdd(this.value,41,43,44,45,12,27,57,72)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell43"onchange="cellAdd(this.value,41,42,44,45,13,28,58,73)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell44"onchange="cellAdd(this.value,41,42,43,45,14,29,59,74)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell45"onchange="cellAdd(this.value,41,42,43,44,15,30,60,75)"><option></option><option>X</option><option>O</option></select></td>    
             </tr>
             <tr>
                 <td id="s_head">DECEMBER 13</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell46"onchange="cellAdd(this.value,47,48,49,50,1,16,31,61)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell47"onchange="cellAdd(this.value,46,48,49,50,2,17,32,62)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell48"onchange="cellAdd(this.value,46,47,49,50,3,18,33,63)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell49"onchange="cellAdd(this.value,46,47,48,50,4,19,34,64)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell50"onchange="cellAdd(this.value,46,47,48,49,5,20,35,65)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell51"onchange="cellAdd(this.value,52,53,54,55,6,21,36,66)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell52"onchange="cellAdd(this.value,51,53,54,55,7,22,37,67)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell53"onchange="cellAdd(this.value,51,52,54,55,8,23,38,68)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell54"onchange="cellAdd(this.value,51,52,53,55,9,24,39,69)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell55"onchange="cellAdd(this.value,51,52,53,54,10,25,40,70)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell56"onchange="cellAdd(this.value,57,58,59,60,11,26,41)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell57"onchange="cellAdd(this.value,56,58,59,60,12,27,42)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell58"onchange="cellAdd(this.value,56,57,59,60,13,28,43)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell59"onchange="cellAdd(this.value,56,57,58,60,14,29,44)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell60"onchange="cellAdd(this.value,56,57,58,59,15,30,45)"><option></option><option>X</option><option>O</option></select></td>
 
             </tr>
             <tr>
                 <td id="s_head">DECEMBER 14</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell61"onchange="cellAdd(this.value,62,63,64,65,1,16,31,46)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell62"onchange="cellAdd(this.value,61,63,64,65,2,17,32,47)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell63"onchange="cellAdd(this.value,61,63,64,65,3,18,33,48)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell64"onchange="cellAdd(this.value,61,62,63,65,4,19,34,49)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell65"onchange="cellAdd(this.value,61,62,63,64,5,20,35,50)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell66"onchange="cellAdd(this.value,67,68,69,70,6,21,36,51)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell67"onchange="cellAdd(this.value,66,68,69,70,7,22,37,52)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell68"onchange="cellAdd(this.value,66,67,69,70,8,23,38,53)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell69"onchange="cellAdd(this.value,66,67,68,70,9,24,39,54)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell70"onchange="cellAdd(this.value,66,67,68,69,10,25,40,55)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell71"onchange="cellAdd(this.value,72,73,74,75,11,26,41,56)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell72"onchange="cellAdd(this.value,71,73,74,75,12,27,42,57)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell73"onchange="cellAdd(this.value,71,72,74,75,13,28,43,58)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell74"onchange="cellAdd(this.value,71,72,73,75,14,29,44,59)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell75"onchange="cellAdd(this.value,71,72,73,74,15,30,45,60)"><option></option><option>X</option><option>O</option></select></td>
             
             </tr>
             <tr>
@@ -237,123 +279,123 @@
 
                 <td id="s_head">BRAZIL</td>
 
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell76"onchange="cellAdd(this.value,77,78,79,80,86,96,106,116)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell77"onchange="cellAdd(this.value,76,78,79,80,87,97,107,117)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell78"onchange="cellAdd(this.value,76,77,79,80,88,98,108,118)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell79"onchange="cellAdd(this.value,76,77,78,80,89,99,109,119)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell80"onchange="cellAdd(this.value,76,77,78,79,90,100,110,120)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell81"onchange="cellAdd(this.value,82,83,84,85,91,101,111,121)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell82"onchange="cellAdd(this.value,81,83,84,85,92,102,112,122)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell83"onchange="cellAdd(this.value,81,82,84,85,93,103,113,123)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell84"onchange="cellAdd(this.value,81,82,83,85,94,104,114,124)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell85"onchange="cellAdd(this.value,81,82,83,84,95,105,115,125)"><option></option><option>X</option><option>O</option></select></td>
                 <td id="mpty" colspan=5; rowspan="5"></td>
             </tr>
             <tr>
                 <td id="s_head">ENGLAND</td>
 
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell86"onchange="cellAdd(this.value,87,88,89,90,76,96,106,116)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell87"onchange="cellAdd(this.value,86,88,89,90,77,97,107,117)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell88"onchange="cellAdd(this.value,86,87,89,90,78,98,108,118)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell89"onchange="cellAdd(this.value,86,87,88,90,79,99,109,119)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell90"onchange="cellAdd(this.value,86,87,88,89,80,100,110,120)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell91"onchange="cellAdd(this.value,92,93,94,95,81,101,111,121)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell92"onchange="cellAdd(this.value,91,93,94,95,82,102,112,122)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell93"onchange="cellAdd(this.value,91,92,94,95,83,103,113,123)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell94"onchange="cellAdd(this.value,91,92,93,95,84,104,114,124)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell95"onchange="cellAdd(this.value,91,92,93,94,85,105,115,125)"><option></option><option>X</option><option>O</option></select></td>
             </tr>
             <tr>
                 <td id="s_head">GERMANY</td>
 
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell96"onchange="cellAdd(this.value,97,98,99,100,76,86,106,116)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell97"onchange="cellAdd(this.value,96,98,99,100,77,87,107,117)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell98"onchange="cellAdd(this.value,96,97,99,100,78,88,108,118)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell99"onchange="cellAdd(this.value,96,97,98,100,79,89,109,119)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell100"onchange="cellAdd(this.value,96,97,98,99,80,90,110,120)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell101"onchange="cellAdd(this.value,102,103,104,105,81,91,111,121)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell102"onchange="cellAdd(this.value,101,103,104,105,82,92,112,122)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell103"onchange="cellAdd(this.value,101,102,104,105,83,93,113,123)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell104"onchange="cellAdd(this.value,101,102,103,105,84,94,114,124)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell105"onchange="cellAdd(this.value,101,102,103,104,85,95,115,125)"><option></option><option>X</option><option>O</option></select></td>
             </tr>
             <tr>
                 <td id="s_head">IRAN</td>
 
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell106"onchange="cellAdd(this.value,107,108,109,110,76,86,96,116)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell107"onchange="cellAdd(this.value,106,108,109,110,77,87,97,117)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell108"onchange="cellAdd(this.value,106,107,109,110,78,88,98,118)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell109"onchange="cellAdd(this.value,106,107,108,110,79,89,109,119)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell110"onchange="cellAdd(this.value,106,107,108,109,80,90,100,120)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell111"onchange="cellAdd(this.value,112,113,114,115,81,91,101,121)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell112"onchange="cellAdd(this.value,111,113,114,115,82,92,102,121)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell113"onchange="cellAdd(this.value,111,112,114,115,83,93,103,123)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell114"onchange="cellAdd(this.value,111,112,113,115,84,94,104,124)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell115"onchange="cellAdd(this.value,111,112,113,114,85,95,105,125)"><option></option><option>X</option><option>O</option></select></td>
             </tr>
             <tr>
                 <td id="s_head">RUSSIA</td>
 
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell116"onchange="cellAdd(this.value,117,118,119,120,76,86,96,106)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell117"onchange="cellAdd(this.value,116,118,119,120,77,87,97,107)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell118"onchange="cellAdd(this.value,116,117,119,120,78,88,98,108)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell119"onchange="cellAdd(this.value,116,117,118,120,79,89,99,109)"><option></option><option>X</option><option>O</option></select></td>
+                <td><select id="cell120"onchange="cellAdd(this.value,116,117,118,119,80,90,100,110)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell121"onchange="cellAdd(this.value,122,123,124,125,81,91,101,111)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell122"onchange="cellAdd(this.value,121,123,124,125,82,92,102,112)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell123"onchange="cellAdd(this.value,121,122,124,125,83,93,103,113)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell124"onchange="cellAdd(this.value,121,122,123,125,84,94,104,114)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell125"onchange="cellAdd(this.value,121,122,123,124,85,95,105,115)"><option></option><option>X</option><option>O</option></select></td>
             </tr>
             <tr>
                 <td rowspan=5; id="t_head">C<br>A<br>L<br>L<br>S<br>I<br>G<br>N</td>
 
                 <td id="s_head">IB-25</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell126"onchange="cellAdd(this.value,127,128,129,130,131,136,141,146)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell127"onchange="cellAdd(this.value,126,128,129,130,132,137,142,147)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell128"onchange="cellAdd(this.value,126,127,129,130,133,138,143,148)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell129"onchange="cellAdd(this.value,126,127,128,130,134,139,144,149)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell130"onchange="cellAdd(this.value,126,127,128,129,135,140,145,150)"><option></option><option>X</option><option>O</option></select></td>
                 <td id="mpty" colspan=10; rowspan="5"></td>
             </tr>
             <tr>
                 <td id="s_head">JC-44</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell131"onchange="cellAdd(this.value,132,133,134,135,126,136,141,146)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell132"onchange="cellAdd(this.value,131,133,134,135,127,137,142,147)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell133"onchange="cellAdd(this.value,131,132,134,135,128,138,143,148)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell134"onchange="cellAdd(this.value,131,132,133,135,129,139,144,149)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell135"onchange="cellAdd(this.value,131,132,133,134,130,140,145,150)"><option></option><option>X</option><option>O</option></select></td>
                 
             </tr>
             <tr>
                 <td id="s_head">MJ-95</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell136"onchange="cellAdd(this.value,137,138,139,140,126,131,141,146)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell137"onchange="cellAdd(this.value,136,138,139,140,127,132,142,147)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell138"onchange="cellAdd(this.value,136,137,139,140,128,133,143,148)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell139"onchange="cellAdd(this.value,136,137,138,140,129,134,144,149)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell140"onchange="cellAdd(this.value,136,137,138,139,130,135,145,150)"><option></option><option>X</option><option>O</option></select></td>
                 
             </tr>
             <tr>
                 <td id="s_head">OU-81</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td> 
+                <td id="g_box"><select id="cell141"onchange="cellAdd(this.value,142,143,144,145,126,131,141,146)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell142"onchange="cellAdd(this.value,141,143,144,145,127,132,142,147,)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell143"onchange="cellAdd(this.value,141,142,144,145,128,133,143,148)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell144"onchange="cellAdd(this.value,141,142,143,145,129,134,144,149)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell145"onchange="cellAdd(this.value,141,142,143,144,130,135,145,150)"><option></option><option>X</option><option>O</option></select></td> 
             </tr>
             <tr>
                 <td id="s_head">UR-12</td>
 
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
-                <td id="g_box"><select><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell146"onchange="cellAdd(this.value,147,148,149,150,126,131,136,141)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell147"onchange="cellAdd(this.value,146,148,149,150,127,132,137,142)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell148"onchange="cellAdd(this.value,146,147,149,150,128,133,138,143)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell149"onchange="cellAdd(this.value,146,147,148,150,129,134,139,144)"><option></option><option>X</option><option>O</option></select></td>
+                <td id="g_box"><select id="cell150"onchange="cellAdd(this.value,146,147,148,149,130,135,140,145)"><option></option><option>X</option><option>O</option></select></td>
             </tr>
         </table>
         <br><br>
@@ -577,6 +619,6 @@
         </table>
         <br>
         <button type="button" onclick="check();">Submit</button>
+        <button type="button" onclick="reset();">Reset</button>
     </body>
-   
     </html>
