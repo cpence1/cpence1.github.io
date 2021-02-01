@@ -53,8 +53,7 @@
                     document.getElementById(x).style.backgroundColor="green";
                     break;  
                     }
-                }
-                checkWin();           
+                }           
             }
             function dotStar(){
                 document.getElementById("star").style.backgroundImage="url('images/green_star.png')";
@@ -125,6 +124,9 @@
                     '<button type="button" onclick="location.reload();">Reset</button>';
             }
             function play(){
+                document.getElementById("button").innerHTML=
+                    '<button type="button" onclick="checkWin();">BINGO!!!</button>';
+                var timer = setTimeout(play, 5000);
                 x=getRndInteger(1,101);
                 while(call.includes(x)) x=getRndInteger(1,101);
                 call[num]=x;
@@ -213,8 +215,11 @@
                     && document.getElementById("O5").style.backgroundColor=="green"))
                     {
                         dotStar();
-                        document.getElementById("button").innerHTML=
-                    '<button type="button" onclick="win();">BINGO!!!</button>';
+                        var timeStop=clearTimeout(play);
+                        win();
+                    }
+                    else{
+                        alert("Check Your Numbers Again! You Haven't Won Yet!");
                     }
                 }
         </script>
@@ -222,6 +227,7 @@
     <body onload="start();">
         <h1>BINGO</h1>
         <h3>Click the Button Below To Start</h3>
+        <div id="txt"></div>
         <table id="card">
             <tr style="font-weight: bold; background-color: red;">
                 <td style="background-color: red;">B</td>
