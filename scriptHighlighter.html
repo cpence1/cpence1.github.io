@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head> 
+    <title>Script Highlighter</title> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0"> 
+          <style type="text/css"> 
+            div { 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+            }  
+            input { 
+                margin-top: 10px; 
+            } 
+              
+            textarea { 
+                margin-top: 15px; 
+                width: 70%; 
+                text-align: center;
+            } 
+            body{
+                text-align: center;
+            }
+            #r{
+                background-color: yellow;
+            }
+        </style> 
+  <script>
+        function fn(){
+            x=document.getElementById("Original").value;
+            document.getElementById("txt").innerHTML+=String(x);
+        }
+        function fn2(){
+           y=document.getElementById("txt").value;
+           for(i=0; i<y.length; i++){
+                if((y.charAt(i)=="R")&&(y.charAt(i+1)=="O")&&(y.charAt(i+2)=="M")
+                  &&(y.charAt(i+3)=="E")&&(y.charAt(i+4)=="O")){
+                                    document.getElementById("fin").innerHTML+="<div id='r'>ROMEO</div>";
+                                    i+=5;
+                                }
+                else if(y.charAt(i)=="\n")document.getElementById("fin").innerHTML+="<br>";
+                else
+                    document.getElementById("fin").innerHTML+=y.charAt(i);
+           }
+        }
+  </script>
+</head> 
+<body>
+        <h1>Script Reader</h1> 
+        <div> 
+            <input type="file"> 
+            <textarea id="Original" cols="30" rows="20"></textarea> 
+        </div>
+    <script src="scriptReader.js"></script>
+    <button type="button" onclick="fn()">Submit</button>
+    <button type="button" onclick="fn2()">Highlight</button>
+    <textarea id="txt"></textarea>
+    <div id="fin"></div>
+</body> 
+  
+</html> 

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Text Formatter</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            textarea {
+                width: 50%;
+                height: 150px;
+                padding: 12px 20px;
+                font-size: 16px;
+                resize: none;
+            }
+            span{
+                background-color: yellow;
+            }
+        </style>
+        <script>
+            function format(){
+                var txt=document.getElementById("txt").value;
+                var fTxt=document.getElementById("fmtTxt");
+                for(i=0; i<txt.length;i++){
+                    var x=txt.charAt(i)
+                    if((txt.charAt(i-1)=="")||(txt.charAt(i-1)==" ")
+                    ||(txt.charAt(i-1)=="\n")||(txt.charAt(i-1)=="—")
+                    ||(txt.charAt(i-1)=='"')){
+                        var x=x.toUpperCase();
+                    }
+                    if(x=="A"){
+                        if(txt.charAt(i+1)=="n"){
+                            if(txt.charAt(i+2=="d")){
+                                if(txt.charAt(i+3)==" "){
+                                    x="& ";
+                                    i+=3;
+                                }
+                                else if((txt.charAt(i+3)==",")){
+                                    x="&,";
+                                    i+=3;
+                                }
+                            }
+                        }
+                    }
+                    if(x=="\n")x+="<br>";
+                    fTxt.innerHTML+=x;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Text Formatter</h1>
+        <h3>Enter Text To Automatically Capitalize All Words, <br>& Replace " and " with " & "</h3>
+        <textarea id="txt"></textarea>
+        <br><br>
+        <button type="button" onclick="format()">Submit</button>
+        <br><br>
+        <div id="fmtTxt"></div>
+    </body>
+</html>
