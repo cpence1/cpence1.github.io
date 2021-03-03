@@ -1,0 +1,244 @@
+<html>
+    <title>Blackjack Strategy Machine</title>
+    <style>
+        img{
+            width:192;
+            height: 192;
+            background-repeat: no-repeat;
+        }
+        body{
+            text-align: center;
+            font-size: large;
+            background-image: url("images/bjTable.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        #ph1{
+            position: absolute;
+            width: 384;
+            height:192;
+            left:35%;
+            bottom:10%;
+        }
+        #player1{
+            position: absolute;
+            left:35%;
+            bottom:7%;
+        }
+        #player2{
+            position: absolute;
+            left:54%;
+            bottom:7%;
+        }
+        #advice{
+            position: absolute;
+            left:47%;
+            bottom:45%;
+            background-color: green;
+            font-weight: bold;
+        }
+        #dh{
+            position: absolute;
+            width: 192;
+            height:192;
+            left:42%;
+            top:10%;
+        }
+        </style>
+        <script>
+        function playerC1(){
+            var playerH=document.getElementById("player1");
+            var card=playerH.value;
+            if(card=="0"){document.getElementById("dH").innerHTML='';}
+            else{
+            document.getElementById("pH1").innerHTML='<img src="images/Cards/'+card+'-s.png">';
+            }
+        }
+        function playerC2(){
+            playerC1();
+            playerH=document.getElementById("player2");
+            card=playerH.value;
+            document.getElementById("pH1").innerHTML+='<img src="images/Cards/'+card+'-h.png">';
+        }
+        function dealerHand(){
+            var dealerH=document.getElementById("dealer");
+            var card=dealerH.value;
+            if(card=="0"){document.getElementById("dH").innerHTML='';}
+            else{
+            document.getElementById("dH").innerHTML='<img src="images/Cards/'+card+'-d.png">';
+            }
+        }
+        function split(){
+            var x=document.getElementById("advice");
+                var p1=document.getElementById("player1");
+            p1=p1.value;
+            var p2=document.getElementById("player2");
+            p2=p2.value;
+            if(p1!=p2) return false;
+            else{
+            var dH=document.getElementById("dealer").value;
+                if((p1=="A")||(p1=="8")){return true;}
+                else if((p1=="2")||(p1=="3"))
+                {
+                    if((dH=="4")||(dH=="5")||(dH=="6")||(dH=="7")){return true;}
+                    else return false;
+                }
+                else if(p1=="6"){
+                        if((dH=="3")||(dH=="4")||(dH=="5")||(dH=="6")){return true;}
+                        else return false;
+                    }
+                else if(p1=="7"){
+                    if((dH=="2")||(dH=="3")||(dH=="4")||(dH=="5")||(dH=="6")||(dH=="7")){return true;}
+                    else return false;
+                    }
+                else if(p1=="9"){
+                    if((dH!="7")||(dH!="10")||(dH!="A")){return true;}
+                    else return false;
+                    }
+                else return false;
+            }
+        }
+        function strat(){
+            var p1=document.getElementById("player1");
+            p1=p1.value;
+            var p2=document.getElementById("player2");
+            p2=p2.value;
+            var dH=document.getElementById("dealer").value;
+            var hard=0;
+            var soft=0;
+            var x=document.getElementById("advice");
+            if((p1=="0")||(p2=="0")||(dH=="0")){
+                alert("Please Select Player & Dealer Cards");
+            }
+            else{
+            x.innerHTML="TOTAL: ";
+            if(p1=="A"){
+                if(p2!="A"){
+                    p2=parseInt(p2);
+                    soft=p2+11;
+                    hard=p2+1;
+                    x.innerHTML+=hard+" / "+soft+"<br>";
+                }
+                else{
+                        x.innerHTML+="2 / 12<br>";
+                    }
+                }
+            else if(p2=="A"){
+                p1=parseInt(p1);
+                soft=p1+11;
+                hard=p1+1;
+                x.innerHTML+=hard+" / "+soft+"<br>";
+                }
+            else{
+                p1=parseInt(p1);
+                p2=parseInt(p2);
+                hard=p1+p2;
+                x.innerHTML+=hard+"<br>";
+                }
+            if(p1==p2){
+                split();
+            }
+                hitStand(hard,soft);
+                document.getElementById("button").innerHTML='<button onclick="reload()">Reload</button>';
+            }
+        }
+            function hitStand(hard,soft){
+                var x=document.getElementById("advice");
+                var dH=document.getElementById("dealer").value;
+                if((hard==4)||(hard==5)||(hard==6)||(hard==7)||(hard==8)){if(!split()){x.innerHTML+="HIT";}else{x.innerHTML+="SPLIT";}}
+                if((hard>=17)||(soft>18)){x.innerHTML+="STAND";}
+                if(hard==9){
+                    if((dH==2)||(dh>=7)){x.innerHTML+="HIT";}
+                    else if((dH>=3)&&(dH<=6)){x.innerHTML+="DOUBLE";}
+                }
+                if(hard==10){
+                    if((dH==10)||(dH=="A"))x.innerHTML+="HIT";
+                    else{x.innerHTML+="DOUBLE";
+                    }
+                }
+                if(hard==11){
+                    if(dH=="A"){x.innerHTML+="HIT";}
+                    else{x.innerHTML+="DOUBLE";}
+                }
+                if(hard==12){
+                        if((dH==4)||(dH==5)||(dH==6)){if(!split()){x.innerHTML+="STAY";} else {x.innerHTML+="SPLIT";}}
+                        else{x.innerHTML+="HIT";}
+                }
+                if((hard==13)||(hard==14)||(hard==15)||(hard==16)){
+                    if(!split()){
+                        if(dH>=7){x.innerHTML+="HIT";}
+                        else{x.innerHTML+="STAY";}
+                    }
+                    else{x.innerHTML+="SPLIT";}
+                }
+                if((soft==13)||(soft==14)){
+                    if((dH==5)||(dH==6)){x.innerHTML+="DOUBLE";}
+                    else{x.innerHTML+="HIT";}
+                }
+                if((soft==15)||(soft==16)){
+                    if((dH==4)||(dH==5)||(dH==6)){x.innerHTML+="DOUBLE";}
+                    else{x.innerHTML+="HIT";}
+                }
+                if(soft==17){
+                    if((dh==3)||(dH==4)||(dH==5)||(dH==6)){x.innerHTML+="DOUBLE";}
+                    else{x.innerHTML+="HIT";}
+                }
+                if(soft==18){
+                    if((dh==9)||(dH==10)||(dH="A")){x.innerHTML+="HIT";}
+                    else if((dh==2)||(dH==7)||(dH=8)){x.innerHTML+="STAY";}
+                    else{x.innerHTML+="DOUBLE";}
+                }
+                x.innerHTML+='<div id="button"><button id="button" onclick="strat()">Submit</button></div>';
+            }
+        function reload(){
+            document.location.reload();
+        }
+        </script>
+        <body>
+            <div id="dH"></div>
+            <select id="dealer" onclick="dealerHand()">
+                <option value="0">DEALER SHOWS</option>
+                <option value="A">Ace</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option></optgroup>
+        </select>
+        <div id="pH1"></div>
+            <select id="player1" onchange="playerC1();">
+                    <option value="0">PLAYER CARD 1</option>
+                    <option value="A">Ace</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+            </select>
+            <select id="player2" onchange="playerC2();">
+                <option value="0">PLAYER CARD 2</option>
+                <option value="A">Ace</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+        </select>
+        <div id="advice" style="border: 1px solid black;">
+            <div id="button"><button id="button" onclick="strat()">Submit</button></div>
+        </div>
+        </body>
+</html>
