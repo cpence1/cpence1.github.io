@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>ASCII TABLE</title>
+        <style>
+        </style>
+        <script>
+            function fn(){
+                document.write("<h1 style='text-align:center;'>ASCII TABLE</h1>");
+                document.write("<table style='margin-left:auto; margin-right:auto; font-size:12pt; text-align:center;'"+
+                "border='1px' cellspacing='0'><tr><th bgcolor='blue'>DEC</th><th bgcolor='blue'>ASCII</th>"+
+                    "<th bgcolor='lightblue'>DEC</th><th bgcolor='lightblue'>ASCII</th>"+
+                    "<th bgcolor='blue'>DEC</th><th bgcolor='blue'>ASCII</th>"+
+                    "<th bgcolor='lightblue'>DEC</th><th bgcolor='lightblue'>ASCII</th>"+
+                    "<th bgcolor='blue'>DEC</th><th bgcolor='blue'>ASCII</th>"+
+                    "<th bgcolor='lightblue'>DEC</th><th bgcolor='lightblue'>ASCII</th>"+
+                    "<th bgcolor='blue'>DEC</th><th bgcolor='blue'>ASCII</th>"+
+                    "<th bgcolor='lightblue'>DEC</th><th bgcolor='lightblue'>ASCII</th><tr>");
+                 i = 0;
+                while(i<128){
+                    if(i%2!=0){var color='lightblue';}
+                    else{color='blue';}
+                    switch(i){
+                        case 0:{ch="Null"; break;} case 1:{ch="StartOfHeading"; break;} case 2:{ch="StartOfTest"; break;} 
+                        case 3:{ch="EndOfText"; break;} case 4:{ch="EndOfXmit"; break;} case 5:{ch="Enquiry"; break;} 
+                        case 6:{ch="Acknowledgement"; break;} case 7:{ch="Bell"; break;}case 8:{ch="Backspace"; break;} 
+                        case 9:{ch="HorizontalTab"; break;} case 10:{ch="LineFeed"; break;} case 11:{ch="VerticalTab"; break;} 
+                        case 12:{ch="FormFeed"; break;} case 13:{ch="CarriageFeed"; break;} case 14:{ch="ShiftOut"; break;}
+                        case 15:{ch="ShiftIn"; break;} case 16:{ch="DataLineEscape"; break;} case 17:{ch="DeviceControl1"; break;} 
+                        case 18:{ch="DeviceControl2"; break;} case 19:{ch="DeviceControl3"; break;} case 20:{ch="DeviceControl4"; break;}
+                        case 21:{ch="NegativeAcknowledgement"; break;} case 22:{ch="SynchronousIdle"; break;} case 23:{ch="EndOfXmitBlock"; break;}
+                        case 24:{ch="Cancel"; break;} case 25:{ch="EndOfMedium"; break;} case 26:{ch="Substitute"; break;} 
+                        case 27:{ch="Escape"; break;} case 28:{ch="FileSeparator"; break;} case 29:{ch="GroupSeparator"; break;} 
+                        case 30:{ch="Record Separator"; break;} case 31:{ch="Unit Separator"; break;}
+                        case 127:{ch="DEL"; break;}
+                        default:{ch=String.fromCharCode(i);break;}
+                    }
+                    document.write("<td bgcolor='"+color+"';><b>"+i+"</td>");
+                    document.write("<td bgcolor='"+color+"'>"+ch+"</td>");
+                        i++;
+                        if(i%8==0){document.write("<tr>");}
+                    }
+                }
+        </script>
+    </head>
+    <body onload="fn()">
+        <h1>ASCII TABLE</h1>
+        <div id="x">|</div>
+    </body>
+</html>
